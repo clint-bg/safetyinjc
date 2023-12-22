@@ -6,7 +6,7 @@ root: intro
 chapters:
   - file: topics
     sections:
-    - file: lectures/01-Motive
+    - file: lectures/01-Intro
   - file: casestudies
     sections:
     - file: casestudies/casestudydocs
