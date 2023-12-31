@@ -7,6 +7,10 @@ chapters:
   - file: topics
     sections:
     - file: lectures/01-Intro
+    - file: lectures/02-GPrinciples
+    - file: lectures/03-Ethics
+    - file: lectures/04-Dilemmas
+    - file: lectures/05-PSM
   - file: casestudies
     sections:
     - file: casestudies/casestudydocs
