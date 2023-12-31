@@ -1,32 +1,37 @@
 # Stewardship and Safety in Jesus Christ
-God our Heavenly Father's work is to bring to pass the immortality and eternal life of man (Moses 1:39). That immortality is having and maintaining a living body of flesh and bone forever. It is also being able to live with God our Heavenly Father forever through the infinite and eternal atonement of Jesus Christ. We will live there according to the laws and ordinances that define the environment where God our Heavenly Father lives. 
+God our Heavenly Father's work is to bring to pass the immortality and eternal life of man (Moses 1:39). That immortality is having and maintaining a living body of flesh and bone forever. It is also being able to live with God our Heavenly Father forever through the infinite and eternal atonement of Jesus Christ. We can live there according to the laws and ordinances that define the environment where God our Heavenly Father lives. Key to living there is loving God and our neighbors as ourselves. Another word for love is safety, spiritual and physical safety.
 
 ## Safety in Jesus Christ
-Safety in Jesus Christ is applying systematic methods to ensure the physical and spiritual health of ourselves and those around us such that we can have immortality and eternal life. There is safe practices for our physical bodies and for the chemical systems for with which we will work. There is also, perhaps more importantly, safety for our souls and the spiritual souls that surround us.
+Safety in Jesus Christ is applying systematic methods to ensure the physical and spiritual health of ourselves and those around us such that we can have immortality and eternal life. There are safe practices for our physical bodies and for the chemical systems with which we will work. There is also, perhaps more importantly, safety for our souls and the spiritual souls that surround us.
 
 ## God-Given Stewardship
 We have been given stewardship for our lives, our bodies, and the land that we have been given to live on together with all the other children of God on all continents of Earth. Our actions as chemical engineers can be magnified for the benefit of man (Haber-Bosch process for example) or to the detriment of man (derivatives of the Haber-Bosch process to wage war for example).
 
 ## Course Outline
-This class treats those two broad topics (safety and stewardship) in addressing the following subtopics:
+This class treats those two broad topics (safety and stewardship) in addressing the following:
 
-### Spiritual Safety in Jesus Christ (Section 1)
+### Spiritual Safety in Jesus Christ
 - Ethics
 - AIChE Code of Ethics
+- Guiding principles from the Gospel of Jesus Christ
 
-### Physical Safety (Section 2)
-- Process Safety Management (PSM)
-- Hazards Analysis
+### Physical Safety
+Protection of people and resources from harm. Here we highlight Process Safety Management (PSM). There are twenty elements part of the process safety management (PSM) required by OSHA for organizations working or storing chemicals above a certain threshold. The threshold for explosives is 0, meaning any amount of explosives qualifies the company to comply with PSM. The regulation is part of the code of federal regulations (CFR) as outlined here: [29 CFR 1910.119 (OSHA PSM)](https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-H/section-1910.119). The primary element is Hazards Analysis and secondarily Process Safety Information.
 
-### Process Safety Information
-- Toxicology
-- ESD
-- Fires and Explosions
-- Dispersion, etc.
-- Other PSM Sub Programs
-- Management of Change, etc.
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/lectures/supportfiles/PSMArch.png?raw=trueg" width="400">
 
-### God-Given Stewardship (Section 3)
+The above arch shows the hazards as bricks held back by an arch representing PSM with the keystone to that arch (hazards analysis) being the most important part to protecting people and resources from harm.
+
+#### Hazards Analysis (HA)
+- Failure Modes and Effects Analysis (FMEA)
+- Hazards and Operability (HAZOP)
+- Job Safety Analysis (JSA)
+- Layers of Protection Analysis (LOPA)
+
+#### Process Safety Information (PSI)
+A critical part of hazards analysis is properly understanding the chemicals and scenarios that can lead to harm. This critical information is Process Safety Information (PSI).
+
+### God-Given Stewardship
 - Environment (Local vs Global, Acute vs Chronic)
     - Land
     - Water
