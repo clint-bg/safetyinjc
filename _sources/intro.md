@@ -1,4 +1,4 @@
-# Stewardship and Safety in Jesus Christ
+# Safety in Jesus Christ
 God our Heavenly Father's work is to bring to pass the immortality and eternal life of man (Moses 1:39). That immortality is having and maintaining a living body of flesh and bone forever. It is also being able to live with God our Heavenly Father forever through the infinite and eternal atonement of Jesus Christ. We can live there according to the laws and ordinances that define the environment where God our Heavenly Father lives. Key to living there is loving God and our neighbors as ourselves. Another word for love is safety, spiritual and physical safety.
 
 ## Safety in Jesus Christ
@@ -62,6 +62,13 @@ Chemical Process Safety by Daniel Crowl and Joseph Louvar, Fourth Edition
 ## Syllabus
 The syllabus is available on Learning Suite.
 
-```{tableofcontents}
-```
+## Course Schedule
+The schedule for the course will be as follows (subject to change where Week 1.2 is the first week and the second class of that week):
+|Week.Lecture|Module|Demo|HW|Exam|
+|---|---|--|--|--|
+|1.1|[Introduction](spiritual/01-Intro)|-|-|-|
+|1.2|[Gospel Principles](spiritual/02-GPrinciples)|-|-|-|
+|1.3|[Ethics](spiritual/03-EthicsApproach)|-|-|-|
+|2.1|[PSM](physical/05-PSM)|-|-|-|
+
 Content is presented using [Jupyter Book](https://jupyterbook.org).
