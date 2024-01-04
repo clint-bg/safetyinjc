@@ -4,15 +4,15 @@
 format: jb-book
 root: intro
 chapters:
-  - file: topics
+  - file: 01-Intro
+  - file: spiritual
     sections:
-    - file: lectures/01-Intro
-    - file: lectures/02-GPrinciples
-    - file: lectures/03-Ethics
-    - file: lectures/04-Dilemmas
-    - file: lectures/05-PSM
-  - file: casestudies
+    - file: spiritual/02-GPrinciples
+    - file: spiritual/03-EthicsApproach
+  - file: physical
     sections:
-    - file: casestudies/casestudydocs
-  - file: acknowledgement
+    - file: physical/04-PSM
+  - file: stewardship
+    sections:
+    - file: stewardship/zz-Environment
 
