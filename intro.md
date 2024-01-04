@@ -1,7 +1,7 @@
 # Safety in Jesus Christ
 God our Heavenly Father's work is to bring to pass the immortality and eternal life of man (Moses 1:39). That immortality is having and maintaining a living body of flesh and bone forever. It is also being able to live with God our Heavenly Father forever through the infinite and eternal atonement of Jesus Christ. We can live there according to the laws and ordinances that define the environment where God our Heavenly Father lives. Key to living there is loving God and our neighbors as ourselves. Another word for love is safety, spiritual and physical safety.
 
-## Safety in Jesus Christ
+## Physical and Spiritual Safety
 Safety in Jesus Christ is applying systematic methods to ensure the physical and spiritual health of ourselves and those around us such that we can have immortality and eternal life. There are safe practices for our physical bodies and for the chemical systems with which we will work. There is also, perhaps more importantly, safety for our souls and the spiritual souls that surround us.
 
 ## God-Given Stewardship
@@ -18,7 +18,7 @@ This class treats those two broad topics (safety and stewardship) in addressing 
 ### Physical Safety
 Protection of people and resources from harm. Here we highlight Process Safety Management (PSM). There are twenty elements part of the process safety management (PSM) required by OSHA for organizations working or storing chemicals above a certain threshold. The threshold for explosives is 0, meaning any amount of explosives qualifies the company to comply with PSM. The regulation is part of the code of federal regulations (CFR) as outlined here: [29 CFR 1910.119 (OSHA PSM)](https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-H/section-1910.119). The primary element is Hazards Analysis and secondarily Process Safety Information.
 
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/lectures/supportfiles/PSMArch.png?raw=trueg" width="400">
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/spiritual/supportfiles/PSMArch.png?raw=trueg" width="400">
 
 The above arch shows the hazards as bricks held back by an arch representing PSM with the keystone to that arch (hazards analysis) being the most important part to protecting people and resources from harm.
 
