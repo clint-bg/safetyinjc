@@ -1,0 +1,699 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>04-Logic and Process Safety &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'physical/04-Logic';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="05-PSM" href="05-PSM.html" />
+    <link rel="prev" title="Physical Safety" href="../physical.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Safety in Jesus Christ
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-Intro.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../spiritual.html">Spiritual Safety</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../spiritual/02-GPrinciples.html">02-Ethics and the Gospel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spiritual/03-EthicsApproach.html">03-Ethics Approach</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../physical.html">Physical Safety</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">04-Logic and Process Safety</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-PSM.html">05-PSM</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../stewardship.html">God-Given Stewardship</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../stewardship/zz-Environment.html">Environment</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/clint-bg/safetyinjc/blob/gh-pages/_sources/physical/04-Logic.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/clint-bg/safetyinjc" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/clint-bg/safetyinjc/issues/new?title=Issue%20on%20page%20%2Fphysical/04-Logic.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/physical/04-Logic.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>04-Logic and Process Safety</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-and-critical-thinking">Logic and Critical Thinking</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deductive-validity">Deductive Validity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductive-force">Inductive Force</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fallacies">Fallacies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other-examples-of-fallacies">Other Examples of Fallacies</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deductive-reasoning">Deductive Reasoning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductive-reasoning">Inductive Reasoning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#influence-of-the-holy-ghost">Influence of the Holy Ghost</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-safety">Process Safety</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safety-culture">Safety Culture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voluntary-and-involuntary-risk">Voluntary and Involuntary Risk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safety-metrics">Safety Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accident-statistics">Accident Statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-tolerance">Risk Tolerance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-matrix">Risk Matrix</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="logic-and-process-safety">
+<h1>04-Logic and Process Safety<a class="headerlink" href="#logic-and-process-safety" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Logic and critical thinking are skills that can help you to evaluate information and make decisions. We will use these skills to help us systematically consider hazards that could lead to catastrophic events.</p>
+</div>
+<p>Learning Objectives</p>
+<ul class="simple">
+<li><p>Learn about critical and creative thinking skills for analysis and evaluation of problems and cause-effect relationships.</p></li>
+<li><p>Highlight argument validation and fallacies.</p></li>
+<li><p>Learn about the difference between deductive and inductive reasoning.</p></li>
+</ul>
+<section id="logic-and-critical-thinking">
+<h2>Logic and Critical Thinking<a class="headerlink" href="#logic-and-critical-thinking" title="Permalink to this heading">#</a></h2>
+<p>Critical thinking is the ability to think clearly and rationally about what to do or what to believe. It includes the ability to engage in reflective and independent thinking. Someone with critical thinking skills is able to:</p>
+<ul class="simple">
+<li><p>Understand the logical connections between ideas.</p></li>
+<li><p>Identify, construct and evaluate arguments.</p></li>
+<li><p>Detect inconsistencies and common mistakes in reasoning.</p></li>
+<li><p>Solve problems systematically.</p></li>
+<li><p>Identify the relevance and importance of ideas.</p></li>
+<li><p>Reflect on the justification of one’s own beliefs and values.</p></li>
+</ul>
+<section id="deductive-validity">
+<h3>Deductive Validity<a class="headerlink" href="#deductive-validity" title="Permalink to this heading">#</a></h3>
+<p>Deductive validity is a property of arguments. An argument is valid if the truth of its premises guarantees the truth of its conclusion. In other words, an argument is valid if the conclusion is true whenever the premises are true. The following argument is valid, because the conclusion must be true, given the premises:</p>
+<ul class="simple">
+<li><p>All humans are mortal.</p></li>
+<li><p>Socrates is human.</p></li>
+<li><p>Therefore, Socrates is mortal.</p></li>
+</ul>
+</section>
+<section id="inductive-force">
+<h3>Inductive Force<a class="headerlink" href="#inductive-force" title="Permalink to this heading">#</a></h3>
+<p>An inductively forceful argument is one where the truth of the premises makes the conclusion more likely to be true. For example, the following argument is inductively forceful:</p>
+<ul class="simple">
+<li><p>90% of the people we have interviewed love to play soccer.</p></li>
+<li><p>Therefore, the next person we interview will also love to play soccer.</p></li>
+</ul>
+</section>
+<section id="fallacies">
+<h3>Fallacies<a class="headerlink" href="#fallacies" title="Permalink to this heading">#</a></h3>
+<p>A fallacy is the use of invalid or otherwise faulty reasoning, or “wrong moves” in the construction of an argument. A fallacious argument may be deceptive by appearing to be better than it really is. Some fallacies are committed intentionally to manipulate or persuade by deception, while others are committed unintentionally due to carelessness or ignorance. An example of a fallacy is:</p>
+<ul class="simple">
+<li><p>If you love your country, you will support the war in X.</p></li>
+<li><p>You do not support the war in X.</p></li>
+<li><p>Therefore, you do not love your country.</p></li>
+</ul>
+<section id="other-examples-of-fallacies">
+<h4>Other Examples of Fallacies<a class="headerlink" href="#other-examples-of-fallacies" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Ad hominem: attacking the person instead of the argument.</p></li>
+<li><p>Appeal to authority: using the opinion or position of an authority figure, or institution of authority, in place of an actual argument.</p></li>
+<li><p>Appeal to emotion: manipulating an emotional response in place of a valid or compelling argument.</p></li>
+<li><p>Appeal to fear: using fear to influence the conclusion.</p></li>
+<li><p>Appeal to flattery: using flattery to influence the conclusion.</p></li>
+<li><p>Circular reasoning: supporting a statement by repeating it in different words. Similar to affirming the consequent: if A, then B. B, therefore A. Also similar to begging the question: assuming the conclusion in the premise.</p></li>
+<li><p>False dilemma: giving two choices when in fact there are three or more.</p></li>
+<li><p>Cause and effect: assuming that the effect is related to a cause because the events occur together. Implying causation from correlation.</p></li>
+<li><p>Sunk cost: assuming that future events will be affected by past events, which have no bearing on future outcomes.</p></li>
+<li><p>Strawman: creating a false or made up scenario and then attacking it. Similar to a red herring: diverting attention from the real issue by focusing instead on an issue having only a surface relevance to the first.</p></li>
+<li><p>Tu quoque: avoiding having to engage with criticism by turning it back on the accuser - answering criticism with criticism.</p></li>
+<li><p>Wishful thinking: making decisions according to what might be pleasing to imagine, rather than according to evidence or reason.</p></li>
+<li><p>Slippery slope: asserting that a relatively small first step inevitably leads to a chain of related events culminating in some significant impact.</p></li>
+<li><p>Herd mentality: doing or thinking things because many other people do or think the same. Similar to bandwagon: doing or thinking things because many other people do or think the same.</p></li>
+</ul>
+</section>
+</section>
+<section id="deductive-reasoning">
+<h3>Deductive Reasoning<a class="headerlink" href="#deductive-reasoning" title="Permalink to this heading">#</a></h3>
+<p>Deductive reasoning is a type of logical thinking that starts with a general statement and then applies that statement to a specific case. For example, if we know that all cats have tails, and we know that Fluffy is a cat, then we can deduce that Fluffy has a tail.</p>
+<p>A few examples from process safety:</p>
+<ul class="simple">
+<li><p>All flammable materials can be ignited and burn, and we know that gasoline is a flammable material, then we can deduce that gasoline can be ignited and burn.</p></li>
+<li><p>Reducing the oxygen concentration in a room will reduce the likelihood of a fire, and we know that the oxygen concentration in a room can be reduced by displacing oxygen with an inert gas, then we can deduce that displacing oxygen with an inert gas will reduce the likelihood of a fire.</p></li>
+<li><p>Encouraging cleanliness and holding hand rails contributes to a culture of safety, and we know that a culture of safety reduces the likelihood of accidents, then we can deduce that encouraging cleanliness and holding hand rails reduces the likelihood of accidents.</p></li>
+</ul>
+</section>
+<section id="inductive-reasoning">
+<h3>Inductive Reasoning<a class="headerlink" href="#inductive-reasoning" title="Permalink to this heading">#</a></h3>
+<p>Inductive reasoning is a type of logical thinking that starts with a specific case and then applies that case to a general statement. For example, if we know that Fluffy has a tail, and we know that Fluffy is a cat, then we can induce that all cats have tails.</p>
+<p>A proceses safety example:</p>
+<ul class="simple">
+<li><p>The Bhopal disaster was caused by a chemical incompatibility with water. We can induce that there may be other chemicals that are incompatible with water and could result in severe consequences.</p></li>
+</ul>
+</section>
+<section id="influence-of-the-holy-ghost">
+<h3>Influence of the Holy Ghost<a class="headerlink" href="#influence-of-the-holy-ghost" title="Permalink to this heading">#</a></h3>
+<p>We should do all we can to learn and determine what is true. We can then ask God if it is true. The Holy Ghost witnesses of truth. It is a feeling of peace and assurance. It is a gift from God that is available to all people. It is a way that God communicates with us. President Nelson has said that:</p>
+<div class="admonition-quote-by-president-nelson admonition">
+<p class="admonition-title">Quote by President Nelson</p>
+<p>in coming days, it will not be possible to survive spiritually without the guiding, directing, comforting, and constant influence of the Holy Ghost.</p>
+</div>
+</section>
+</section>
+<section id="process-safety">
+<h2>Process Safety<a class="headerlink" href="#process-safety" title="Permalink to this heading">#</a></h2>
+<section id="safety-culture">
+<h3>Safety Culture<a class="headerlink" href="#safety-culture" title="Permalink to this heading">#</a></h3>
+<p>How important is safety to you and those around you? What does process safety mean? What does it mean to your company? Are you willing to work for a company that does not value safety? Is it true that a company that does not value safety does not value you?</p>
+<p>Ultimately, we are responsible for our safety, both physical and spiritual. We’ll talk about many accidents in the course. For example, a few days ago, the Los Angeles Times reported about Zuko Carrasco, who was paralyzed while leading people on a trust fall. He blames himself as he was the last to descend when what he thought he heard was “on belay” but his belayer was not yet ready. He jumped and fell 40 feet and was paralyzed from the waist down. He had safely completed that activity many times before.</p>
+</section>
+<section id="voluntary-and-involuntary-risk">
+<h3>Voluntary and Involuntary Risk<a class="headerlink" href="#voluntary-and-involuntary-risk" title="Permalink to this heading">#</a></h3>
+<p>Most are much more comfortable assuming voluntary versus involuntary risk. As a chemical engineer, how will you mitigate those two types of risk? Undoubtedly, a chemical engineer will work under voluntary risk and be on the front lines of helping to reduce involuntary risk to the public.</p>
+</section>
+<section id="safety-metrics">
+<h3>Safety Metrics<a class="headerlink" href="#safety-metrics" title="Permalink to this heading">#</a></h3>
+<p>You say you’re safe…prove it. Some safety metrics are training hours, near misses, number of lost time accidents, etc.</p>
+</section>
+<section id="accident-statistics">
+<h3>Accident Statistics<a class="headerlink" href="#accident-statistics" title="Permalink to this heading">#</a></h3>
+<p>Accident statistics are used to help us understand the risks we face. They are also used to help us understand the effectiveness of our safety programs.</p>
+</section>
+<section id="risk-tolerance">
+<h3>Risk Tolerance<a class="headerlink" href="#risk-tolerance" title="Permalink to this heading">#</a></h3>
+<p>Our tolerance for risk varies widely between individuals and organizations. How do we determine what is an acceptable risk? How do we determine what is an unacceptable risk? How do we determine what is a tolerable risk? How do we determine what is a negligible risk?</p>
+</section>
+<section id="risk-matrix">
+<h3>Risk Matrix<a class="headerlink" href="#risk-matrix" title="Permalink to this heading">#</a></h3>
+<p>Semi-quantitative: See Table 1-14 in the textbook.</p>
+<p>Qualitative Risk Matrix:</p>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/RiskMatrix.png?raw=trueg" width="400">
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./physical"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../physical.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Physical Safety</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05-PSM.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">05-PSM</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-and-critical-thinking">Logic and Critical Thinking</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deductive-validity">Deductive Validity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductive-force">Inductive Force</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fallacies">Fallacies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other-examples-of-fallacies">Other Examples of Fallacies</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deductive-reasoning">Deductive Reasoning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductive-reasoning">Inductive Reasoning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#influence-of-the-holy-ghost">Influence of the Holy Ghost</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-safety">Process Safety</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safety-culture">Safety Culture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voluntary-and-involuntary-risk">Voluntary and Involuntary Risk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safety-metrics">Safety Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accident-statistics">Accident Statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-tolerance">Risk Tolerance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-matrix">Risk Matrix</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Clint Guymon, Brigham Young University
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
