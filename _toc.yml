@@ -14,6 +14,7 @@ chapters:
     - file: physical/04-Logic
     - file: physical/05-PSM
     - file: physical/06-FTA
+    - file: physical/07-HA
   - file: stewardship
     sections:
     - file: stewardship/zz-Environment
