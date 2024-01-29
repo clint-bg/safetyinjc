@@ -64,11 +64,6 @@ The syllabus is available on Learning Suite.
 
 ## Course Schedule
 The schedule for the course will be as follows (subject to change where Week 1.2 is the first week and the second class of that week):
-|Week.Lecture|Module|Demo|HW|Exam|
-|---|---|--|--|--|
-|1.1|[Introduction](spiritual/01-Intro)|-|-|-|
-|1.2|[Gospel Principles](spiritual/02-GPrinciples)|-|-|-|
-|1.3|[Ethics](spiritual/03-EthicsApproach)|-|-|-|
-|2.1|[PSM](physical/05-PSM)|-|-|-|
+See Learning Suite for the most up-to-date schedule.
 
 Content is presented using [Jupyter Book](https://jupyterbook.org).
