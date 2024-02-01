@@ -17,6 +17,7 @@ chapters:
     - file: physical/07-HA
     - file: physical/08-HAZ
     - file: physical/09-Prob
+    - file: physical/10-CaseStudy
   - file: stewardship
     sections:
     - file: stewardship/zz-Environment
