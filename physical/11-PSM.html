@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>08-HAZOP &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
+    <title>11-PSM &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'physical/08-HAZ';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'physical/11-PSM';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="09-Probabilities" href="09-Prob.html" />
-    <link rel="prev" title="07-Hazards Analysis" href="07-HA.html" />
+    <link rel="next" title="12-Review" href="12-Review.html" />
+    <link rel="prev" title="10-HAZOP Case" href="10-CaseStudy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,10 +168,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="05-PSM.html">05-PSM Intro</a></li>
 <li class="toctree-l2"><a class="reference internal" href="06-FTA.html">06-Fault Tree Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07-HA.html">07-Hazards Analysis</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">08-HAZOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08-HAZ.html">08-HAZOP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="09-Prob.html">09-Probabilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10-CaseStudy.html">10-HAZOP Case</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11-PSM.html">11-PSM</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">11-PSM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12-Review.html">12-Review</a></li>
 </ul>
 </li>
@@ -233,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/clint-bg/safetyinjc/blob/gh-pages/_sources/physical/08-HAZ.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/clint-bg/safetyinjc/blob/gh-pages/_sources/physical/11-PSM.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/clint-bg/safetyinjc/issues/new?title=Issue%20on%20page%20%2Fphysical/08-HAZ.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/clint-bg/safetyinjc/issues/new?title=Issue%20on%20page%20%2Fphysical/11-PSM.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -311,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/physical/08-HAZ.ipynb" target="_blank"
+      <li><a href="../_sources/physical/11-PSM.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -393,7 +393,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>08-HAZOP</h1>
+    <h1>11-PSM</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -403,14 +403,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazards-and-operability-study-hazop">Hazards and Operability Study (HAZOP)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-flow-diagram-pfd">Process Flow Diagram (PFD)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-and-instrumentation-diagram-p-id">Process and Instrumentation Diagram (P&amp;ID)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-id-activity">P&amp;ID Activity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guide-words">Guide Words</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#osha-29-cfr-psm-elements">OSHA 29 CFR PSM Elements</a></li>
 </ul>
             </nav>
         </div>
@@ -422,55 +415,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hazop">
-<h1>08-HAZOP<a class="headerlink" href="#hazop" title="Permalink to this heading">#</a></h1>
-<section id="hazards-and-operability-study-hazop">
-<h2>Hazards and Operability Study (HAZOP)<a class="headerlink" href="#hazards-and-operability-study-hazop" title="Permalink to this heading">#</a></h2>
-<p>Systematic method of identifying hazards in a process plant using a process flow diagram (PFD) and/ or a piping and instrumentation diagram (P&amp;ID) and guide words.</p>
-<section id="process-flow-diagram-pfd">
-<h3>Process Flow Diagram (PFD)<a class="headerlink" href="#process-flow-diagram-pfd" title="Permalink to this heading">#</a></h3>
-<p>Example PFD of the Haber-Bosch process from <a class="reference external" href="https://en.wikipedia.org/wiki/Haber_process">https://en.wikipedia.org/wiki/Haber_process</a></p>
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/HaberBoschProcess.png?raw=true" width="700"><p>Nodes are judiciously picked at points where the process changes significantly.  The nodes are numbered and the node numbers are used in the HAZOP study.</p>
-</section>
-<section id="process-and-instrumentation-diagram-p-id">
-<h3>Process and Instrumentation Diagram (P&amp;ID)<a class="headerlink" href="#process-and-instrumentation-diagram-p-id" title="Permalink to this heading">#</a></h3>
-<p>This site does a good job of explaining the symbols of PID diagrams and gives a few examples: <a class="reference external" href="https://www.edrawmax.com/pid/">https://www.edrawmax.com/pid/</a>. PID symbols are not standardized, so you may see different symbols used in different diagrams. PID’s are very helpful, invaluable, in designing a process plant (Smokeless powder manufacturing in Mulwala, NSW, Australia). The P&amp;ID is a more detailed diagram than the PFD.  It shows the process flow, but also shows the instrumentation and control devices.</p>
-<p>Similar to the PFD, nodes are judiciously picked at points where the process changes significantly.  The nodes are numbered and the node numbers are used in the HAZOP study.</p>
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/PIDSymb.png?raw=true" width="700"><img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/ExamplePID.png?raw=true" width="700"></section>
-<section id="p-id-activity">
-<h3>P&amp;ID Activity<a class="headerlink" href="#p-id-activity" title="Permalink to this heading">#</a></h3>
-<p>Draw a P&amp;ID for a continuous washing machine. Water, soap, and clothing enter the machine and water and soap exit in one stream and wet clothing in another exit stream. The system has a water level control with feedback, soap amount control, and clothing (material) control.</p>
-<div class="toggle toggle-shown docutils container">
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/WashingPID.png?raw=true" width="500">
-</div>
-</section>
-<section id="guide-words">
-<h3>Guide Words<a class="headerlink" href="#guide-words" title="Permalink to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="psm">
+<h1>11-PSM<a class="headerlink" href="#psm" title="Permalink to this heading">#</a></h1>
+<p>Process safety management also covers important topics besides Process Safety Information and Process Hazard Analysis.</p>
+<section id="osha-29-cfr-psm-elements">
+<h2>OSHA 29 CFR PSM Elements<a class="headerlink" href="#osha-29-cfr-psm-elements" title="Permalink to this heading">#</a></h2>
+<p>Required for those meeting the Threshold Quantities</p>
 <ul class="simple">
-<li><p>High, Low, No Flow, Reverse Flow</p></li>
-<li><p>High, Low Pressure</p></li>
-<li><p>High, Low Temperature</p></li>
-<li><p>High, Low, No Level</p></li>
-<li><p>High, Low Composition</p></li>
-<li><p>High, Low Reaction Rate, Side reaction, Reverse reaction</p></li>
-<li><p>High, Low, No Power</p></li>
-<li><p>Wrong material</p></li>
+<li><p>Employee Participation</p></li>
+<li><p><strong>Process Safety Information</strong></p></li>
+<li><p><strong>Process Hazards Analysis</strong></p></li>
+<li><p>Operating Procedures</p></li>
+<li><p>Training</p></li>
+<li><p>Contractors</p></li>
+<li><p>Pre-Startup Safety Review</p></li>
+<li><p>Mechanical Integrity</p></li>
+<li><p>Hot Work Permits</p></li>
+<li><p>Management of Change</p></li>
+<li><p>Incident Investigation</p></li>
+<li><p>Emergency Planning and Response</p></li>
+<li><p>Audits</p></li>
+<li><p>Trade Secrets</p></li>
 </ul>
-</section>
-</section>
-<section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h2>
-<p>Document the HAZOP study in a table.  The table should have the following columns:</p>
-<ul class="simple">
-<li><p>Node number/ Operation</p></li>
-<li><p>Guide word</p></li>
-<li><p>Cause/Hazard</p></li>
-<li><p>Consequence</p></li>
-<li><p>Safeguard</p></li>
-<li><p>Risk Rating</p></li>
-<li><p>Recommendation</p></li>
-</ul>
-</section>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/PSMPieces/PSMandtext.png?raw=true" width="500"><img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/PSMPieces/init.png?raw=true" width="500"><img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/PSMPieces/PSMandtext.png?raw=true" width="500"><img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/PSMPieces/phapiece.png?raw=true" width="500"><img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/PSMPieces/op2contr.png?raw=true" width="500"><img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/PSMPieces/pre2hot.png?raw=true" width="500"><img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/PSMPieces/changeII.png?raw=true" width="500"><img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/PSMPieces/emertrad.png?raw=true" width="500"></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -505,20 +472,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="07-HA.html"
+       href="10-CaseStudy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">07-Hazards Analysis</p>
+        <p class="prev-next-title">10-HAZOP Case</p>
       </div>
     </a>
     <a class="right-next"
-       href="09-Prob.html"
+       href="12-Review.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">09-Probabilities</p>
+        <p class="prev-next-title">12-Review</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -540,14 +507,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazards-and-operability-study-hazop">Hazards and Operability Study (HAZOP)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-flow-diagram-pfd">Process Flow Diagram (PFD)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-and-instrumentation-diagram-p-id">Process and Instrumentation Diagram (P&amp;ID)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-id-activity">P&amp;ID Activity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guide-words">Guide Words</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#osha-29-cfr-psm-elements">OSHA 29 CFR PSM Elements</a></li>
 </ul>
   </nav></div>
 
