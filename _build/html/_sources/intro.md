@@ -16,7 +16,7 @@ This class treats those two broad topics (safety and stewardship) in addressing 
 - Guiding principles from the Gospel of Jesus Christ
 
 ### Physical Safety
-Protection of people and resources from harm. Here we highlight Process Safety Management (PSM). There are twenty elements part of the process safety management (PSM) required by OSHA for organizations working or storing chemicals above a certain threshold. The threshold for explosives is 0, meaning any amount of explosives qualifies the company to comply with PSM. The regulation is part of the code of federal regulations (CFR) as outlined here: [29 CFR 1910.119 (OSHA PSM)](https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-H/section-1910.119). The primary element is Hazards Analysis and secondarily Process Safety Information.
+Protection of people and resources from harm. Here we highlight Process Safety Management (PSM). There are fourteen elements part of the process safety management (PSM) required by OSHA for organizations working or storing chemicals above a certain threshold. The threshold for explosives is 0, meaning any amount of explosives qualifies the company to comply with PSM. The regulation is part of the code of federal regulations (CFR) as outlined here: [29 CFR 1910.119 (OSHA PSM)](https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-H/section-1910.119). The primary element is Hazards Analysis and secondarily Process Safety Information.
 
 <img src="https://github.com/clint-bg/safetyinjc/blob/main/spiritual/supportfiles/PSMArch.png?raw=trueg" width="400">
 

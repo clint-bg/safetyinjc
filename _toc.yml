@@ -20,7 +20,9 @@ chapters:
     - file: physical/10-CaseStudy
     - file: physical/11-PSM
     - file: physical/12-Review
+    - file: physical/13-CaseStudy2
   - file: stewardship
     sections:
     - file: stewardship/zz-Environment
+  - file: acknowledgement
 
