@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physical/14-Toxicity';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -410,7 +412,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toxin-blood-concentration">Toxin Blood Concentration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#responses-to-toxicants">Responses to Toxicants</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toxin-storage-and-elimination">Toxin Storage and Elimination</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dose-response-relationships">Dose-Response Relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dose-response-relationships">Dose-Response Relationships</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probit-equation">Probit Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probit-correlation-example">Probit Correlation Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tlv-and-pel">TLV and PEL</a></li>
 </ul>
             </nav>
         </div>
@@ -494,7 +501,7 @@ document.write(`
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Dose (mg/kg)</p></th>
-<th class="head"><p>Response ()</p></th>
+<th class="head"><p>Response (Death)</p></th>
 </tr>
 </thead>
 <tbody>
@@ -511,40 +518,401 @@ document.write(`
 <td><p>0</p></td>
 </tr>
 <tr class="row-even"><td><p>0.5</p></td>
-<td><p>0</p></td>
+<td><p>1 of 20</p></td>
 </tr>
-<tr class="row-odd"><td><p>0.6</p></td>
-<td><p>0</p></td>
+<tr class="row-odd"><td><p>0.75</p></td>
+<td><p>2 of 20</p></td>
 </tr>
-<tr class="row-even"><td><p>0.7</p></td>
-<td><p>0</p></td>
+<tr class="row-even"><td><p>1.0</p></td>
+<td><p>5 of 20</p></td>
 </tr>
-<tr class="row-odd"><td><p>0.8</p></td>
-<td><p>0</p></td>
+<tr class="row-odd"><td><p>1.25</p></td>
+<td><p>12 of 20</p></td>
 </tr>
-<tr class="row-even"><td><p>0.9</p></td>
-<td><p>0</p></td>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>13 of 20</p></td>
 </tr>
-<tr class="row-odd"><td><p>1.0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>1.1</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>1.2</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>1.3</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>1.4</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>1.5</p></td>
-<td><p>0</p></td>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>19 of 20</p></td>
 </tr>
 </tbody>
 </table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Dose (mg/kg)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="s1">&#39;Response (Death)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">19</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fraction (Death)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Response (Death)&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Dose (mg/kg)&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fraction (Death)&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Dose (mg/kg)&#39;, ylabel=&#39;Fraction (Death)&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/5fa43c858d6f643f763397e8a0cb0ace203f7ece5f5af96449e8fa643ed6c98e.png" src="../_images/5fa43c858d6f643f763397e8a0cb0ace203f7ece5f5af96449e8fa643ed6c98e.png" />
+</div>
+</div>
+<p>Some questions we might ask:</p>
+<ul class="simple">
+<li><p>Were the mice that survived a lower dose then dosed with a higher dose?</p></li>
+<li><p>How does this toxicant affect humans? In the same way as mice?</p></li>
+<li><p>What is the LD50 (lethal dose for 50% of the population)?</p></li>
+<li><p>What would be a threshold dose?</p></li>
+</ul>
+<p>If we fit a response curve to the data, we can answer some of those questions.</p>
+<p>Lets fit a gaussian curve to the data and see what we get.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fit a cumulative gaussian to the data</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="k">def</span> <span class="nf">cumulative_gaussian</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+
+<span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">cumulative_gaussian</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dose (mg/kg)&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fraction (Death)&#39;</span><span class="p">])</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">cumulative_gaussian</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Dose (mg/kg)&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fraction (Death)&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fit&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1ea53eeae1bfa89c2d0625ecb59bd3b50fbd1203b958480c9982899ff7a90686.png" src="../_images/1ea53eeae1bfa89c2d0625ecb59bd3b50fbd1203b958480c9982899ff7a90686.png" />
+</div>
+</div>
+<p>What’s the cumulative distribution function for a gaussian curve?</p>
+<p>It is the integral of the gaussian curve from negative infinity to x…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot of the gaussian curve</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;pdf&#39;</span><span class="p">);</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cdf&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;pdf(x), cdf(x)&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7362d808e1bba0e7b787fe9db0c5cc746cb9f38278787825f9337aab8896f96b.png" src="../_images/7362d808e1bba0e7b787fe9db0c5cc746cb9f38278787825f9337aab8896f96b.png" />
+</div>
+</div>
+<p>From the above cumulative fit, we can calculate the LD50 and the threshold dose.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculation of the LD50 and threshold dose</span>
+
+<span class="c1"># LD50</span>
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">popt</span>
+<span class="n">ld50</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span> <span class="c1"># ppf is the inverse of the cdf</span>
+<span class="c1">#print the LD50 with 2 decimal places</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;LD50:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">ld50</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;mg/kg&#39;</span><span class="p">)</span>
+
+<span class="c1"># threshold dose</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Threshold: </span><span class="si">{</span><span class="n">threshold</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mg/kg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LD50: 1.45 mg/kg
+Threshold: -0.18 mg/kg
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we’ve given an estimate of the LD50 and the threshold dose (LD01). But wait, a negative value for the dose? That doesn’t make sense.</p>
+<p>In order to prevent that from happening, we can transform the dose or causitive variable (use the logarithmic function).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># log dose</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;log Dose&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dose (mg/kg)&#39;</span><span class="p">])</span>
+
+<span class="c1"># fit the cumulative gaussian to the log dose</span>
+<span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">cumulative_gaussian</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;log Dose&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fraction (Death)&#39;</span><span class="p">])</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">cumulative_gaussian</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;log Dose&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Fraction (Death)&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fit&#39;</span><span class="p">);</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/431aa7df21178fafb61c61ef3537f1d65f736e969f8c33f7b19e6b0ef9d461ed.png" src="../_images/431aa7df21178fafb61c61ef3537f1d65f736e969f8c33f7b19e6b0ef9d461ed.png" />
+</div>
+</div>
+<p>Now lets try again on determining the LD50 and threshold dose.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculation of the LD50 and threshold dose</span>
+
+<span class="c1"># LD50</span>
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">popt</span>
+<span class="n">ld50</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">))</span> <span class="c1"># we need to transform back to the original scale with np.exp</span>
+<span class="c1">#print the LD50 with 2 decimal places</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;LD50:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">ld50</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;mg/kg&#39;</span><span class="p">)</span>
+
+<span class="c1"># threshold dose</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">))</span> <span class="c1"># we need to transform back to the original scale with np.exp</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Threshold: </span><span class="si">{</span><span class="n">threshold</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mg/kg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LD50: 1.37 mg/kg
+Threshold: 0.33 mg/kg
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is a slight difference in the LD50, which is expected as the weighting is different for the data in log space. In this case it is more conservative.</p>
+<p>The threshold dose (1% chance of death) is also different (not negative) and thus realistic.</p>
+<section id="probit-equation">
+<h3>Probit Equation<a class="headerlink" href="#probit-equation" title="Permalink to this heading">#</a></h3>
+<p>It can be convenient to use the probit equation to determine the response to a dose. The probit equation is essentially the inverse of the cumulative distribution function of the normal distribution and can be use to linearize the dose-response relationship.</p>
+<p>Transforming the fraction to a probit value…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># transform of the probability or fraction response to probit</span>
+<span class="k">def</span> <span class="nf">probit</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Probit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">probit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fraction (Death)&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Dose (mg/kg)</th>
+      <th>Response (Death)</th>
+      <th>Fraction (Death)</th>
+      <th>log Dose</th>
+      <th>Probit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.10</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-2.302585</td>
+      <td>-inf</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.20</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-1.609438</td>
+      <td>-inf</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.30</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-1.203973</td>
+      <td>-inf</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.40</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-0.916291</td>
+      <td>-inf</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.50</td>
+      <td>1</td>
+      <td>0.05</td>
+      <td>-0.693147</td>
+      <td>3.355146</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.75</td>
+      <td>2</td>
+      <td>0.10</td>
+      <td>-0.287682</td>
+      <td>3.718448</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.00</td>
+      <td>5</td>
+      <td>0.25</td>
+      <td>0.000000</td>
+      <td>4.325510</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.25</td>
+      <td>12</td>
+      <td>0.60</td>
+      <td>0.223144</td>
+      <td>5.253347</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2.00</td>
+      <td>13</td>
+      <td>0.65</td>
+      <td>0.693147</td>
+      <td>5.385320</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>5.00</td>
+      <td>19</td>
+      <td>0.95</td>
+      <td>1.609438</td>
+      <td>6.644854</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot of the data with the probit scale</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;log Dose&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Probit&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">probit</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fit&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x168e9fd60&gt;]
+</pre></div>
+</div>
+<img alt="../_images/abbbff39e9ed5f89ceca1a9492b719581828df3a2cc6f4fb23db2b8af88245d9.png" src="../_images/abbbff39e9ed5f89ceca1a9492b719581828df3a2cc6f4fb23db2b8af88245d9.png" />
+</div>
+</div>
+<p>Instead of fitting a gaussian and then transforming the dose, we can fit the probit equation directly to the data. This will give us the two probit constants k1 (intercept) and k2 (slope) referenced in Table 2-5 in the textbook (Crowl and Louvar).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fit a line (probit linear model) to the data</span>
+<span class="c1">#first drop -inf values</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Probit&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">k2</span><span class="p">,</span><span class="n">k1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;log Dose&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Probit&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># the first value is the slope and the second the intercept</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;k1: </span><span class="si">{</span><span class="n">k1</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, k2: </span><span class="si">{</span><span class="n">k2</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k1: 4.40, k2: 1.47
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once we have the probit constants, we can use them to determine the response to any dose, including the LD50 and threshold dose.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#using the probit constants to calculate the LD50 and threshold dose</span>
+<span class="n">ld50_log</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="n">k1</span><span class="p">)</span> <span class="o">/</span> <span class="n">k2</span> 
+<span class="n">ld50</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">ld50_log</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;LD50: </span><span class="si">{</span><span class="n">ld50</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mg/kg&#39;</span><span class="p">)</span>
+
+<span class="c1"># threshold dose</span>
+<span class="n">threshold_log</span> <span class="o">=</span> <span class="p">(</span><span class="n">probit</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span> <span class="o">-</span> <span class="n">k1</span><span class="p">)</span> <span class="o">/</span> <span class="n">k2</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">threshold_log</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Threshold: </span><span class="si">{</span><span class="n">threshold</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> mg/kg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LD50: 1.50 mg/kg
+Threshold: 0.31 mg/kg
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also transform from probit back to percent response…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">P</span><span class="p">(</span><span class="n">Y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">Y</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.50</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">erf</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.50</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="probit-correlation-example">
+<h3>Probit Correlation Example<a class="headerlink" href="#probit-correlation-example" title="Permalink to this heading">#</a></h3>
+<p>Suppose we use Table 2-5 in the textbook (Crowl and Louvar) to estimate the probability of death from exposure to a fireball (say the sun). The causitive variable is <span class="math notranslate nohighlight">\(t_{exposure}\cdot I^{4/3}\)</span>/1E4 where I is the radiation intensity. Say we stay out in the sun for 8 hours. The typical radiation intensity in full sun is 1000 W/m^2. What is the probability of death?</p>
+</section>
+</section>
+<section id="tlv-and-pel">
+<h2>TLV and PEL<a class="headerlink" href="#tlv-and-pel" title="Permalink to this heading">#</a></h2>
+<p>TLV (Threshold Limit Value) and PEL (Permissible Exposure Limit) are exposure limits for toxicants. They are typically given in units of concentration (e.g. ppm, mg/m^3).</p>
+<ul class="simple">
+<li><p>TLV-TWA (Time Weighted Average) is the average concentration over an 8-hour workday that is believed to be safe for most workers.</p></li>
+<li><p>TLV-STEL (Short Term Exposure Limit) is the maximum concentration for a short period of time (15 minutes) that is expected to be safe.</p></li>
+<li><p>TLV-C (Ceiling) is the maximum concentration that should never be exceeded.</p></li>
+</ul>
+<p>These TLV values are established by the American Conference of Governmental Industrial Hygienists (ACGIH).</p>
+<p>OSHA (Occupational Safety and Health Administration) has established PEL values which are similar to TLV values.</p>
+<p>ILDV (Immediately Dangerous to Life and Health) is the concentration that is immediately dangerous to life and health.</p>
 </section>
 </section>
 
@@ -619,7 +987,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toxin-blood-concentration">Toxin Blood Concentration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#responses-to-toxicants">Responses to Toxicants</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toxin-storage-and-elimination">Toxin Storage and Elimination</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dose-response-relationships">Dose-Response Relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dose-response-relationships">Dose-Response Relationships</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probit-equation">Probit Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probit-correlation-example">Probit Correlation Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tlv-and-pel">TLV and PEL</a></li>
 </ul>
   </nav></div>
 
