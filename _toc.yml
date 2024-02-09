@@ -21,7 +21,7 @@ chapters:
     - file: physical/11-PSM
     - file: physical/12-Review
     - file: physical/13-CaseStudy2
-  - file: stewardship
+    - file: physical/14-Toxicity
     sections:
     - file: stewardship/zz-Environment
   - file: acknowledgement
