@@ -22,6 +22,8 @@ chapters:
     - file: physical/12-Review
     - file: physical/13-CaseStudy2
     - file: physical/14-Toxicity
+    - file: physical/15-Hygiene
+    - file: physical/16-GHS
   - file: stewardship
     sections:
     - file: stewardship/zz-Environment
