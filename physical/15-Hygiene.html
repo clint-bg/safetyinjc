@@ -415,11 +415,17 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-exposures">Quantifying Exposures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-concentration-profile">Example Concentration Profile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#was-the-worker-over-exposed">Was the worker over exposed?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gases-and-vapors">Gases and Vapors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-concentration-profile">Example Concentration Profile</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#was-the-worker-over-exposed">Was the worker over exposed?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-chemicals-overexposure">Multiple Chemicals - Overexposure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-gaseous-chemicals">Multiple Gaseous Chemicals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dusts">Dusts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noise">Noise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-radiation">Thermal Radiation</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -471,6 +477,8 @@ document.write(`
 <section id="quantifying-exposures">
 <h2>Quantifying Exposures<a class="headerlink" href="#quantifying-exposures" title="Permalink to this heading">#</a></h2>
 <p>TWA, time-weighted average, is the most common way to quantify exposures. It is the exposure averaged over an 8-hour workday.</p>
+<section id="gases-and-vapors">
+<h3>Gases and Vapors<a class="headerlink" href="#gases-and-vapors" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Even if the exposure is longer than 8 hours, the TWA is still calculated over an 8-hour workday. For example, if a worker is exposed to a chemical for 12 hours, the TWA is calculated over 8 hours.</p>
@@ -478,6 +486,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\text{TWA} = \frac{\sum_{i=1}^{n} C_i \cdot T_i}{8} = \frac{1}{8} \int_{0}^{8} C(t) dt\]</div>
 <p>where <span class="math notranslate nohighlight">\(C_i\)</span> is the concentration of the chemical at time <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(T_i\)</span> is the time the concentration is present.</p>
+</section>
 <section id="example-concentration-profile">
 <h3>Example Concentration Profile<a class="headerlink" href="#example-concentration-profile" title="Permalink to this heading">#</a></h3>
 <table class="table">
@@ -655,20 +664,93 @@ Polynomial_3	22.1
 </div>
 </div>
 </div>
-</section>
 <section id="was-the-worker-over-exposed">
-<h3>Was the worker over exposed?<a class="headerlink" href="#was-the-worker-over-exposed" title="Permalink to this heading">#</a></h3>
+<h4>Was the worker over exposed?<a class="headerlink" href="#was-the-worker-over-exposed" title="Permalink to this heading">#</a></h4>
 <p>If the TLV-TWA is 20 ppm for the above chemical, then YES, the worker was over exposed.</p>
 <div class="warning admonition">
 <p class="admonition-title">Consequences of Overexposure</p>
 <p>Overexposure to chemicals can cause a variety of health effects. Some chemicals can cause immediate effects such as dizziness, nausea, and headaches. Others can cause long-term effects such as cancer, reproductive issues, and organ damage.</p>
+<p>In order to prevent this scenario from happening again, the industrial hygienist would work with the safety team to implement control measures such as increased ventilation and the use of a respirator with a organic vapor cartridge for example.</p>
+<ul class="simple">
+<li><p>Using a respiratory for long periods of time is not ideal</p></li>
+</ul>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/resp.png?raw=true" width="300">
 </div>
 </section>
 </section>
-<section id="multiple-chemicals-overexposure">
-<h2>Multiple Chemicals - Overexposure<a class="headerlink" href="#multiple-chemicals-overexposure" title="Permalink to this heading">#</a></h2>
-<p>Math on Nois, Dusts, Vapors on assessing if TWA is exceeded</p>
-<p>Thermal Radiation</p>
+<section id="multiple-gaseous-chemicals">
+<h3>Multiple Gaseous Chemicals<a class="headerlink" href="#multiple-gaseous-chemicals" title="Permalink to this heading">#</a></h3>
+<p>What if there are multiple hazardous vapors present?</p>
+<p>Overexposure can be determined by the below equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^{n} \frac{C_i}{\text{TLV-TWA}_i} &gt; 1?
+\]</div>
+<p>The TLV-TWA for gaseous mixtures can be found by:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{TLV-TWA}_{\text{mixture}} =  \frac{\sum_{i=1}^{n} C_i}{\sum_{i=1}^{n} \frac{C_i}{\text{TLV-TWA}_i}}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once the mixture TLV-TWA is found, determining the exposure can be done using the same equation as before where the sum of the concentrations for each timeframe is summed and divided by 8 hours.</p>
+</div>
+</section>
+<section id="dusts">
+<h3>Dusts<a class="headerlink" href="#dusts" title="Permalink to this heading">#</a></h3>
+<p>Dusts are treated the same way but instead of using ppm, mg/m^3 is used.</p>
+</section>
+<section id="noise">
+<h3>Noise<a class="headerlink" href="#noise" title="Permalink to this heading">#</a></h3>
+<p>Sound pressure level (SPL) is used as an intensity measure. The lowest SPL that can be heard by the human ear is near 2E-5 Pa. Thus in the below equation <span class="math notranslate nohighlight">\(I_o\)</span> is 2E-5 Pa.</p>
+<div class="math notranslate nohighlight">
+\[
+\text{dB} = 10 \log_{10} \left( \frac{I}{I_o} \right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(P\)</span> is the sound pressure and <span class="math notranslate nohighlight">\(I\)</span> is the intensity.</p>
+<p>See “Permissible Noise Exposures,” [<a class="reference external" href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.95">https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.95</a>] (<a class="reference external" href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.95">https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.95</a>) where you can use the combination rule of <span class="math notranslate nohighlight">\(\sum \frac{D_i}{\text{MTA}_i}&gt;1?\)</span> to determine if the worker is overexposed, where <span class="math notranslate nohighlight">\(D_i\)</span> is the duration at the given dB sound level and MTA is the maximum time allowed at that level.</p>
+</section>
+<section id="thermal-radiation">
+<h3>Thermal Radiation<a class="headerlink" href="#thermal-radiation" title="Permalink to this heading">#</a></h3>
+<p>Flames, hot metal surfaces, and other heat sources can cause burns. The heat flux is the amount of heat energy transferred per unit area per unit time. The heat flux is measured in W/m^2.</p>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/degrees.png?raw=true" width="600">
+<p><a class="reference external" href="https://commons.wikimedia.org/wiki/File:1st,_2nd,_and_3rd_degree_burns.jpg">Image Reference</a></p>
+<p>From Handbook of Chemical Hazards Analysis Procedures (1989), Table 4.2</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Heat Radiation Intensity (kW/m^2)</p></th>
+<th class="head"><p>Time for 2nd Degree Burn (seconds)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>663</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>57</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>11</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="https://nepis.epa.gov/Exe/ZyNET.exe/10003MK5.txt?ZyActionD=ZyDocument&amp;Client=EPA&amp;Index=1986%20Thru%201990&amp;Docs=&amp;Query=%28radiation%29%20OR%20FNAME%3D%2210003MK5.txt%22%20AND%20FNAME%3D%2210003MK5.txt%22&amp;Time=&amp;EndTime=&amp;SearchMethod=1&amp;TocRestrict=n&amp;Toc=&amp;TocEntry=&amp;QField=&amp;QFieldYear=&amp;QFieldMonth=&amp;QFieldDay=&amp;UseQField=&amp;IntQFieldOp=0&amp;ExtQFieldOp=0&amp;XmlQuery=&amp;File=D%3A%5CZYFILES%5CINDEX%20DATA%5C86THRU90%5CTXT%5C00000003%5C10003MK5.txt&amp;User=ANONYMOUS&amp;Password=anonymous&amp;SortMethod=h%7C-&amp;MaximumDocuments=1&amp;FuzzyDegree=0&amp;ImageQuality=r75g8/r75g8/x150y150g16/i425&amp;Display=hpfr&amp;DefSeekPage=x&amp;SearchBack=ZyActionL&amp;Back=ZyActionS&amp;BackDesc=Results%20page&amp;MaximumPages=1&amp;ZyEntry=73">Reference Link</a></p>
+</section>
 </section>
 </section>
 
@@ -744,11 +826,17 @@ Polynomial_3	22.1
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-exposures">Quantifying Exposures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-concentration-profile">Example Concentration Profile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#was-the-worker-over-exposed">Was the worker over exposed?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gases-and-vapors">Gases and Vapors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-concentration-profile">Example Concentration Profile</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#was-the-worker-over-exposed">Was the worker over exposed?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-chemicals-overexposure">Multiple Chemicals - Overexposure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-gaseous-chemicals">Multiple Gaseous Chemicals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dusts">Dusts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noise">Noise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-radiation">Thermal Radiation</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
