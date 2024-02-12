@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>04-Logic and Process Safety &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
+    <title>15-Industrial Hygiene &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
   
   
   
@@ -61,11 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'physical/04-Logic';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'physical/15-Hygiene';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="05-PSM Intro" href="05-PSM.html" />
-    <link rel="prev" title="Physical Safety" href="../physical.html" />
+    <link rel="next" title="16-GHS" href="16-GHS.html" />
+    <link rel="prev" title="14-Toxicity" href="14-Toxicity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../physical.html">Physical Safety</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">04-Logic and Process Safety</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-Logic.html">04-Logic and Process Safety</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05-PSM.html">05-PSM Intro</a></li>
 <li class="toctree-l2"><a class="reference internal" href="06-FTA.html">06-Fault Tree Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07-HA.html">07-Hazards Analysis</a></li>
@@ -175,7 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="12-Review.html">12-Review</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13-CaseStudy2.html">13-FMEA Case Study</a></li>
 <li class="toctree-l2"><a class="reference internal" href="14-Toxicity.html">14-Toxicity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="15-Hygiene.html">15-Industrial Hygiene</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">15-Industrial Hygiene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="16-GHS.html">16-GHS</a></li>
 </ul>
 </li>
@@ -238,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/clint-bg/safetyinjc/blob/gh-pages/_sources/physical/04-Logic.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/clint-bg/safetyinjc/blob/gh-pages/_sources/physical/15-Hygiene.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +288,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/clint-bg/safetyinjc/issues/new?title=Issue%20on%20page%20%2Fphysical/04-Logic.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/clint-bg/safetyinjc/issues/new?title=Issue%20on%20page%20%2Fphysical/15-Hygiene.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +318,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/physical/04-Logic.ipynb" target="_blank"
+      <li><a href="../_sources/physical/15-Hygiene.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>04-Logic and Process Safety</h1>
+    <h1>15-Industrial Hygiene</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -408,25 +410,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-and-critical-thinking">Logic and Critical Thinking</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deductive-validity">Deductive Validity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductive-force">Inductive Force</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fallacies">Fallacies</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other-examples-of-fallacies">Other Examples of Fallacies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Industrial Hygiene</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-tools-used-by-industrial-hygienists">Common Tools used by Industrial Hygienists</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deductive-reasoning">Deductive Reasoning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductive-reasoning">Inductive Reasoning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#influence-of-the-holy-ghost">Influence of the Holy Ghost</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-safety">Process Safety</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safety-culture">Safety Culture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voluntary-and-involuntary-risk">Voluntary and Involuntary Risk</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safety-metrics">Safety Metrics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accident-statistics">Accident Statistics</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-exposures">Quantifying Exposures</a></li>
 </ul>
             </nav>
         </div>
@@ -438,120 +426,54 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="logic-and-process-safety">
-<h1>04-Logic and Process Safety<a class="headerlink" href="#logic-and-process-safety" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="industrial-hygiene">
+<h1>15-Industrial Hygiene<a class="headerlink" href="#industrial-hygiene" title="Permalink to this heading">#</a></h1>
+<p>Learning Objectives:</p>
+<ol class="arabic simple">
+<li><p>Learn the four steps of industrial hygiene</p></li>
+<li><p>Evaluate the magnitude of exposures and responses</p>
+<ul class="simple">
+<li><p>Vapors</p></li>
+<li><p>Dusts</p></li>
+<li><p>Noise</p></li>
+<li><p>Thermal radiation</p></li>
+</ul>
+</li>
+<li><p>Control Techniques</p></li>
+</ol>
+<section id="id1">
+<h2>Industrial Hygiene<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Industrial hygienists are typically part of the safety and health team in a company. They are responsible for identifying, evaluating, and controlling workplace hazards together with workers and management.</p>
+<p>Picture of Industrial Hygienist in Chemical Plant</p>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/hygienist.jpeg?raw=true" width="400">
+<p><a class="reference external" href="https://images.app.goo.gl/EmTPJxCdSidwUoXQ6">https://images.app.goo.gl/EmTPJxCdSidwUoXQ6</a></p>
+<p>The four steps of industrial hygiene are:</p>
+<ol class="arabic simple">
+<li><p><strong>Anticipation</strong>: Identifying potential hazards before they occur.</p></li>
+<li><p><strong>Recognition</strong>: Identifying hazards that are present.</p></li>
+<li><p><strong>Evaluation</strong>: Determining the magnitude of the exposure and the response.</p></li>
+<li><p><strong>Control</strong>: Implementing measures to control the hazards.</p></li>
+</ol>
+<section id="common-tools-used-by-industrial-hygienists">
+<h3>Common Tools used by Industrial Hygienists<a class="headerlink" href="#common-tools-used-by-industrial-hygienists" title="Permalink to this heading">#</a></h3>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/htools.png?raw=true" width="600">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Logic and critical thinking are skills that can help you to evaluate information and make decisions. We will use these skills to help us systematically consider hazards that could lead to catastrophic events.</p>
-</div>
-<p>Learning Objectives</p>
-<ul class="simple">
-<li><p>Learn about critical and creative thinking skills for analysis and evaluation of problems and cause-effect relationships.</p></li>
-<li><p>Highlight argument validation and fallacies.</p></li>
-<li><p>Learn about the difference between deductive and inductive reasoning.</p></li>
-</ul>
-<section id="logic-and-critical-thinking">
-<h2>Logic and Critical Thinking<a class="headerlink" href="#logic-and-critical-thinking" title="Permalink to this heading">#</a></h2>
-<p>Critical thinking is the ability to think clearly and rationally about what to do or what to believe. It includes the ability to engage in reflective and independent thinking. Someone with critical thinking skills is able to:</p>
-<ul class="simple">
-<li><p>Understand the logical connections between ideas.</p></li>
-<li><p>Identify, construct and evaluate arguments.</p></li>
-<li><p>Detect inconsistencies and common mistakes in reasoning.</p></li>
-<li><p>Solve problems systematically.</p></li>
-<li><p>Identify the relevance and importance of ideas.</p></li>
-<li><p>Reflect on the justification of one’s own beliefs and values.</p></li>
-</ul>
-<section id="deductive-validity">
-<h3>Deductive Validity<a class="headerlink" href="#deductive-validity" title="Permalink to this heading">#</a></h3>
-<p>Deductive validity is a property of arguments. An argument is valid if the truth of its premises guarantees the truth of its conclusion. In other words, an argument is valid if the conclusion is true whenever the premises are true. The following argument is valid, because the conclusion must be true, given the premises:</p>
-<ul class="simple">
-<li><p>All humans are mortal.</p></li>
-<li><p>Socrates is human.</p></li>
-<li><p>Therefore, Socrates is mortal.</p></li>
-</ul>
-</section>
-<section id="inductive-force">
-<h3>Inductive Force<a class="headerlink" href="#inductive-force" title="Permalink to this heading">#</a></h3>
-<p>An inductively forceful argument is one where the truth of the premises makes the conclusion more likely to be true. For example, the following argument is inductively forceful:</p>
-<ul class="simple">
-<li><p>90% of the people we have interviewed love to play soccer.</p></li>
-<li><p>Therefore, the next person we interview will also love to play soccer.</p></li>
-</ul>
-</section>
-<section id="fallacies">
-<h3>Fallacies<a class="headerlink" href="#fallacies" title="Permalink to this heading">#</a></h3>
-<p>A fallacy is the use of invalid or otherwise faulty reasoning, or “wrong moves” in the construction of an argument. A fallacious argument may be deceptive by appearing to be better than it really is. Some fallacies are committed intentionally to manipulate or persuade by deception, while others are committed unintentionally due to carelessness or ignorance. An example of a fallacy is:</p>
-<ul class="simple">
-<li><p>If you love your country, you will support the war in X.</p></li>
-<li><p>You do not support the war in X.</p></li>
-<li><p>Therefore, you do not love your country.</p></li>
-</ul>
-<section id="other-examples-of-fallacies">
-<h4>Other Examples of Fallacies<a class="headerlink" href="#other-examples-of-fallacies" title="Permalink to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Ad hominem: attacking the person instead of the argument.</p></li>
-<li><p>Appeal to authority: using the opinion or position of an authority figure, or institution of authority, in place of an actual argument.</p></li>
-<li><p>Appeal to emotion: manipulating an emotional response in place of a valid or compelling argument.</p></li>
-<li><p>Appeal to fear: using fear to influence the conclusion.</p></li>
-<li><p>Appeal to flattery: using flattery to influence the conclusion.</p></li>
-<li><p>Circular reasoning: supporting a statement by repeating it in different words. Similar to affirming the consequent: if A, then B. B, therefore A. Also similar to begging the question: assuming the conclusion in the premise.</p></li>
-<li><p>False dilemma: giving two choices when in fact there are three or more.</p></li>
-<li><p>Cause and effect: assuming that the effect is related to a cause because the events occur together. Implying causation from correlation.</p></li>
-<li><p>Sunk cost: assuming that future events will be affected by past events, which have no bearing on future outcomes.</p></li>
-<li><p>Strawman: creating a false or made up scenario and then attacking it. Similar to a red herring: diverting attention from the real issue by focusing instead on an issue having only a surface relevance to the first.</p></li>
-<li><p>Tu quoque: avoiding having to engage with criticism by turning it back on the accuser - answering criticism with criticism.</p></li>
-<li><p>Wishful thinking: making decisions according to what might be pleasing to imagine, rather than according to evidence or reason.</p></li>
-<li><p>Slippery slope: asserting that a relatively small first step inevitably leads to a chain of related events culminating in some significant impact.</p></li>
-<li><p>Herd mentality: doing or thinking things because many other people do or think the same. Similar to bandwagon: doing or thinking things because many other people do or think the same.</p></li>
-</ul>
-</section>
-</section>
-<section id="deductive-reasoning">
-<h3>Deductive Reasoning<a class="headerlink" href="#deductive-reasoning" title="Permalink to this heading">#</a></h3>
-<p>Deductive reasoning is a type of logical thinking that starts with a general statement and then applies that statement to a specific case. For example, if we know that all cats have tails, and we know that Fluffy is a cat, then we can deduce that Fluffy has a tail.</p>
-<p>A few examples from process safety:</p>
-<ul class="simple">
-<li><p>All flammable materials can be ignited and burn, and we know that gasoline is a flammable material, then we can deduce that gasoline can be ignited and burn.</p></li>
-<li><p>Reducing the oxygen concentration in a room will reduce the likelihood of a fire, and we know that the oxygen concentration in a room can be reduced by displacing oxygen with an inert gas, then we can deduce that displacing oxygen with an inert gas will reduce the likelihood of a fire.</p></li>
-<li><p>Encouraging cleanliness and holding hand rails contributes to a culture of safety, and we know that a culture of safety reduces the likelihood of accidents, then we can deduce that encouraging cleanliness and holding hand rails reduces the likelihood of accidents.</p></li>
-</ul>
-</section>
-<section id="inductive-reasoning">
-<h3>Inductive Reasoning<a class="headerlink" href="#inductive-reasoning" title="Permalink to this heading">#</a></h3>
-<p>Inductive reasoning is a type of logical thinking that starts with a specific case and then applies that case to a general statement. For example, if we know that Fluffy has a tail, and we know that Fluffy is a cat, then we can induce that all cats have tails.</p>
-<p>A proceses safety example:</p>
-<ul class="simple">
-<li><p>The Bhopal disaster was caused by a chemical incompatibility with water. We can induce that there may be other chemicals that are incompatible with water and could result in severe consequences.</p></li>
-</ul>
-</section>
-<section id="influence-of-the-holy-ghost">
-<h3>Influence of the Holy Ghost<a class="headerlink" href="#influence-of-the-holy-ghost" title="Permalink to this heading">#</a></h3>
-<p>We should do all we can to learn and determine what is true. We can then ask God if it is true. The Holy Ghost witnesses of truth. It is a feeling of peace and assurance. It is a gift from God that is available to all people. It is a way that God communicates with us. President Nelson has said that:</p>
-<div class="admonition-quote-by-president-nelson admonition">
-<p class="admonition-title">Quote by President Nelson</p>
-<p>in coming days, it will not be possible to survive spiritually without the guiding, directing, comforting, and constant influence of the Holy Ghost.</p>
+<p>The EH&amp;S department together with Industrial Hygienists work to keep everyone safe. The safety team utilizes Process Safety Management (PSM) to identify and control hazards as we discussed in the previous lectures. However, it is important to remember that safety is everyone’s responsibility. Some facilities have thousands of employees and only a few industrial hygienists. It is important to take responsibility for your own safety and work with the safety team.</p>
 </div>
 </section>
 </section>
-<section id="process-safety">
-<h2>Process Safety<a class="headerlink" href="#process-safety" title="Permalink to this heading">#</a></h2>
-<section id="safety-culture">
-<h3>Safety Culture<a class="headerlink" href="#safety-culture" title="Permalink to this heading">#</a></h3>
-<p>How important is safety to you and those around you? What does process safety mean? What does it mean to your company? Are you willing to work for a company that does not value safety? Is it true that a company that does not value safety does not value you?</p>
-<p>Ultimately, we are responsible for our safety, both physical and spiritual. We’ll talk about many accidents in the course. For example, a few days ago, the Los Angeles Times reported about Zuko Carrasco, who was paralyzed while leading people on a trust fall. He blames himself as he was the last to descend when what he thought he heard was “on belay” but his belayer was not yet ready. He jumped and fell 40 feet and was paralyzed from the waist down. He had safely completed that activity many times before.</p>
-</section>
-<section id="voluntary-and-involuntary-risk">
-<h3>Voluntary and Involuntary Risk<a class="headerlink" href="#voluntary-and-involuntary-risk" title="Permalink to this heading">#</a></h3>
-<p>Most are much more comfortable assuming voluntary versus involuntary risk. As a chemical engineer, how will you mitigate those two types of risk? Undoubtedly, a chemical engineer will work under voluntary risk and be on the front lines of helping to reduce involuntary risk to the public.</p>
-</section>
-<section id="safety-metrics">
-<h3>Safety Metrics<a class="headerlink" href="#safety-metrics" title="Permalink to this heading">#</a></h3>
-<p>You say you’re safe…prove it. Some safety metrics are training hours, near misses, number of lost time accidents, etc.</p>
-</section>
-<section id="accident-statistics">
-<h3>Accident Statistics<a class="headerlink" href="#accident-statistics" title="Permalink to this heading">#</a></h3>
-<p>Accident statistics are used to help us understand the risks we face. They are also used to help us understand the effectiveness of our safety programs.</p>
-</section>
+<section id="quantifying-exposures">
+<h2>Quantifying Exposures<a class="headerlink" href="#quantifying-exposures" title="Permalink to this heading">#</a></h2>
+<p>TWA, time-weighted average, is the most common way to quantify exposures. It is the exposure averaged over an 8-hour workday.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even if the exposure is longer than 8 hours, the TWA is still calculated over an 8-hour workday. For example, if a worker is exposed to a chemical for 12 hours, the TWA is calculated over 8 hours.</p>
+</div>
+<div class="math notranslate nohighlight">
+\[\text{TWA} = \frac{\sum_{i=1}^{n} C_i \cdot T_i}{8} = \frac{1}{8} \int_{0}^{8} C(t) dt\]</div>
+<p>Math on Nois, Dusts, Vapors on assessing if TWA is exceeded</p>
+<p>Thermal Radiation</p>
 </section>
 </section>
 
@@ -587,20 +509,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../physical.html"
+       href="14-Toxicity.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Physical Safety</p>
+        <p class="prev-next-title">14-Toxicity</p>
       </div>
     </a>
     <a class="right-next"
-       href="05-PSM.html"
+       href="16-GHS.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">05-PSM Intro</p>
+        <p class="prev-next-title">16-GHS</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -622,25 +544,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-and-critical-thinking">Logic and Critical Thinking</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deductive-validity">Deductive Validity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductive-force">Inductive Force</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fallacies">Fallacies</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other-examples-of-fallacies">Other Examples of Fallacies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Industrial Hygiene</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-tools-used-by-industrial-hygienists">Common Tools used by Industrial Hygienists</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deductive-reasoning">Deductive Reasoning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductive-reasoning">Inductive Reasoning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#influence-of-the-holy-ghost">Influence of the Holy Ghost</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-safety">Process Safety</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safety-culture">Safety Culture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voluntary-and-involuntary-risk">Voluntary and Involuntary Risk</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safety-metrics">Safety Metrics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accident-statistics">Accident Statistics</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-exposures">Quantifying Exposures</a></li>
 </ul>
   </nav></div>
 
