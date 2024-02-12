@@ -414,7 +414,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-tools-used-by-industrial-hygienists">Common Tools used by Industrial Hygienists</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-exposures">Quantifying Exposures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-exposures">Quantifying Exposures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-concentration-profile">Example Concentration Profile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#was-the-worker-over-exposed">Was the worker over exposed?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-chemicals-overexposure">Multiple Chemicals - Overexposure</a></li>
 </ul>
             </nav>
         </div>
@@ -472,6 +477,196 @@ document.write(`
 </div>
 <div class="math notranslate nohighlight">
 \[\text{TWA} = \frac{\sum_{i=1}^{n} C_i \cdot T_i}{8} = \frac{1}{8} \int_{0}^{8} C(t) dt\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_i\)</span> is the concentration of the chemical at time <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(T_i\)</span> is the time the concentration is present.</p>
+<section id="example-concentration-profile">
+<h3>Example Concentration Profile<a class="headerlink" href="#example-concentration-profile" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Time (hours)</p></th>
+<th class="head"><p>Concentration (ppm)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>40</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#example discrete concentration profile</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+        <span class="s1">&#39;concentration (ppm)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;concentration (ppm)&#39;</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/44fa20e3b989012175ca3468d8e32792ef6c11a79a5be48fcb115d018e0fa289.png" src="../_images/44fa20e3b989012175ca3468d8e32792ef6c11a79a5be48fcb115d018e0fa289.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#TWA Calculation; Method 1 (assume the current measure is the same for the previous interval)</span>
+<span class="n">TWA_1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ti_1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="c1">#loop through each time interval</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+    <span class="c1">#calculate TWA for each interval</span>
+    <span class="n">C_i</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;concentration (ppm)&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">t_i</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">TWA_1</span> <span class="o">+=</span> <span class="n">C_i</span><span class="o">*</span><span class="p">(</span><span class="n">t_i</span><span class="o">-</span><span class="n">ti_1</span><span class="p">)</span>
+    <span class="n">ti_1</span> <span class="o">=</span> <span class="n">t_i</span><span class="p">;</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TWA_1 = </span><span class="si">{</span><span class="n">TWA_1</span><span class="o">/</span><span class="mi">8</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> ppm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TWA_1 = 23.6 ppm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#TWA Calculation; Method 2 (use the trapezoidal rule)</span>
+<span class="n">TWA_trap</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="c1">#loop through each time interval</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+    <span class="c1">#calculate TWA for each interval</span>
+    <span class="n">C_i</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;concentration (ppm)&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">C_i_1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;concentration (ppm)&#39;</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">t_i</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">t_i_1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">TWA_trap</span> <span class="o">+=</span> <span class="p">(</span><span class="n">C_i</span><span class="o">+</span><span class="n">C_i_1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">t_i</span><span class="o">-</span><span class="n">t_i_1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TWA_trap = </span><span class="si">{</span><span class="n">TWA_trap</span><span class="o">/</span><span class="mi">8</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> ppm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TWA_trap = 21.4 ppm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#TWA Calculation; Method 3 (fit a polynomial to the data and integrate with cspline1d_integral)</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">CubicSpline</span>
+<span class="c1">#fit a polynomial to the data</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">CubicSpline</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;concentration (ppm)&#39;</span><span class="p">])</span>
+<span class="c1">#integrate the polynomial with quad</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="n">TWA_CSpline</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TWA_CSpline = </span><span class="si">{</span><span class="n">TWA_CSpline</span><span class="o">/</span><span class="mi">8</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> ppm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TWA_CSpline = 21.1 ppm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#fit a polynomial to the data</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;concentration (ppm)&#39;</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1">#integrate the polynomial</span>
+<span class="n">TWA_poly</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TWA_poly = </span><span class="si">{</span><span class="n">TWA_poly</span><span class="o">/</span><span class="mi">8</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> ppm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TWA_poly = 22.1 ppm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot the data and the polynomial fit</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">p</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">cs</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cubic spline&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;polynomial fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;concentration (ppm)&#39;</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (hr)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;concentration (ppm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/607b1115974b35913285c46f84fed64559b1382305ad2c1382f18fb97fc7353b.png" src="../_images/607b1115974b35913285c46f84fed64559b1382305ad2c1382f18fb97fc7353b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#tabular display of the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Method</span><span class="se">\t</span><span class="s1">TWA (ppm)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;1</span><span class="se">\t\t</span><span class="si">{</span><span class="n">TWA_1</span><span class="o">/</span><span class="mi">8</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;trapezoid</span><span class="se">\t</span><span class="si">{</span><span class="n">TWA_trap</span><span class="o">/</span><span class="mi">8</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;CSpline</span><span class="se">\t\t</span><span class="si">{</span><span class="n">TWA_CSpline</span><span class="o">/</span><span class="mi">8</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Polynomial_3</span><span class="se">\t</span><span class="si">{</span><span class="n">TWA_poly</span><span class="o">/</span><span class="mi">8</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Method	TWA (ppm)
+1		23.6
+trapezoid	21.4
+CSpline		21.1
+Polynomial_3	22.1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="was-the-worker-over-exposed">
+<h3>Was the worker over exposed?<a class="headerlink" href="#was-the-worker-over-exposed" title="Permalink to this heading">#</a></h3>
+<p>If the TLV-TWA is 20 ppm for the above chemical, then YES, the worker was over exposed.</p>
+<div class="warning admonition">
+<p class="admonition-title">Consequences of Overexposure</p>
+<p>Overexposure to chemicals can cause a variety of health effects. Some chemicals can cause immediate effects such as dizziness, nausea, and headaches. Others can cause long-term effects such as cancer, reproductive issues, and organ damage.</p>
+</div>
+</section>
+</section>
+<section id="multiple-chemicals-overexposure">
+<h2>Multiple Chemicals - Overexposure<a class="headerlink" href="#multiple-chemicals-overexposure" title="Permalink to this heading">#</a></h2>
 <p>Math on Nois, Dusts, Vapors on assessing if TWA is exceeded</p>
 <p>Thermal Radiation</p>
 </section>
@@ -548,7 +743,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-tools-used-by-industrial-hygienists">Common Tools used by Industrial Hygienists</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-exposures">Quantifying Exposures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-exposures">Quantifying Exposures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-concentration-profile">Example Concentration Profile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#was-the-worker-over-exposed">Was the worker over exposed?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-chemicals-overexposure">Multiple Chemicals - Overexposure</a></li>
 </ul>
   </nav></div>
 
