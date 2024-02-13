@@ -385,7 +385,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -401,6 +403,30 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard-classes">9 Hazard Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explosives">Explosives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gases">Gases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flammable-liquids">Flammable Liquids</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flammable-solids">Flammable Solids</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oxidizing-substances">Oxidizing Substances</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toxic-and-infectious-substances">Toxic and Infectious Substances</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radioactive-material">Radioactive Material</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corrosives">Corrosives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous-dangerous-goods">Miscellaneous Dangerous Goods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hazardous-materials-table">Hazardous Materials Table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sds-components">SDS Components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ghs-labeling">GHS Labeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nfpaa-704-diamond">NFPAA 704 Diamond</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shipping-and-handling-intro">Shipping and Handling Intro</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -414,16 +440,114 @@ document.write(`
 <h1>16-GHS<a class="headerlink" href="#ghs" title="Permalink to this heading">#</a></h1>
 <p>Learning Objectives:</p>
 <ol class="arabic simple">
-<li><p>Introduction to the Globally Harmonized System of Classification and Labeling of Chemicals (GHS)</p></li>
-<li><p>Safety Data Sheets (SDS)</p></li>
-<li><p>GHS Labeling</p></li>
-<li><p>GHS Pictograms</p></li>
-<li><p>GHS Hazard Statements</p></li>
-<li><p>GHS Precautionary Statements</p></li>
-<li><p>GHS Signal Words</p></li>
-<li><p>GHS Hazard Communication</p></li>
-<li><p>NFPA 704 Diamond</p></li>
+<li><p>Understand the 9 Hazard Classes of the GHS</p></li>
+<li><p>Understand the 16 Components of a Safety Data Sheet (SDS)</p></li>
+<li><p>Understand the elements of GHS Labeling</p></li>
+<li><p>Be familiar with the GHS Pictograms</p></li>
+<li><p>Understand the NFPA 704 Diamond</p></li>
+<li><p>Intro to Shipping and Handling of Hazardous Materials</p></li>
 </ol>
+<section id="hazard-classes">
+<h2>9 Hazard Classes<a class="headerlink" href="#hazard-classes" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Explosives</p></li>
+<li><p>Gases</p></li>
+<li><p>Flammable Liquids</p></li>
+<li><p>Flammable Solids</p></li>
+<li><p>Oxidizing Substances</p></li>
+<li><p>Toxic and Infectious Substances</p></li>
+<li><p>Radioactive Material</p></li>
+<li><p>Corrosives</p></li>
+<li><p>Miscellaneous Dangerous Goods</p></li>
+</ol>
+<section id="explosives">
+<h3>Explosives<a class="headerlink" href="#explosives" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>HD1.1: Mass explosion hazard</p></li>
+<li><p>HD1.2: Projection hazard</p></li>
+<li><p>HD1.3: Fire hazard</p></li>
+<li><p>HD1.4: No significant hazard</p></li>
+<li><p>HD1.5: Very insensitive substances</p></li>
+<li><p>HD1.6: Extremely insensitive substances</p></li>
+</ul>
+</section>
+<section id="gases">
+<h3>Gases<a class="headerlink" href="#gases" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>HD2.1: Flammable gases</p></li>
+<li><p>HD2.2: Non-flammable, non-toxic gases</p></li>
+<li><p>HD2.3: Toxic gases</p></li>
+</ul>
+</section>
+<section id="flammable-liquids">
+<h3>Flammable Liquids<a class="headerlink" href="#flammable-liquids" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Flammable liquids: flash point &lt; 60°C</p></li>
+<li><p>Combustible liquids: flash point &gt; 60°C and &lt; 93°C</p></li>
+</ul>
+</section>
+<section id="flammable-solids">
+<h3>Flammable Solids<a class="headerlink" href="#flammable-solids" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>HD4.1: Flammable solids</p></li>
+<li><p>HD4.2: Spontaneously combustible</p>
+<ul>
+<li><p>Pyrophoric: ignite spontaneously in air</p></li>
+<li><p>Self-heating: heat up in air</p></li>
+</ul>
+</li>
+<li><p>HD4.3: Dangerous when wet</p></li>
+</ul>
+</section>
+<section id="oxidizing-substances">
+<h3>Oxidizing Substances<a class="headerlink" href="#oxidizing-substances" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>HD5.1: Oxidizing substances</p></li>
+<li><p>HD5.2: Organic peroxides</p></li>
+</ul>
+</section>
+<section id="toxic-and-infectious-substances">
+<h3>Toxic and Infectious Substances<a class="headerlink" href="#toxic-and-infectious-substances" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>HD6.1: Poisonous substances</p></li>
+<li><p>HD6.2: Infectious substances</p></li>
+</ul>
+</section>
+<section id="radioactive-material">
+<h3>Radioactive Material<a class="headerlink" href="#radioactive-material" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>HD7: Radioactive material</p></li>
+</ul>
+</section>
+<section id="corrosives">
+<h3>Corrosives<a class="headerlink" href="#corrosives" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>HD8: Corrosives</p></li>
+</ul>
+</section>
+<section id="miscellaneous-dangerous-goods">
+<h3>Miscellaneous Dangerous Goods<a class="headerlink" href="#miscellaneous-dangerous-goods" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>HD9: Miscellaneous dangerous goods</p></li>
+</ul>
+</section>
+<section id="hazardous-materials-table">
+<h3>Hazardous Materials Table<a class="headerlink" href="#hazardous-materials-table" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="sds-components">
+<h2>SDS Components<a class="headerlink" href="#sds-components" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="ghs-labeling">
+<h2>GHS Labeling<a class="headerlink" href="#ghs-labeling" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="nfpaa-704-diamond">
+<h2>NFPAA 704 Diamond<a class="headerlink" href="#nfpaa-704-diamond" title="Permalink to this heading">#</a></h2>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/Diamond.png?raw=true" width="600">
+</section>
+<section id="shipping-and-handling-intro">
+<h2>Shipping and Handling Intro<a class="headerlink" href="#shipping-and-handling-intro" title="Permalink to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -484,6 +608,36 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard-classes">9 Hazard Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explosives">Explosives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gases">Gases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flammable-liquids">Flammable Liquids</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flammable-solids">Flammable Solids</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oxidizing-substances">Oxidizing Substances</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toxic-and-infectious-substances">Toxic and Infectious Substances</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radioactive-material">Radioactive Material</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corrosives">Corrosives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous-dangerous-goods">Miscellaneous Dangerous Goods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hazardous-materials-table">Hazardous Materials Table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sds-components">SDS Components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ghs-labeling">GHS Labeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nfpaa-704-diamond">NFPAA 704 Diamond</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shipping-and-handling-intro">Shipping and Handling Intro</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
