@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>05-PSM Intro &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
+    <title>17-Mole Balances &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
   
   
   
@@ -61,11 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'physical/05-PSM';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'physical/17-Balances';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="06-Fault Tree Analysis" href="06-FTA.html" />
-    <link rel="prev" title="04-Logic and Process Safety" href="04-Logic.html" />
+    <link rel="next" title="18-Flammability" href="18-Flammability.html" />
+    <link rel="prev" title="16-GHS" href="16-GHS.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../physical.html">Physical Safety</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="04-Logic.html">04-Logic and Process Safety</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">05-PSM Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-PSM.html">05-PSM Intro</a></li>
 <li class="toctree-l2"><a class="reference internal" href="06-FTA.html">06-Fault Tree Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07-HA.html">07-Hazards Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="08-HAZ.html">08-HAZOP</a></li>
@@ -177,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="14-Toxicity.html">14-Toxicity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="15-Hygiene.html">15-Industrial Hygiene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="16-GHS.html">16-GHS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="17-Balances.html">17-Mole Balances</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">17-Mole Balances</a></li>
 <li class="toctree-l2"><a class="reference internal" href="18-Flammability.html">18-Flammability</a></li>
 </ul>
 </li>
@@ -240,7 +242,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/clint-bg/safetyinjc/blob/gh-pages/_sources/physical/05-PSM.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/clint-bg/safetyinjc/blob/gh-pages/_sources/physical/17-Balances.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/clint-bg/safetyinjc/issues/new?title=Issue%20on%20page%20%2Fphysical/05-PSM.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/clint-bg/safetyinjc/issues/new?title=Issue%20on%20page%20%2Fphysical/17-Balances.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +320,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/physical/05-PSM.ipynb" target="_blank"
+      <li><a href="../_sources/physical/17-Balances.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -400,7 +402,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>05-PSM Intro</h1>
+    <h1>17-Mole Balances</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -410,11 +412,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-tolerance">Risk Tolerance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-matrix">Risk Matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ragagep">RAGAGEP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#osha-29-cfr-psm-elements">OSHA 29 CFR PSM Elements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-estimate-concentration">Risk Estimate: Concentration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-mole-mass-and-component-mole-balances">Total Mole (Mass) and Component Mole Balances</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inlet-composition-from-vaporization-of-a-liquid">Inlet composition from vaporization of a liquid</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-techniques">Control Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#engineering-controls">Engineering Controls</a></li>
 </ul>
 </li>
 </ul>
@@ -428,60 +432,81 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="psm-intro">
-<h1>05-PSM Intro<a class="headerlink" href="#psm-intro" title="Permalink to this heading">#</a></h1>
-<p>Process Safety Management Introduction</p>
-<section id="risk-tolerance">
-<h2>Risk Tolerance<a class="headerlink" href="#risk-tolerance" title="Permalink to this heading">#</a></h2>
-<p>Our tolerance for risk varies widely between individuals and organizations. How do we determine what is an acceptable risk? How do we determine what is an unacceptable risk? How do we determine what is a tolerable risk? How do we determine what is a negligible risk?</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="mole-balances">
+<h1>17-Mole Balances<a class="headerlink" href="#mole-balances" title="Permalink to this heading">#</a></h1>
+<section id="risk-estimate-concentration">
+<h2>Risk Estimate: Concentration<a class="headerlink" href="#risk-estimate-concentration" title="Permalink to this heading">#</a></h2>
+<p>Prior to implementing control techniques, it can be important to quantify the risk of exposure from a spill scenario of other toxic gas/ vapor release.</p>
+<section id="total-mole-mass-and-component-mole-balances">
+<h3>Total Mole (Mass) and Component Mole Balances<a class="headerlink" href="#total-mole-mass-and-component-mole-balances" title="Permalink to this heading">#</a></h3>
+<p>Given a control volume and:</p>
+<ul class="simple">
+<li><p>A release of toxic gas or vapor at a constant rate</p></li>
+<li><p>Addition of air at a constant rate</p></li>
+<li><p>Exit of the gasses based on the inlet conditions and assuming that the exit rate can be achieved without pressurization of the control volume</p></li>
+<li><p>Steady state conditions</p></li>
+</ul>
+<p>Total molar balance:
+$<span class="math notranslate nohighlight">\( \text{Rate of accumulation} = \text{Rate of inlet} - \text{Rate of exit} + \text{Generation rate} \)</span>$</p>
+<div class="math notranslate nohighlight">
+\[ \frac{dn_{tot}}{dt} = n_{in} - n_{out} + n_{gen} \]</div>
+<p>Component balances:
+$<span class="math notranslate nohighlight">\( \frac{dn_{i}}{dt} = n_{in,i} - n_{out,i} + n_{gen,i} \)</span>$</p>
+<p>At steady state, the accumulation terms (<span class="math notranslate nohighlight">\( \frac{dn_{tot}}{dt} \)</span> and <span class="math notranslate nohighlight">\( \frac{dn_{i}}{dt} \)</span>) are zero.</p>
+<p>Other assumptions/ notation:</p>
+<ul class="simple">
+<li><p>concentration of interest, <span class="math notranslate nohighlight">\( C_i  = n_i/V \)</span>,</p></li>
+<li><p>the exit rate of the total gases is <span class="math notranslate nohighlight">\( Q^n_v \)</span>, mol//time,</p></li>
+<li><p>the inlet rate of the composition of interest is <span class="math notranslate nohighlight">\( Q^e \)</span>, mol//time,</p></li>
+<li><p><span class="math notranslate nohighlight">\( C_{ppm} = C_iRT/P\cdot 10^6 \)</span>, where <span class="math notranslate nohighlight">\( C_{ppm} \)</span> is the concentration in parts per million (ppm), <span class="math notranslate nohighlight">\( R \)</span> is the ideal gas constant, <span class="math notranslate nohighlight">\( T \)</span> is the temperature, and <span class="math notranslate nohighlight">\( P \)</span> is the pressure.</p></li>
+<li><p><span class="math notranslate nohighlight">\( n_{gen,i} = 0 \)</span>, for the case of a spill or release of a toxic gas or vapor (new species are not generated).</p></li>
+<li><p>Perfect mixing of the gases in the control volume (no concentration gradients).</p></li>
+</ul>
+<p>As such, the mole balance for the component of interest i is
+$<span class="math notranslate nohighlight">\( 0 = Q^e - C_iQ^n_v \)</span>$</p>
+<div class="math notranslate nohighlight">
+\[ C_i = \frac{Q^e}{Q^n_v} \]</div>
+<p>If however, there are concentration gradients, the concentration could deviate significantly from the above estimate (larger or smaller).</p>
 </section>
-<section id="risk-matrix">
-<h2>Risk Matrix<a class="headerlink" href="#risk-matrix" title="Permalink to this heading">#</a></h2>
-<p>Semi-quantitative: See Table 1-14 in the textbook.</p>
-<p>Qualitative Risk Matrix:</p>
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/RiskMatrix.png?raw=trueg" width="600"></section>
-<section id="ragagep">
-<h2>RAGAGEP<a class="headerlink" href="#ragagep" title="Permalink to this heading">#</a></h2>
-<p>Recognized and Generally Accepted Good Engineering Practices:</p>
-<p>Regulations:</p>
-<ul class="simple">
-<li><p>OSHA 29 CFR 1910.119 Process Safety Management (PSM)</p></li>
-<li><p>EPA 40 CFR 68 Risk Management Programs (RMP)</p></li>
-<li><p>DHS 6 CFR 27 Chemical Facility Anti-Terrorism Standards (CFATS)</p></li>
-<li><p>PHMSA/ DOT Shipment of Hazardous Chemicals 49 CFR Parts 100-185</p></li>
-</ul>
-<p>Codes</p>
-<ul class="simple">
-<li><p>NFPA 70: National Electrical Code</p></li>
-<li><p>ASME Boiler and Pressure Vessel Code</p></li>
-</ul>
-<p>Standards</p>
-<ul class="simple">
-<li><p>NFPA 45, 68, 69</p></li>
-<li><p>Many others</p></li>
-</ul>
+<section id="inlet-composition-from-vaporization-of-a-liquid">
+<h3>Inlet composition from vaporization of a liquid<a class="headerlink" href="#inlet-composition-from-vaporization-of-a-liquid" title="Permalink to this heading">#</a></h3>
+<p>The inlet rate of the species of interest, <span class="math notranslate nohighlight">\( Q^e \)</span>, can be estimated from the vapor pressure of the liquid and the rate of vaporization and a mass transfer coefficient according to:
+$<span class="math notranslate nohighlight">\( Q^e = k_mA(C_{sat}-C) \)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\( k_m \)</span> is the mass transfer coefficient, <span class="math notranslate nohighlight">\( C_{sat} \)</span> is the saturation concentration of the species close to the liquid surface, and C is the concentration of the species in the air, and <span class="math notranslate nohighlight">\( A \)</span> is the area of the spill.</p>
+<p><span class="math notranslate nohighlight">\( k_m \)</span> can be estimated from correlations or from experimental data or by comparison to another component with a known mass transfer coefficient (e.g. water, <span class="math notranslate nohighlight">\( k_m^0 \)</span>).:
+$<span class="math notranslate nohighlight">\( k_m = k_m^0\left(\frac{M}{M_0}\right)^{0.33} \)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\( M \)</span> is the molecular weight of the species of interest and <span class="math notranslate nohighlight">\( M_0 \)</span> is the molecular weight of water. <span class="math notranslate nohighlight">\( k_m^0 \)</span> is typically in the range of <span class="math notranslate nohighlight">\( 0.1-10.0 \, \text{cm/s} \)</span> depending on the conditions.</p>
+<p><span class="math notranslate nohighlight">\(C_{sat}\)</span> can be estimated from the Antoine equation:
+$<span class="math notranslate nohighlight">\( \log_{10}P_{sat} = A - \frac{B}{T+C} \)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\( P_{sat} \)</span> is the saturation pressure of the species of interest, and <span class="math notranslate nohighlight">\( A \)</span>, <span class="math notranslate nohighlight">\( B \)</span>, and <span class="math notranslate nohighlight">\( C \)</span> are constants that can be found in the literature. Where <span class="math notranslate nohighlight">\( C_{sat} \)</span> = <span class="math notranslate nohighlight">\( P_{sat}/RT \)</span>.</p>
+<p>Incorporating those into the mole balance, we have:</p>
+<div class="math notranslate nohighlight">
+\[ 0 = k_mA(C_{sat}-C_i) - C_iQ^n_v \]</div>
+<div class="math notranslate nohighlight">
+\[ C_i = \frac{k_mA}{Q^n_v+k_mA}C_{sat} \]</div>
+<p>How would you solve the above if you would like the unsteady state concentration as a function of time? And there by obtain the Time Weighted Average (TWA) for a worker directly after a spill?</p>
 </section>
-<section id="osha-29-cfr-psm-elements">
-<h2>OSHA 29 CFR PSM Elements<a class="headerlink" href="#osha-29-cfr-psm-elements" title="Permalink to this heading">#</a></h2>
-<p>Required for those meeting the Threshold Quantities</p>
+</section>
+<section id="control-techniques">
+<h2>Control Techniques<a class="headerlink" href="#control-techniques" title="Permalink to this heading">#</a></h2>
+<p>There are multiple control techniques that can be used to reduce the exposure to workers from a toxic gas or vapor. These include:</p>
+<p><strong>Inherent Safety</strong>: Designing the process to eliminate or reduce the use of toxic gases or vapors.</p>
 <ul class="simple">
-<li><p>Employee Participation</p></li>
-<li><p><strong>Process Safety Information</strong></p></li>
-<li><p><strong>Process Hazards Analysis</strong></p></li>
-<li><p>Operating Procedures</p></li>
-<li><p>Training</p></li>
-<li><p>Contractors</p></li>
-<li><p>Pre-Startup Safety Review</p></li>
-<li><p>Mechanical Integrity</p></li>
-<li><p>Hot Work Permits</p></li>
-<li><p>Management of Change</p></li>
-<li><p>Incident Investigation</p></li>
-<li><p>Emergency Planning and Response</p></li>
-<li><p>Audits</p></li>
-<li><p>Trade Secrets</p></li>
+<li><p><strong>Substitution</strong>: Replace the toxic gas or vapor with a less toxic or non-toxic alternative.</p></li>
+<li><p><strong>Minimization</strong>: Reduce the amount of toxic gas or vapor that is used in the workplace.</p></li>
+<li><p><strong>Isolation</strong>: Use of barriers or other methods to separate the toxic gas or vapor from workers.</p></li>
 </ul>
-<section id="id1">
-<h3><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p><strong>Engineering Controls</strong>: Use of ventilation, enclosures, or other engineering controls to reduce the concentration of the toxic gas or vapor in the workplace.</p>
+<p><strong>Administrative Controls</strong>: Use of work practices, policies, and procedures to reduce the exposure of workers to toxic gases or vapors.</p>
+<p><strong>Personal Protective Equipment (PPE)</strong>: Use of PPE to protect workers from exposure to toxic gases or vapors.</p>
+<section id="engineering-controls">
+<h3>Engineering Controls<a class="headerlink" href="#engineering-controls" title="Permalink to this heading">#</a></h3>
+<p><strong>Ventilation</strong>:
+Ventilation occurs with HVAC systems where air is circulated and filtered. However, most of the air is recirculated and only a small fraction is replaced with fresh air. The recirculation of air can lead to a build up of toxic gases and or distribute them to other areas of the workplace.</p>
+<p>Ventilation where outside air is brought in can help reduce the concentration of toxic gases or vapors but it has significant energy costs.</p>
+<p>Typical ventilation occurs with negative rather than positive pressure systems.</p>
+<p><strong>Local Venilation: Hoods</strong></p>
+<p>Hoods are effective at containing an expelling toxic gases or vapors. However, they can be expensive to install and maintain. They also require a significant amount of energy to operate.</p>
 </section>
 </section>
 </section>
@@ -518,20 +543,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="04-Logic.html"
+       href="16-GHS.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">04-Logic and Process Safety</p>
+        <p class="prev-next-title">16-GHS</p>
       </div>
     </a>
     <a class="right-next"
-       href="06-FTA.html"
+       href="18-Flammability.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">06-Fault Tree Analysis</p>
+        <p class="prev-next-title">18-Flammability</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -553,11 +578,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-tolerance">Risk Tolerance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-matrix">Risk Matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ragagep">RAGAGEP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#osha-29-cfr-psm-elements">OSHA 29 CFR PSM Elements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-estimate-concentration">Risk Estimate: Concentration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-mole-mass-and-component-mole-balances">Total Mole (Mass) and Component Mole Balances</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inlet-composition-from-vaporization-of-a-liquid">Inlet composition from vaporization of a liquid</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-techniques">Control Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#engineering-controls">Engineering Controls</a></li>
 </ul>
 </li>
 </ul>

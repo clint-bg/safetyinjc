@@ -24,6 +24,8 @@ chapters:
     - file: physical/14-Toxicity
     - file: physical/15-Hygiene
     - file: physical/16-GHS
+    - file: physical/17-Balances
+    - file: physical/18-Flammability
   - file: stewardship
     sections:
     - file: stewardship/zz-Environment
