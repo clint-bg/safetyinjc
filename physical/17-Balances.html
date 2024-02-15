@@ -446,12 +446,14 @@ document.write(`
 <li><p>Exit of the gasses based on the inlet conditions and assuming that the exit rate can be achieved without pressurization of the control volume</p></li>
 <li><p>Steady state conditions</p></li>
 </ul>
-<p>Total molar balance:
-$<span class="math notranslate nohighlight">\( \text{Rate of accumulation} = \text{Rate of inlet} - \text{Rate of exit} + \text{Generation rate} \)</span>$</p>
+<p>Total molar balance:</p>
+<div class="math notranslate nohighlight">
+\[ \text{Rate of accumulation} = \text{Rate of inlet} - \text{Rate of exit} + \text{Generation rate} \]</div>
 <div class="math notranslate nohighlight">
 \[ \frac{dn_{tot}}{dt} = n_{in} - n_{out} + n_{gen} \]</div>
-<p>Component balances:
-$<span class="math notranslate nohighlight">\( \frac{dn_{i}}{dt} = n_{in,i} - n_{out,i} + n_{gen,i} \)</span>$</p>
+<p>Component balances:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{dn_{i}}{dt} = n_{in,i} - n_{out,i} + n_{gen,i} \]</div>
 <p>At steady state, the accumulation terms (<span class="math notranslate nohighlight">\( \frac{dn_{tot}}{dt} \)</span> and <span class="math notranslate nohighlight">\( \frac{dn_{i}}{dt} \)</span>) are zero.</p>
 <p>Other assumptions/ notation:</p>
 <ul class="simple">
@@ -462,22 +464,26 @@ $<span class="math notranslate nohighlight">\( \frac{dn_{i}}{dt} = n_{in,i} - n_
 <li><p><span class="math notranslate nohighlight">\( n_{gen,i} = 0 \)</span>, for the case of a spill or release of a toxic gas or vapor (new species are not generated).</p></li>
 <li><p>Perfect mixing of the gases in the control volume (no concentration gradients).</p></li>
 </ul>
-<p>As such, the mole balance for the component of interest i is
-$<span class="math notranslate nohighlight">\( 0 = Q^e - C_iQ^n_v \)</span>$</p>
+<p>As such, the mole balance for the component of interest i is</p>
+<div class="math notranslate nohighlight">
+\[ 0 = Q^e - C_iQ^n_v \]</div>
 <div class="math notranslate nohighlight">
 \[ C_i = \frac{Q^e}{Q^n_v} \]</div>
 <p>If however, there are concentration gradients, the concentration could deviate significantly from the above estimate (larger or smaller).</p>
 </section>
 <section id="inlet-composition-from-vaporization-of-a-liquid">
 <h3>Inlet composition from vaporization of a liquid<a class="headerlink" href="#inlet-composition-from-vaporization-of-a-liquid" title="Permalink to this heading">#</a></h3>
-<p>The inlet rate of the species of interest, <span class="math notranslate nohighlight">\( Q^e \)</span>, can be estimated from the vapor pressure of the liquid and the rate of vaporization and a mass transfer coefficient according to:
-$<span class="math notranslate nohighlight">\( Q^e = k_mA(C_{sat}-C) \)</span>$</p>
+<p>The inlet rate of the species of interest, <span class="math notranslate nohighlight">\( Q^e \)</span>, can be estimated from the vapor pressure of the liquid and the rate of vaporization and a mass transfer coefficient according to:</p>
+<div class="math notranslate nohighlight">
+\[ Q^e = k_mA(C_{sat}-C) \]</div>
 <p>where <span class="math notranslate nohighlight">\( k_m \)</span> is the mass transfer coefficient, <span class="math notranslate nohighlight">\( C_{sat} \)</span> is the saturation concentration of the species close to the liquid surface, and C is the concentration of the species in the air, and <span class="math notranslate nohighlight">\( A \)</span> is the area of the spill.</p>
-<p><span class="math notranslate nohighlight">\( k_m \)</span> can be estimated from correlations or from experimental data or by comparison to another component with a known mass transfer coefficient (e.g. water, <span class="math notranslate nohighlight">\( k_m^0 \)</span>).:
-$<span class="math notranslate nohighlight">\( k_m = k_m^0\left(\frac{M}{M_0}\right)^{0.33} \)</span>$</p>
+<p><span class="math notranslate nohighlight">\( k_m \)</span> can be estimated from correlations or from experimental data or by comparison to another component with a known mass transfer coefficient (e.g. water, <span class="math notranslate nohighlight">\( k_m^0 \)</span>).:</p>
+<div class="math notranslate nohighlight">
+\[ k_m = k_m^0\left(\frac{M}{M_0}\right)^{0.33} \]</div>
 <p>where <span class="math notranslate nohighlight">\( M \)</span> is the molecular weight of the species of interest and <span class="math notranslate nohighlight">\( M_0 \)</span> is the molecular weight of water. <span class="math notranslate nohighlight">\( k_m^0 \)</span> is typically in the range of <span class="math notranslate nohighlight">\( 0.1-10.0 \, \text{cm/s} \)</span> depending on the conditions.</p>
-<p><span class="math notranslate nohighlight">\(C_{sat}\)</span> can be estimated from the Antoine equation:
-$<span class="math notranslate nohighlight">\( \log_{10}P_{sat} = A - \frac{B}{T+C} \)</span>$</p>
+<p><span class="math notranslate nohighlight">\(C_{sat}\)</span> can be estimated from the Antoine equation:</p>
+<div class="math notranslate nohighlight">
+\[ \log_{10}P_{sat} = A - \frac{B}{T+C} \]</div>
 <p>where <span class="math notranslate nohighlight">\( P_{sat} \)</span> is the saturation pressure of the species of interest, and <span class="math notranslate nohighlight">\( A \)</span>, <span class="math notranslate nohighlight">\( B \)</span>, and <span class="math notranslate nohighlight">\( C \)</span> are constants that can be found in the literature. Where <span class="math notranslate nohighlight">\( C_{sat} \)</span> = <span class="math notranslate nohighlight">\( P_{sat}/RT \)</span>.</p>
 <p>Incorporating those into the mole balance, we have:</p>
 <div class="math notranslate nohighlight">
@@ -485,9 +491,8 @@ $<span class="math notranslate nohighlight">\( \log_{10}P_{sat} = A - \frac{B}{T
 <div class="math notranslate nohighlight">
 \[ C_i = \frac{k_mA}{Q^n_v+k_mA}C_{sat} \]</div>
 <p>How would you solve the above if you would like the unsteady state concentration as a function of time? And there by obtain the Time Weighted Average (TWA) for a worker directly after a spill?</p>
-<iframe width=”560" height=”315"
- src=”https://youtu.be/fr5_cXH9uWQ"
-</iframe></section>
+<iframe width="560" height="315" src="https://youtu.be/M94INyj28i8" frameborder="0" allowfullscreen></iframe>
+</section>
 </section>
 <section id="control-techniques">
 <h2>Control Techniques<a class="headerlink" href="#control-techniques" title="Permalink to this heading">#</a></h2>
