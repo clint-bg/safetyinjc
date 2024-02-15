@@ -446,12 +446,14 @@ document.write(`
 <li><p>Exit of the gasses based on the inlet conditions and assuming that the exit rate can be achieved without pressurization of the control volume</p></li>
 <li><p>Steady state conditions</p></li>
 </ul>
-<p>Total molar balance:
-$<span class="math notranslate nohighlight">\( \text{Rate of accumulation} = \text{Rate of inlet} - \text{Rate of exit} + \text{Generation rate} \)</span>$</p>
+<p>Total molar balance:</p>
+<div class="math notranslate nohighlight">
+\[ \text{Rate of accumulation} = \text{Rate of inlet} - \text{Rate of exit} + \text{Generation rate} \]</div>
 <div class="math notranslate nohighlight">
 \[ \frac{dn_{tot}}{dt} = n_{in} - n_{out} + n_{gen} \]</div>
-<p>Component balances:
-$<span class="math notranslate nohighlight">\( \frac{dn_{i}}{dt} = n_{in,i} - n_{out,i} + n_{gen,i} \)</span>$</p>
+<p>Component balances:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{dn_{i}}{dt} = n_{in,i} - n_{out,i} + n_{gen,i} \]</div>
 <p>At steady state, the accumulation terms (<span class="math notranslate nohighlight">\( \frac{dn_{tot}}{dt} \)</span> and <span class="math notranslate nohighlight">\( \frac{dn_{i}}{dt} \)</span>) are zero.</p>
 <p>Other assumptions/ notation:</p>
 <ul class="simple">
@@ -462,22 +464,26 @@ $<span class="math notranslate nohighlight">\( \frac{dn_{i}}{dt} = n_{in,i} - n_
 <li><p><span class="math notranslate nohighlight">\( n_{gen,i} = 0 \)</span>, for the case of a spill or release of a toxic gas or vapor (new species are not generated).</p></li>
 <li><p>Perfect mixing of the gases in the control volume (no concentration gradients).</p></li>
 </ul>
-<p>As such, the mole balance for the component of interest i is
-$<span class="math notranslate nohighlight">\( 0 = Q^e - C_iQ^n_v \)</span>$</p>
+<p>As such, the mole balance for the component of interest i is</p>
+<div class="math notranslate nohighlight">
+\[ 0 = Q^e - C_iQ^n_v \]</div>
 <div class="math notranslate nohighlight">
 \[ C_i = \frac{Q^e}{Q^n_v} \]</div>
 <p>If however, there are concentration gradients, the concentration could deviate significantly from the above estimate (larger or smaller).</p>
 </section>
 <section id="inlet-composition-from-vaporization-of-a-liquid">
 <h3>Inlet composition from vaporization of a liquid<a class="headerlink" href="#inlet-composition-from-vaporization-of-a-liquid" title="Permalink to this heading">#</a></h3>
-<p>The inlet rate of the species of interest, <span class="math notranslate nohighlight">\( Q^e \)</span>, can be estimated from the vapor pressure of the liquid and the rate of vaporization and a mass transfer coefficient according to:
-$<span class="math notranslate nohighlight">\( Q^e = k_mA(C_{sat}-C) \)</span>$</p>
+<p>The inlet rate of the species of interest, <span class="math notranslate nohighlight">\( Q^e \)</span>, can be estimated from the vapor pressure of the liquid and the rate of vaporization and a mass transfer coefficient according to:</p>
+<div class="math notranslate nohighlight">
+\[ Q^e = k_mA(C_{sat}-C) \]</div>
 <p>where <span class="math notranslate nohighlight">\( k_m \)</span> is the mass transfer coefficient, <span class="math notranslate nohighlight">\( C_{sat} \)</span> is the saturation concentration of the species close to the liquid surface, and C is the concentration of the species in the air, and <span class="math notranslate nohighlight">\( A \)</span> is the area of the spill.</p>
-<p><span class="math notranslate nohighlight">\( k_m \)</span> can be estimated from correlations or from experimental data or by comparison to another component with a known mass transfer coefficient (e.g. water, <span class="math notranslate nohighlight">\( k_m^0 \)</span>).:
-$<span class="math notranslate nohighlight">\( k_m = k_m^0\left(\frac{M}{M_0}\right)^{0.33} \)</span>$</p>
+<p><span class="math notranslate nohighlight">\( k_m \)</span> can be estimated from correlations or from experimental data or by comparison to another component with a known mass transfer coefficient (e.g. water, <span class="math notranslate nohighlight">\( k_m^0 \)</span>).:</p>
+<div class="math notranslate nohighlight">
+\[ k_m = k_m^0\left(\frac{M}{M_0}\right)^{0.33} \]</div>
 <p>where <span class="math notranslate nohighlight">\( M \)</span> is the molecular weight of the species of interest and <span class="math notranslate nohighlight">\( M_0 \)</span> is the molecular weight of water. <span class="math notranslate nohighlight">\( k_m^0 \)</span> is typically in the range of <span class="math notranslate nohighlight">\( 0.1-10.0 \, \text{cm/s} \)</span> depending on the conditions.</p>
-<p><span class="math notranslate nohighlight">\(C_{sat}\)</span> can be estimated from the Antoine equation:
-$<span class="math notranslate nohighlight">\( \log_{10}P_{sat} = A - \frac{B}{T+C} \)</span>$</p>
+<p><span class="math notranslate nohighlight">\(C_{sat}\)</span> can be estimated from the Antoine equation:</p>
+<div class="math notranslate nohighlight">
+\[ \log_{10}P_{sat} = A - \frac{B}{T+C} \]</div>
 <p>where <span class="math notranslate nohighlight">\( P_{sat} \)</span> is the saturation pressure of the species of interest, and <span class="math notranslate nohighlight">\( A \)</span>, <span class="math notranslate nohighlight">\( B \)</span>, and <span class="math notranslate nohighlight">\( C \)</span> are constants that can be found in the literature. Where <span class="math notranslate nohighlight">\( C_{sat} \)</span> = <span class="math notranslate nohighlight">\( P_{sat}/RT \)</span>.</p>
 <p>Incorporating those into the mole balance, we have:</p>
 <div class="math notranslate nohighlight">
@@ -485,6 +491,7 @@ $<span class="math notranslate nohighlight">\( \log_{10}P_{sat} = A - \frac{B}{T
 <div class="math notranslate nohighlight">
 \[ C_i = \frac{k_mA}{Q^n_v+k_mA}C_{sat} \]</div>
 <p>How would you solve the above if you would like the unsteady state concentration as a function of time? And there by obtain the Time Weighted Average (TWA) for a worker directly after a spill?</p>
+<p>See <a class="reference external" href="https://youtu.be/M94INyj28i8">here</a> to view a video on a mole (mass) balance for a spill scenario. This video can be helpful for the homework. You can download the sheet used in the video here: <a class="github reference external" href="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/Balance.pdf">clint-bg/safetyinjc</a></p>
 </section>
 </section>
 <section id="control-techniques">
@@ -498,13 +505,13 @@ $<span class="math notranslate nohighlight">\( \log_{10}P_{sat} = A - \frac{B}{T
 </ul>
 <p><strong>Engineering Controls</strong>: Use of ventilation, enclosures, or other engineering controls to reduce the concentration of the toxic gas or vapor in the workplace.</p>
 <p><strong>Administrative Controls</strong>: Use of work practices, policies, and procedures to reduce the exposure of workers to toxic gases or vapors.</p>
-<p><strong>Personal Protective Equipment (PPE)</strong>: Use of PPE to protect workers from exposure to toxic gases or vapors.</p>
+<p><strong>Personal Protective Equipment (PPE)</strong>: Use of PPE such as respirators (full or half face) or supplied air respirators to reduce the exposure of workers to toxic gases or vapors.</p>
 <section id="engineering-controls">
 <h3>Engineering Controls<a class="headerlink" href="#engineering-controls" title="Permalink to this heading">#</a></h3>
 <p><strong>Ventilation</strong>:
 Ventilation occurs with HVAC systems where air is circulated and filtered. However, most of the air is recirculated and only a small fraction is replaced with fresh air. The recirculation of air can lead to a build up of toxic gases and or distribute them to other areas of the workplace.</p>
 <p>Ventilation where outside air is brought in can help reduce the concentration of toxic gases or vapors but it has significant energy costs.</p>
-<p>Typical ventilation occurs with negative rather than positive pressure systems.</p>
+<p>Typical ventilation occurs with negative rather than positive pressure systems. Know the difference between positive and negative pressure systems and why one might be used over the other.</p>
 <p><strong>Local Venilation: Hoods</strong></p>
 <p>Hoods are effective at containing an expelling toxic gases or vapors. However, they can be expensive to install and maintain. They also require a significant amount of energy to operate.</p>
 </section>
