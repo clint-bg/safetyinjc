@@ -466,9 +466,9 @@ document.write(`
 </ul>
 <p>As such, the mole balance for the component of interest i is</p>
 <div class="math notranslate nohighlight">
-\[ 0 = Q^e - C_iQ^n_v \]</div>
+\[ 0 = Q^e - C_iQ^n_vRT/P \]</div>
 <div class="math notranslate nohighlight">
-\[ C_i = \frac{Q^e}{Q^n_v} \]</div>
+\[ C_i = \frac{Q^e}{Q^n_vRT/P} \]</div>
 <p>If however, there are concentration gradients, the concentration could deviate significantly from the above estimate (larger or smaller).</p>
 </section>
 <section id="inlet-composition-from-vaporization-of-a-liquid">
@@ -487,9 +487,9 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\( P_{sat} \)</span> is the saturation pressure of the species of interest, and <span class="math notranslate nohighlight">\( A \)</span>, <span class="math notranslate nohighlight">\( B \)</span>, and <span class="math notranslate nohighlight">\( C \)</span> are constants that can be found in the literature. Where <span class="math notranslate nohighlight">\( C_{sat} \)</span> = <span class="math notranslate nohighlight">\( P_{sat}/RT \)</span>.</p>
 <p>Incorporating those into the mole balance, we have:</p>
 <div class="math notranslate nohighlight">
-\[ 0 = k_mA(C_{sat}-C_i) - C_iQ^n_v \]</div>
+\[ 0 = k_mA(C_{sat}-C_i) - C_iQ^n_vRT/P \]</div>
 <div class="math notranslate nohighlight">
-\[ C_i = \frac{k_mA}{Q^n_v+k_mA}C_{sat} \]</div>
+\[ C_i = \frac{k_mA}{Q^n_vRT/P+k_mA}C_{sat} \]</div>
 <p>How would you solve the above if you would like the unsteady state concentration as a function of time? And there by obtain the Time Weighted Average (TWA) for a worker directly after a spill?</p>
 <p>See <a class="reference external" href="https://youtu.be/M94INyj28i8">here</a> to view a video on a mole (mass) balance for a spill scenario. This video can be helpful for the homework. You can download the sheet used in the video here: <a class="github reference external" href="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/Balance.pdf">clint-bg/safetyinjc</a></p>
 </section>
