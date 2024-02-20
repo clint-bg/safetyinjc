@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physical/18-Flammability';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -431,6 +433,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flammability-limits">Flammability limits</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-estimation-of-flammabilities">Empirical Estimation of Flammabilities</a></li>
 </ul>
 </li>
 </ul>
@@ -681,12 +684,110 @@ document.write(`
 <section id="flash-point">
 <h4>Flash point<a class="headerlink" href="#flash-point" title="Permalink to this heading">#</a></h4>
 <p>Closed cup</p>
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/cct1.jgg?raw=true" width="400">
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/cct2.jgg?raw=true" width="400"></section>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/cct1.jpg?raw=true" width="400">
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/cct2.jpg?raw=true" width="400"></section>
 <section id="flammability-limits">
 <h4>Flammability limits<a class="headerlink" href="#flammability-limits" title="Permalink to this heading">#</a></h4>
 <p>20 Liter Sphere</p>
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/tls.jgg?raw=true" width="400"></section>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/tls.jpg?raw=true" width="400"><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Fuel Conc.&#39;</span><span class="p">:[</span><span class="mf">2.1</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mf">4.2</span><span class="p">,</span><span class="mf">5.8</span><span class="p">,</span><span class="mf">6.4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mf">7.7</span><span class="p">],</span><span class="s1">&#39;Max Pressure&#39;</span><span class="p">:[</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mf">8.5</span><span class="p">,</span><span class="mf">7.6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">.03</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Fuel Conc.&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Max Pressure&#39;</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
+<span class="c1">#fit a parabola to the data</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Fuel Conc.&#39;</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Max Pressure&#39;</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#plot the parabola</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;k-.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f08a94ff4bfabef5a0b1a4428e0a281013c8b4e4e8f059f7ae910aa4d71029b8.png" src="../_images/f08a94ff4bfabef5a0b1a4428e0a281013c8b4e4e8f059f7ae910aa4d71029b8.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="empirical-estimation-of-flammabilities">
+<h3>Empirical Estimation of Flammabilities<a class="headerlink" href="#empirical-estimation-of-flammabilities" title="Permalink to this heading">#</a></h3>
+<p>From Crowl and Louvar (4th edition of Chemical Process Safety, Chapter 6), the following empirical equations can be used to estimate the LFL and UFL for a gas or vapor:</p>
+<p><u>Flash Point</u></p>
+<div class="math notranslate nohighlight">
+\[
+T_f = a + \frac{b(c/T_b)^2 e^{-c/T_b}}{1 - e^{-c/T_b}}
+\]</div>
+<p>where a,b, and c are constants, and <span class="math notranslate nohighlight">\(T_b\)</span> is the normal boiling point of the liquid and T_f is the flash point. See Crowl and Louvar for the constants.</p>
+<p>Reaction Stoichiometry</p>
+<p><span class="math notranslate nohighlight">\(C_m H_x O_y +zO_2 \rightarrow mCO_2 + x/2H_2O\)</span></p>
+<p>How do you get the stoichiometric concentration for say propane in air?</p>
+<div class="toggle docutils container">
+<div class="math notranslate nohighlight">
+\[
+C3H8 + 5O2 \rightarrow 3CO2 + 4H2O
+\]</div>
+</div>
+<p><u> LFL and UFL: Method 1</u></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+LFL = 0.55 \cdot C_{st}\\
+UFL = 3.5 \cdot C_{st}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{st}\)</span> is the stoichiometric concentration (vol percent).</p>
+<p><u> LFL and UFL: Method 2</u></p>
+<div class="math notranslate nohighlight">
+\[
+LFL = \frac{0.55}{4.76m+1.19x-2.38y+1}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+UFL = \frac{3.5}{4.76m+1.19x-2.38y+1}
+\]</div>
+<p><u> LFL and UFL: Method 3</u></p>
+<div class="math notranslate nohighlight">
+\[
+LFL = \frac{-3.42}{\Delta H_c} + 0.569\Delta H_c + 0.0538\Delta H_c^2 + 1.8
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+UFL = 6.3\Delta H_c + 0.567\Delta H_c^2 + 23.5
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta H_c\)</span> is the heat of combustion in kJ/mol.</p>
+<p><u>LFL and UFL: Mixtures</u></p>
+<div class="math notranslate nohighlight">
+\[
+LFL = \frac{1}{\sum_i \frac{y_i}{LFL_i}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_i\)</span> is the mole fraction of the component and <span class="math notranslate nohighlight">\(LFL_i\)</span> is the LFL of the component. The UFL is calculated similarly.</p>
+<p><u> UOL </u></p>
+<div class="math notranslate nohighlight">
+\[
+UOL = \frac{UFL[100+1.87(100-UFL_o)]}{UFL_o + UFL(1+1.87)}
+\]</div>
+<p>where UFL_o is the oxygen concentration at the UFL. 1.87 is a fitting constant.</p>
+<p><u>LOC</u></p>
+<div class="math notranslate nohighlight">
+\[
+LOC = \left ( \frac{LFL+1.11UFL}{1+1.11} \right ) \left ( \frac{UFL_o}{UFL} \right)
+\]</div>
+<p>where UFL_o is the oxygen concentration at the UFL. 1.11 is a fitting constant.</p>
 </section>
 </section>
 </section>
@@ -779,6 +880,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flammability-limits">Flammability limits</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-estimation-of-flammabilities">Empirical Estimation of Flammabilities</a></li>
 </ul>
 </li>
 </ul>
