@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>10-HAZOP Case Study &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
+    <title>19-Flammability 2 &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'physical/10-CaseStudy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'physical/19-Flammability2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11-PSM Pieces" href="11-PSM.html" />
-    <link rel="prev" title="09-Probabilities" href="09-Prob.html" />
+    <link rel="next" title="20-Explosion" href="20-Explosion.html" />
+    <link rel="prev" title="18-Flammability 1" href="18-Flammability.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="07-HA.html">07-Hazards Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="08-HAZ.html">08-HAZOP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="09-Prob.html">09-Probabilities</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">10-HAZOP Case Study</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10-CaseStudy.html">10-HAZOP Case Study</a></li>
 <li class="toctree-l2"><a class="reference internal" href="11-PSM.html">11-PSM Pieces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12-Review.html">12-Review</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13-CaseStudy2.html">13-FMEA Case Study</a></li>
@@ -179,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="16-GHS.html">16-GHS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="17-Balances.html">17-Mole Balances</a></li>
 <li class="toctree-l2"><a class="reference internal" href="18-Flammability.html">18-Flammability 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="19-Flammability2.html">19-Flammability 2</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">19-Flammability 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20-Explosion.html">20-Explosion</a></li>
 </ul>
 </li>
@@ -242,7 +242,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/clint-bg/safetyinjc/blob/gh-pages/_sources/physical/10-CaseStudy.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/clint-bg/safetyinjc/blob/gh-pages/_sources/physical/19-Flammability2.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -290,7 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/clint-bg/safetyinjc/issues/new?title=Issue%20on%20page%20%2Fphysical/10-CaseStudy.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/clint-bg/safetyinjc/issues/new?title=Issue%20on%20page%20%2Fphysical/19-Flammability2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +320,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/physical/10-CaseStudy.ipynb" target="_blank"
+      <li><a href="../_sources/physical/19-Flammability2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -400,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>10-HAZOP Case Study</h1>
+    <h1>19-Flammability 2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -414,11 +414,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hazop-case-study">
-<h1>10-HAZOP Case Study<a class="headerlink" href="#hazop-case-study" title="Permalink to this heading">#</a></h1>
-<p>CSB Investigation of H2S Poisoning in a Pump House in Texas: Aghorn Operating Waterflood Station Hydrogen Sulfide Release</p>
-<p><a class="reference external" href="https://www.csb.gov/aghorn-operating-waterflood-station-hydrogen-sulfide-release-/">https://www.csb.gov/aghorn-operating-waterflood-station-hydrogen-sulfide-release-/</a></p>
-<p>Download lecture freeform here: <a class="reference external" href="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/311%20HAZOP%20Case%20Study.pdf">https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/311 HAZOP Case Study.pdf</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="flammability-2">
+<h1>19-Flammability 2<a class="headerlink" href="#flammability-2" title="Permalink to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -453,20 +450,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="09-Prob.html"
+       href="18-Flammability.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">09-Probabilities</p>
+        <p class="prev-next-title">18-Flammability 1</p>
       </div>
     </a>
     <a class="right-next"
-       href="11-PSM.html"
+       href="20-Explosion.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">11-PSM Pieces</p>
+        <p class="prev-next-title">20-Explosion</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
