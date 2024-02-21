@@ -26,6 +26,8 @@ chapters:
     - file: physical/16-GHS
     - file: physical/17-Balances
     - file: physical/18-Flammability
+    - file: physical/19-Flammability2
+    - file: physical/20-Explosion
   - file: stewardship
     sections:
     - file: stewardship/zz-Environment
