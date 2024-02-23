@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physical/20-Explosions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -418,6 +420,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detonation">Detonation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deflagration">Deflagration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tnt-equivalence-and-blast-effects">TNT Equivalence and Blast Effects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tnt-overpressure-model">TNT Overpressure Model</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pressurized-vessel-bursting">Pressurized Vessel Bursting</a></li>
@@ -436,6 +439,7 @@ document.write(`
 <h1>20-Explosions<a class="headerlink" href="#explosions" title="Permalink to this heading">#</a></h1>
 <section id="tnt-blasts">
 <h2>TNT Blasts<a class="headerlink" href="#tnt-blasts" title="Permalink to this heading">#</a></h2>
+<p>*By Daniel Grohmann - Own work, CC BY-SA 3.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=30126231">https://commons.wikimedia.org/w/index.php?curid=30126231</a></p>
 <section id="detonation">
 <h3>Detonation<a class="headerlink" href="#detonation" title="Permalink to this heading">#</a></h3>
 <p>TNT detonates. That is, if boosted properly, the reaction front moves through the material at the detonation speed, approximately 7 km/s (much faster than the speed of sound in TNT).</p>
@@ -456,10 +460,20 @@ document.write(`
 <li><p>&gt;5 psig: severe damage</p></li>
 </ul>
 </section>
-</section>
-<section id="pressurized-vessel-bursting">
-<h2>Pressurized Vessel Bursting<a class="headerlink" href="#pressurized-vessel-bursting" title="Permalink to this heading">#</a></h2>
-<p>This is referred to in the book (Crowl and Louvar) as <strong>Mechanical Explosions</strong>.</p>
+<section id="tnt-overpressure-model">
+<h3>TNT Overpressure Model<a class="headerlink" href="#tnt-overpressure-model" title="Permalink to this heading">#</a></h3>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/tnt.jpeg?raw=true" width="500">
+<p>*credit to <a class="reference external" href="https://www.fema.gov/pdf/plan/prevent/rms/155/e155_unit_vi.pdf">https://www.fema.gov/pdf/plan/prevent/rms/155/e155_unit_vi.pdf</a></p>
+<p>The peak side-on overpressure can be estimated for a given mass of TNT from the following equation (hemispherical blast or blast on the ground):</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p_o}{p_a} = \frac{1616\left [ 1 + \left ( \frac{z_e}{4.5}\right )^2\right ]}{\sqrt{1 + \left ( \frac{z_e}{0.048}\right )^2}\sqrt{1 + \left ( \frac{z_e}{0.32}\right )^2}\sqrt{1 + \left ( \frac{z_e}{1.35}\right )^2}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_o\)</span> is the overpressure in psig (gauge), <span class="math notranslate nohighlight">\(p_a\)</span> is the ambient pressure in psia, and <span class="math notranslate nohighlight">\(z_e\)</span> is the scaled distance (m/kg^1/3). <span class="math notranslate nohighlight">\(z_e\)</span> is the distance in meters divided by the TNT (or equivalent) mass to the 1/3 power. Equation from G. F. Kinney and K. J. Graham. “Explosive Shocks in Air (Verlin, Germany: Springer-Verlag, 1985).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>More accurate alternatives to the above equation that are used throughout the defense community are described in UFC-340-02. The above equation is an estimate.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -468,6 +482,59 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">overpressure</span><span class="p">(</span><span class="n">pa</span><span class="p">,</span> <span class="n">ze</span><span class="p">):</span>
+    <span class="n">numerator</span> <span class="o">=</span> <span class="mi">1616</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">ze</span><span class="o">/</span><span class="mf">4.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">denom1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">ze</span><span class="o">/</span><span class="mf">0.048</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">denom2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">ze</span><span class="o">/</span><span class="mf">0.32</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">denom3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">ze</span><span class="o">/</span><span class="mf">1.35</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pa</span><span class="o">*</span><span class="p">(</span><span class="n">numerator</span><span class="o">/</span><span class="p">(</span><span class="n">denom1</span><span class="o">*</span><span class="n">denom2</span><span class="o">*</span><span class="n">denom3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot the above relationship</span>
+<span class="n">ze</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">pa</span> <span class="o">=</span> <span class="mf">14.7</span> <span class="c1">#psi</span>
+<span class="n">po</span> <span class="o">=</span> <span class="n">overpressure</span><span class="p">(</span><span class="n">pa</span><span class="p">,</span> <span class="n">ze</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">ze</span><span class="p">,</span> <span class="n">po</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Scaled distance, ze (m/kg^0.333)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Peak side-on overpressure (psig)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c51582fcad0ae0cec888929f8b726b854b05ffadd68563421a254ec982394377.png" src="../_images/c51582fcad0ae0cec888929f8b726b854b05ffadd68563421a254ec982394377.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Also given in the TM5-1300 document are the impulse as a function of the scaled distance. The impulse is the integral of the overpressure with respect to time. The damage from a blast depends both on the peak overpressure and the impulse. The impulse is a measure of the energy in the blast.</p>
+</div>
+<p>For example, using the above correlation, the peak overpressure at 100 m from a 1000 kg TNT blast is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ze</span> <span class="o">=</span> <span class="mi">100</span><span class="o">/</span><span class="p">(</span><span class="mi">1000</span><span class="o">**</span><span class="mf">0.333</span><span class="p">)</span>
+<span class="n">po</span> <span class="o">=</span> <span class="n">overpressure</span><span class="p">(</span><span class="n">pa</span><span class="p">,</span> <span class="n">ze</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;At a distance of 100m, the peak side-on overpressure from a 1000 kg blast is </span><span class="si">{</span><span class="n">po</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> psig&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>At a distance of 100m, the peak side-on overpressure from a 1000 kg blast is 2.89 psig
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="pressurized-vessel-bursting">
+<h2>Pressurized Vessel Bursting<a class="headerlink" href="#pressurized-vessel-bursting" title="Permalink to this heading">#</a></h2>
+<p>This is referred to in the book (Crowl and Louvar) as <strong>Mechanical Explosions</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P1</span> <span class="o">=</span> <span class="mi">101325</span> <span class="c1"># ambient pressure, Pa</span>
@@ -499,13 +566,11 @@ document.write(`
 <img alt="../_images/ac35d2780e81e9da921f1ca3dbc44401676b7479daf325a02bcd845df2973948.png" src="../_images/ac35d2780e81e9da921f1ca3dbc44401676b7479daf325a02bcd845df2973948.png" />
 </div>
 </div>
+<p>*If you divide the energy by the number of moles in the volume (assuming room temperature) to get an energy per mole, you get the plot given in Figure 6-26 in the book.</p>
+<p>The above plot can then be used to estimate a TNT equivalent mass for the given energy and then thereby estimate the overpressure at a given distance.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you divide the energy by number of moles in the volume (assuming room temperature) to get an energy per mole, you get the plot given in Figure 6-26 in the book.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The energy from fragments from a mechanical energy burst is approximately 5% of the product of the gauge pressure and the volume of the pressurized gas.</p>
+<p>The energy from fragments from a mechanical energy burst is approximately 5% of the product of the burst pressure of the structure (gauge) and the volume of the pressurized gas.</p>
 </div>
 </section>
 </section>
@@ -581,6 +646,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detonation">Detonation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deflagration">Deflagration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tnt-equivalence-and-blast-effects">TNT Equivalence and Blast Effects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tnt-overpressure-model">TNT Overpressure Model</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pressurized-vessel-bursting">Pressurized Vessel Bursting</a></li>
