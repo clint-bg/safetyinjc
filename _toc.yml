@@ -27,7 +27,9 @@ chapters:
     - file: physical/17-Balances
     - file: physical/18-Flammability
     - file: physical/19-Flammability2
-    - file: physical/20-Explosion
+    - file: physical/20-Explosions
+    - file: physical/21-Inerting
+    - file: physical/22-ESD
   - file: stewardship
     sections:
     - file: stewardship/zz-Environment
