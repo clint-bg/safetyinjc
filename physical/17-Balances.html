@@ -525,14 +525,14 @@ document.write(`
 <span class="n">Cv_m</span> <span class="o">=</span> <span class="mi">27</span> <span class="c1"># J/mol-K specific heat of methane, (estimate) assumed constant but is a function of temperature</span>
 <span class="n">Cv_air</span> <span class="o">=</span> <span class="mi">29</span> <span class="c1"># J/mol-K specific heat of air, (estimated) assumed constant but is a function of temperature</span>
 <span class="c1">#stream flow rates</span>
-<span class="n">nin_air</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># mol/s air flow rate</span>
-<span class="n">nin_m</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span> <span class="c1"># mol/s methane flow rate</span>
+<span class="n">nin_air</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># mol/s air flow rate</span>
+<span class="n">nin_m</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">7</span> <span class="c1"># mol/s methane flow rate</span>
 <span class="c1">#stream temperatures</span>
-<span class="n">Pairin</span> <span class="o">=</span> <span class="mi">102325</span> <span class="c1"># Pa, pressure of air stream entering the room</span>
+<span class="n">Pairin</span> <span class="o">=</span> <span class="mi">101425</span> <span class="c1"># Pa, pressure of air stream entering the room</span>
 <span class="n">Tairin</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">+</span> <span class="mf">273.15</span> <span class="c1"># K, temperature of air entering the room</span>
 <span class="n">Tmin</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">+</span> <span class="mf">273.15</span> <span class="c1"># K, temperature of methane entering the room</span>
 <span class="c1">#room parameters</span>
-<span class="n">orifice_diameter</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># m (outlet diameter)</span>
+<span class="n">orifice_diameter</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="c1"># m (outlet diameter)</span>
 <span class="n">Cd</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="c1"># discharge coefficient</span>
 <span class="n">Pext</span> <span class="o">=</span> <span class="mi">101325</span> <span class="c1"># Pa, external pressure</span>
 <span class="n">P_initial</span> <span class="o">=</span> <span class="n">Pext</span> <span class="c1"># Pa, constant pressure</span>
@@ -550,9 +550,6 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Air flow rate into room = </span><span class="si">{</span><span class="n">nin_air</span><span class="o">*</span><span class="n">Rg</span><span class="o">*</span><span class="n">Tairin</span><span class="o">/</span><span class="n">Pairin</span><span class="si">}</span><span class="s1"> m3/s&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Air flow rate into room = </span><span class="si">{</span><span class="n">nin_air</span><span class="si">}</span><span class="s1"> mol/s&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">nout</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">Pext</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">Cd</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span> <span class="o">*</span> <span class="n">orifice_diameter</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">P</span><span class="o">-</span><span class="n">Pext</span><span class="p">)</span><span class="o">*</span><span class="n">rho</span><span class="p">)</span> <span class="c1"># mol/s</span>
-
 <span class="k">def</span> <span class="nf">derivatives</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
     <span class="c1"># changing parameters</span>
     <span class="n">n</span><span class="p">,</span> <span class="n">nm</span><span class="p">,</span> <span class="n">T</span>  <span class="o">=</span> <span class="n">p</span>
@@ -563,7 +560,7 @@ document.write(`
     <span class="n">rho</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="n">Mw</span><span class="o">/</span><span class="n">Rg</span><span class="o">/</span><span class="n">T</span> <span class="c1"># kg/m^3, density of the mixture</span>
 
     <span class="c1"># flow rate out, assume flow out is incompressible </span>
-    <span class="n">nout</span> <span class="o">=</span> <span class="n">Cd</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span> <span class="o">*</span> <span class="n">orifice_diameter</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">P</span><span class="o">-</span><span class="n">Pext</span><span class="p">)</span><span class="o">*</span><span class="n">rho</span><span class="p">)</span> <span class="c1"># mol/s</span>
+    <span class="n">nout</span> <span class="o">=</span> <span class="n">Cd</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span> <span class="o">*</span> <span class="n">orifice_diameter</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">P</span><span class="o">-</span><span class="n">Pext</span><span class="p">)</span><span class="o">*</span><span class="n">rho</span><span class="p">)</span><span class="o">/</span><span class="n">Mw</span> <span class="c1"># mol/s</span>
 
     <span class="c1"># Mass balance</span>
     <span class="c1"># first total mass balance</span>
@@ -601,11 +598,11 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volume of room = 24.053778435726617 m^3
-Air flow rate into room = 0.04763741216711458 m3/s
-Air flow rate into room = 2 mol/s
+Air flow rate into room = 0.024030062607838305 m3/s
+Air flow rate into room = 1 mol/s
 </pre></div>
 </div>
-<img alt="../_images/46d088201c5225a612c9c61417634a6dbdcdb1d5279329e4a346a23fa675754d.png" src="../_images/46d088201c5225a612c9c61417634a6dbdcdb1d5279329e4a346a23fa675754d.png" />
+<img alt="../_images/c6c43af5a56fa8528debff6304924e5ddadef2a5fde0d714961ac20153140ac4.png" src="../_images/c6c43af5a56fa8528debff6304924e5ddadef2a5fde0d714961ac20153140ac4.png" />
 </div>
 </div>
 </section>
