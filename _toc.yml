@@ -28,8 +28,9 @@ chapters:
     - file: physical/18-Flammability
     - file: physical/19-Flammability2
     - file: physical/20-Explosions
-    - file: physical/21-Inerting
-    - file: physical/22-ESD
+    - file: physical/21-ESD
+    - file: physical/22-Reactivity
+    - file: physical/23-Reliefs
   - file: stewardship
     sections:
     - file: stewardship/zz-Environment

@@ -181,8 +181,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="18-Flammability.html">18-Flammability 1</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">19-Flammability 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20-Explosions.html">20-Explosions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="21-Inerting.html">21-Inerting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="22-ESD.html">22-ESD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="21-ESD.html">21-Static Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22-Reactivity.html">22-Reactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23-Reliefs.html">24-Reliefs</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../stewardship.html">God-Given Stewardship</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -391,7 +392,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -407,6 +410,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-flammability-diagram">Python Flammability Diagram</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -419,6 +430,102 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="flammability-2">
 <h1>19-Flammability 2<a class="headerlink" href="#flammability-2" title="Permalink to this heading">#</a></h1>
 <p>Download lecture freeform here: <a class="github reference external" href="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/311Flammability.pdf">clint-bg/safetyinjc</a></p>
+<section id="python-flammability-diagram">
+<h2>Python Flammability Diagram<a class="headerlink" href="#python-flammability-diagram" title="Permalink to this heading">#</a></h2>
+<p>Below code submitted by <a class="reference external" href="https://www.linkedin.com/in/isaac-matthews-2a0244290/">Isaac Matthews</a>, 2024.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pip install matplotlib, python-ternary#this is the newer one, it wont work if you install ternary, </span>
+<span class="c1">#and I don&#39;t think that package has something to uninstall with pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">ternary</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+
+<span class="n">ufl</span> <span class="o">=</span> <span class="mi">74</span>
+<span class="n">lfl</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">stoic</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">lol</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">flammabilityTriangle</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">lfl</span><span class="p">,</span> <span class="n">ufl</span><span class="p">,</span> <span class="n">stoic</span><span class="p">,</span><span class="n">loc</span><span class="p">,</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">100</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="n">stoic</span><span class="p">)</span>
+    <span class="n">sf</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">10</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+         <span class="c1">#n bz o</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>  <span class="c1"># Pure Oxygen 0</span>
+        <span class="p">[</span><span class="mi">79</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">21</span><span class="p">],</span>  <span class="c1"># Pure Air 1</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  <span class="c1"># Pure Benzene  2</span>
+        <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="c1">#pure n2  3</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">lfl</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="c1">#LFL  4</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">ufl</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="c1">#UFL  5</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="o">-</span><span class="n">loc</span><span class="p">,</span><span class="n">loc</span><span class="p">],</span><span class="c1">#loc</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">sf</span><span class="p">,</span><span class="n">sf</span><span class="o">*</span><span class="n">stoic</span><span class="p">],</span><span class="c1">#stoic point  6</span>
+        <span class="p">[</span><span class="mi">100</span><span class="o">-</span><span class="n">lfl</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">stoic</span><span class="p">),</span><span class="n">lfl</span><span class="p">,</span><span class="n">stoic</span><span class="o">*</span><span class="n">lfl</span><span class="p">],</span><span class="c1">#intersection  7]</span>
+        <span class="c1"># Add more data points as needed</span>
+    <span class="p">]</span>
+    <span class="c1"># Create a larger figure</span>
+    <span class="n">whole</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="n">box</span> <span class="o">=</span> <span class="n">whole</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> 
+    <span class="c1"># Create a ternary plot</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">tax</span> <span class="o">=</span> <span class="n">ternary</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">box</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="c1">#fix what terniary messes up</span>
+    <span class="n">box</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">110</span><span class="p">)</span>
+    <span class="n">box</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">120</span><span class="p">)</span>
+    <span class="n">box</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">box</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">labelcolor</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">)</span> <span class="c1">#if you can&#39;t beat them join them</span>
+    
+    <span class="n">tax</span><span class="o">.</span><span class="n">ticks</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;lbr&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">clockwise</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1"># Plot data points</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Points&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Add a line between pure benzene and pure air</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Air line&quot;</span><span class="p">)</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Flammability triangle&quot;</span><span class="p">)</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Stoic line&quot;</span><span class="p">)</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Lower Oxygen Level&quot;</span><span class="p">)</span>
+    <span class="c1"># Customize the plot</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Flammability Triangle for </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> in Air&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">left_axis_label</span><span class="p">(</span><span class="s2">&quot;Oxygen&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">right_axis_label</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">bottom_axis_label</span><span class="p">(</span><span class="s2">&quot;Nitrogen&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">offset</span><span class="o">=-</span><span class="mf">.1</span><span class="p">)</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightgrey&quot;</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Define labels for data points</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Pure Oxygen&quot;</span><span class="p">,</span> <span class="s2">&quot;Pure Air&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Pure </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;Pure N2&quot;</span><span class="p">,</span><span class="s2">&quot;LFL&quot;</span><span class="p">,</span><span class="s2">&quot;UFL&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
+    
+    <span class="c1"># Add labels for data points</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">tax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">position</span><span class="o">=</span><span class="n">point</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    
+    <span class="c1"># Number the axes on the sides</span>
+    
+    
+    <span class="c1"># Add legend</span>
+    <span class="n">tax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    
+    <span class="c1"># Show the plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ticks</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">flammabilityTriangle</span><span class="p">(</span><span class="s2">&quot;Hydrogen&quot;</span><span class="p">,</span> <span class="n">lfl</span><span class="p">,</span><span class="n">ufl</span><span class="p">,</span><span class="n">stoic</span><span class="p">,</span><span class="n">lol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/clintguymon/opt/anaconda3/envs/jupiterbook/lib/python3.9/site-packages/ternary/plotting.py:148: UserWarning: No data for colormapping provided via &#39;c&#39;. Parameters &#39;vmin&#39;, &#39;vmax&#39; will be ignored
+  ax.scatter(xs, ys, vmin=vmin, vmax=vmax, **kwargs)
+</pre></div>
+</div>
+<img alt="../_images/72908f4dc24d05dbfcd7bfb69a7418c16e20a5f39f02fff539acb91822711d98.png" src="../_images/72908f4dc24d05dbfcd7bfb69a7418c16e20a5f39f02fff539acb91822711d98.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -479,6 +586,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-flammability-diagram">Python Flammability Diagram</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
