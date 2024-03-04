@@ -431,7 +431,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rupture-disks">Rupture Disks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-and-why-pressure-protection-devices-are-used">Where and Why Pressure Protection Devices are Used</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-definitions">Some Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-and-why-pressure-protection-devices-are-used">Where and Why Pressure Protection Devices are Used</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vessels">Vessels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-displacement-pumps-compressors-and-turbines">Positive Displacement Pumps, Compressors, and Turbines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piping">Piping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-where-pressure-protection-devices-are-used">Examples of Where Pressure Protection Devices are Used</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -619,8 +626,114 @@ Energy could power 3992.33 homes for a year
 </ul>
 </section>
 </section>
+<section id="some-definitions">
+<h2>Some Definitions<a class="headerlink" href="#some-definitions" title="Permalink to this heading">#</a></h2>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Set Pressure</p></td>
+<td><p>The pressure at which the relief device is set to open</p></td>
+</tr>
+<tr class="row-odd"><td><p>Relief Pressure</p></td>
+<td><p>The pressure at which the relief device actually opens</p></td>
+</tr>
+<tr class="row-even"><td><p>MAWP</p></td>
+<td><p>Maximum Allowable Working Pressure, maximum gauge pressure permissible at the top of the vessel at the designated temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>MAWT</p></td>
+<td><p>Maximum Allowable Working Temperature, the maximum temperature at which the vessel is permitted to operate</p></td>
+</tr>
+<tr class="row-even"><td><p>MDMT</p></td>
+<td><p>Minimum Design Metal Temperature, the lowest temperature at which the vessel is permitted to operate</p></td>
+</tr>
+<tr class="row-odd"><td><p>Operating Pressure</p></td>
+<td><p>The pressure at which the vessel is intended to operate; no more than 90% of the MAWP</p></td>
+</tr>
+<tr class="row-even"><td><p>Accumulation</p></td>
+<td><p>The pressure increase over the MAWP that occurs when the relief device is operating; expressed as a percentage of the MAWT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Overpressure</p></td>
+<td><p>The pressure increase over the set pressure that occurs when the relief device is operating; expressed as a percentage of the set pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>Back Pressure</p></td>
+<td><p>The pressure at the outlet of the relief device; composed of two components: pressure from downstream and pressure required for frictional losses</p></td>
+</tr>
+<tr class="row-odd"><td><p>Blowdown</p></td>
+<td><p>The difference between the set pressure and the relief reseating pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>Maximum allowable accumulation pressure</p></td>
+<td><p>Sum of the accumulation and the MAWP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Relieving pressure</p></td>
+<td><p>The pressure at which the relief device is fully open and relieving: set pressure plus overpressure</p></td>
+</tr>
+</tbody>
+</table>
+<p>Code comments:</p>
+<ul class="simple">
+<li><p>The maximum normal operating pressure can never exceed the MAWP, even momentarily.  However, the actual pressure during the relieving process may exceed the MAWP.</p></li>
+<li><p>Pressure tests (to verify strength) are often performed at 1.5 times the MAWP. Tests use water typically (gas tests would yield a much more violent failure if the vessel were to fail during the test).</p></li>
+<li><p>For a single relief, the maximum set pressure is the MAWP.</p></li>
+<li><p>During the relieving process, the overpressure cannot exceed the MAWP by more than the following percentages:</p>
+<ul>
+<li><p>110% for vessels equipped with a single pressure relief device.</p></li>
+<li><p>116% for vessels equipped with supplemental pressure relief devices.</p></li>
+<li><p>121% for fire exposures.</p></li>
+</ul>
+</li>
+<li><p>For supplemental relief devices, the max. set pressure is 105% of the MAWP.</p></li>
+</ul>
+</section>
 <section id="where-and-why-pressure-protection-devices-are-used">
 <h2>Where and Why Pressure Protection Devices are Used<a class="headerlink" href="#where-and-why-pressure-protection-devices-are-used" title="Permalink to this heading">#</a></h2>
+<section id="vessels">
+<h3>Vessels<a class="headerlink" href="#vessels" title="Permalink to this heading">#</a></h3>
+<p>All vessels, including reactors, storage tanks, heat exchangers, towers and drums.</p>
+</section>
+<section id="positive-displacement-pumps-compressors-and-turbines">
+<h3>Positive Displacement Pumps, Compressors, and Turbines<a class="headerlink" href="#positive-displacement-pumps-compressors-and-turbines" title="Permalink to this heading">#</a></h3>
+<p>These devices can be blocked in by a closed valve, causing the pressure to rise. These processing pieces may have an internal relief valve.</p>
+</section>
+<section id="piping">
+<h3>Piping<a class="headerlink" href="#piping" title="Permalink to this heading">#</a></h3>
+<p>Piping is not normally required or recommended to have pressure relief protection as piping can typically withstand pressures higher than the vessels they supply. However, there are some exceptions:</p>
+<ul class="simple">
+<li><p>blocked-in sections of liquid-filled piping that may be heated or otherwise pressurized</p></li>
+<li><p>heat traced piping</p></li>
+<li><p>long lines (thermal expansion)</p></li>
+<li><p>loading or transfer lines beyond the property line</p></li>
+<li><p>lines with history of overpressure</p></li>
+<li><p>lines that may be exposed to high pressures</p></li>
+<li><p>per the hazards analysis</p></li>
+</ul>
+</section>
+<section id="examples-of-where-pressure-protection-devices-are-used">
+<h3>Examples of Where Pressure Protection Devices are Used<a class="headerlink" href="#examples-of-where-pressure-protection-devices-are-used" title="Permalink to this heading">#</a></h3>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/reliefexample.png?raw=true" width="600"><div class="toggle docutils container">
+<ul class="simple">
+<li><p>Blocked in heating coils.</p></li>
+<li><p>Blocked in cooling water line on reflux condenser.</p></li>
+<li><p>Relief on reactor – variety of scenarios.</p></li>
+<li><p>Relief on pump – need to check with manufacturer of pump.</p></li>
+<li><p>Side reaction? Incompatibility?</p></li>
+<li><p>Fire?</p></li>
+</ul>
+</div>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/reliefexample2.png?raw=true" width="600"><div class="toggle docutils container">
+<ul class="simple">
+<li><p>Failure of high pressure nitrogen regulator</p></li>
+<li><p>Hole in cooling water coil.</p></li>
+<li><p>Pump continues to run after filling.</p></li>
+<li><p>Fire exposure</p></li>
+<li><p>Runaway reaction</p></li>
+<li><p>Blocked outlet</p></li>
+</ul>
+</div>
+</section>
 </section>
 </section>
 
@@ -700,7 +813,14 @@ Energy could power 3992.33 homes for a year
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rupture-disks">Rupture Disks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-and-why-pressure-protection-devices-are-used">Where and Why Pressure Protection Devices are Used</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-definitions">Some Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-and-why-pressure-protection-devices-are-used">Where and Why Pressure Protection Devices are Used</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vessels">Vessels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-displacement-pumps-compressors-and-turbines">Positive Displacement Pumps, Compressors, and Turbines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piping">Piping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-where-pressure-protection-devices-are-used">Examples of Where Pressure Protection Devices are Used</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
