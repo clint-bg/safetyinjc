@@ -9,7 +9,7 @@ chapters:
     sections:
     - file: spiritual/02-GPrinciples
     - file: spiritual/03-EthicsApproach
-  - file: physical
+  - file: physicalPHA
     sections:
     - file: physical/04-Logic
     - file: physical/05-PSM
@@ -21,6 +21,8 @@ chapters:
     - file: physical/11-PSM
     - file: physical/12-Review
     - file: physical/13-CaseStudy2
+  - file: physicalPSI
+    sections:
     - file: physical/14-Toxicity
     - file: physical/15-Hygiene
     - file: physical/16-GHS
@@ -30,7 +32,10 @@ chapters:
     - file: physical/20-Explosions
     - file: physical/21-ESD
     - file: physical/22-Reactivity
+  - file: physicalControls
+    sections:
     - file: physical/23-Reliefs
+    - file: physical/24-ReliefSizing
   - file: stewardship
     sections:
     - file: stewardship/zz-Environment

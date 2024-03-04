@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>24-Reliefs &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
+    <title>23-Reliefs &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
   
   
   
@@ -64,8 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'physical/23-Reliefs';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="God-Given Stewardship" href="../stewardship.html" />
-    <link rel="prev" title="22-Reactivity" href="22-Reactivity.html" />
+    <link rel="next" title="24-Relief Sizing" href="24-ReliefSizing.html" />
+    <link rel="prev" title="Physical Safety (Controls)" href="../physicalControls.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../spiritual/03-EthicsApproach.html">03-Ethics Approach</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../physical.html">Physical Safety</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../physicalPHA.html">Physical Safety (PHA)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="04-Logic.html">04-Logic and Process Safety</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05-PSM.html">05-PSM Intro</a></li>
 <li class="toctree-l2"><a class="reference internal" href="06-FTA.html">06-Fault Tree Analysis</a></li>
@@ -174,6 +174,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="11-PSM.html">11-PSM Pieces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12-Review.html">12-Review</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13-CaseStudy2.html">13-FMEA Case Study</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../physicalPSI.html">Physical Safety (PSI)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="14-Toxicity.html">14-Toxicity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="15-Hygiene.html">15-Industrial Hygiene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="16-GHS.html">16-GHS</a></li>
@@ -183,10 +186,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="20-Explosions.html">20-Explosions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="21-ESD.html">21-Static Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="22-Reactivity.html">22-Reactivity</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">24-Reliefs</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../stewardship.html">God-Given Stewardship</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../physicalControls.html">Physical Safety (Controls)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">23-Reliefs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24-ReliefSizing.html">24-Relief Sizing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../stewardship.html">God-Given Stewardship</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../stewardship/zz-Environment.html">Environment</a></li>
 </ul>
 </li>
@@ -392,7 +399,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -403,11 +412,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>24-Reliefs</h1>
+    <h1>23-Reliefs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-protection">Pressure Protection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-pressure-protection-devices">Types of Pressure Protection Devices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-and-why-pressure-protection-devices-are-used">Where and Why Pressure Protection Devices are Used</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -418,7 +437,75 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="reliefs">
-<h1>24-Reliefs<a class="headerlink" href="#reliefs" title="Permalink to this heading">#</a></h1>
+<h1>23-Reliefs<a class="headerlink" href="#reliefs" title="Permalink to this heading">#</a></h1>
+<p>Learning Objectives:</p>
+<ul class="simple">
+<li><p>Understand the importance of <strong>pressure protection</strong></p></li>
+<li><p>Identify and understand the different <strong>types of pressure protection devices</strong></p></li>
+<li><p>Understand <strong>where and why</strong> pressure protection devices are used</p></li>
+</ul>
+<section id="pressure-protection">
+<h2>Pressure Protection<a class="headerlink" href="#pressure-protection" title="Permalink to this heading">#</a></h2>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/reactor.png?raw=true" width="500">
+<p><em>AI Generated Image of a Reactor</em></p>
+<p>What would be the consequences if the reactor in the image above were to over-pressurize?</p>
+<ul class="simple">
+<li><p>The reactor could <strong>explode</strong>, causing damage to the plant and surrounding area</p></li>
+<li><p>The reactor could <strong>release hazardous chemicals into the environment</strong></p></li>
+<li><p>The reactor could <strong>release hazardous chemicals into the plant</strong>, causing harm to personnel</p></li>
+</ul>
+<p>Explosion approximate consequences:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Potential energy from exploding reactor</span>
+<span class="n">ReactorVolume</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1">#m^3 (13,200 gallons)</span>
+<span class="n">VoidFraction</span> <span class="o">=</span> <span class="mf">0.67</span> <span class="c1">#67% void fraction</span>
+<span class="n">Contents</span> <span class="o">=</span> <span class="s1">&#39;Acetone&#39;</span>
+<span class="n">BurstPressure</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#bar</span>
+<span class="n">ContentMass</span> <span class="o">=</span> <span class="n">ReactorVolume</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">VoidFraction</span><span class="p">)</span> <span class="o">*</span> <span class="mi">785</span> <span class="c1">#kg/m^3, Acetone density estimate</span>
+<span class="n">CombustionHeat</span> <span class="o">=</span> <span class="mf">30.819e6</span> <span class="c1">#J/kg: 1790 kJ/mol, molecular weight 58.08 g/mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Energy from bursting reactor scales with burst pressure and void volume:</span>
+<span class="n">BurstEnergy</span> <span class="o">=</span> <span class="n">BurstPressure</span> <span class="o">*</span> <span class="n">ReactorVolume</span> <span class="o">*</span> <span class="mf">1e5</span> <span class="c1">#Joules</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;BurstEnergy, MJ: &#39;</span><span class="p">,</span> <span class="n">BurstEnergy</span><span class="o">/</span><span class="mf">1e6</span><span class="p">)</span>
+<span class="n">CombustionEnergy</span> <span class="o">=</span> <span class="n">ContentMass</span> <span class="o">*</span> <span class="n">CombustionHeat</span> <span class="c1">#Joules</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;CombustionEnergy, MJ: </span><span class="si">{</span><span class="n">CombustionEnergy</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1">#energy to power 1 homes for a year</span>
+<span class="n">EnergyPerYear</span> <span class="o">=</span> <span class="mf">100e6</span> <span class="c1">#J</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Energy could power </span><span class="si">{</span><span class="p">(</span><span class="n">CombustionEnergy</span><span class="o">+</span><span class="n">BurstEnergy</span><span class="p">)</span><span class="o">/</span><span class="n">EnergyPerYear</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> homes for a year&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BurstEnergy, MJ:  50.0
+CombustionEnergy, MJ: 399183.10
+Energy could power 3992.33 homes for a year
+</pre></div>
+</div>
+</div>
+</div>
+<p>What steps could be taken to prevent the reactor from over-pressurizing?</p>
+<div class="toggle docutils container">
+<ul class="simple">
+<li><p>Effective control of the rate of the reaction(s)</p></li>
+<li><p>Specific strategies to control side reactions</p></li>
+<li><p>Effective reactor cooling</p></li>
+<li><p><strong>Pressure Relief Devices</strong> are used to prevent over-pressurization of equipment</p></li>
+</ul>
+</div>
+<p>Code requirements</p>
+</section>
+<section id="types-of-pressure-protection-devices">
+<h2>Types of Pressure Protection Devices<a class="headerlink" href="#types-of-pressure-protection-devices" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="where-and-why-pressure-protection-devices-are-used">
+<h2>Where and Why Pressure Protection Devices are Used<a class="headerlink" href="#where-and-why-pressure-protection-devices-are-used" title="Permalink to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -453,20 +540,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="22-Reactivity.html"
+       href="../physicalControls.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">22-Reactivity</p>
+        <p class="prev-next-title">Physical Safety (Controls)</p>
       </div>
     </a>
     <a class="right-next"
-       href="../stewardship.html"
+       href="24-ReliefSizing.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">God-Given Stewardship</p>
+        <p class="prev-next-title">24-Relief Sizing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -479,6 +566,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-protection">Pressure Protection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-pressure-protection-devices">Types of Pressure Protection Devices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-and-why-pressure-protection-devices-are-used">Where and Why Pressure Protection Devices are Used</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
