@@ -514,13 +514,14 @@ Ma = \text{min} \left(1, \sqrt{\frac{2}{\gamma - 1}\left(\left(\frac{P_o}{P_{atm
 \[
 \dot{m} = f \frac{\Delta H_v A}{\nu_{fg}}\sqrt{\frac{1}{C_p T_s}}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\dot{m}\)</span> is the mass flow rate, <span class="math notranslate nohighlight">\(f\)</span> is a factor depending on the scenario (less than 1), <span class="math notranslate nohighlight">\(\Delta H_v\)</span> is the heat of vaporization, <span class="math notranslate nohighlight">\(A\)</span> is the area of the orifice, <span class="math notranslate nohighlight">\(\nu\)</span> is the specific volume of the liquid, <span class="math notranslate nohighlight">\(C_p\)</span> is teh heat capacity of the fluid, and <span class="math notranslate nohighlight">\(T_s\)</span> is the saturation temperature of the fluid at the set pressure. See Chapter 4 of Crowl and Louvar for more information.</p>
+<p>where <span class="math notranslate nohighlight">\(\dot{m}\)</span> is the mass flow rate, <span class="math notranslate nohighlight">\(f\)</span> is a factor depending on the scenario (less than 1), <span class="math notranslate nohighlight">\(\Delta H_v\)</span> is the heat of vaporization, <span class="math notranslate nohighlight">\(A\)</span> is the area of the orifice, <span class="math notranslate nohighlight">\(\nu\)</span> is the specific volume change of the liquid as it flashes (<span class="math notranslate nohighlight">\(\nu_g\)</span> - <span class="math notranslate nohighlight">\(\nu_l\)</span>), <span class="math notranslate nohighlight">\(C_p\)</span> is the heat capacity of the fluid, and <span class="math notranslate nohighlight">\(T_s\)</span> is the saturation temperature of the fluid at the set pressure. See Chapter 4 of Crowl and Louvar for more information.</p>
 </section>
 <section id="relief-valve-sizing">
 <h2>Relief Valve Sizing<a class="headerlink" href="#relief-valve-sizing" title="Permalink to this heading">#</a></h2>
 <p>The above equations can be rearranged to solve for the area of the orifice, <span class="math notranslate nohighlight">\(A\)</span>, for a given flow rate and other conditions. Note that the discharge coefficient, <span class="math notranslate nohighlight">\(C_d\)</span>, is a function of the geometry of the orifice and the flow conditions. The discharge coefficient is typically determined experimentally with viscosity, downstream piping, backpressure, and other factors influencing the value. Estimates for some of those parameters can be found in Chapter 10 of Crowl and Louvar. For a preliminary estimate, a value of 0.65 is often used for liquid flow and 0.9 for gas flow.</p>
 <div class="toggle docutils container">
 <p>See in-class examples</p>
+<p>Download a pdf of the example using freeform here: <a class="github reference external" href="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/GasFlowExample311.pdf">clint-bg/safetyinjc</a></p>
 </div>
 </section>
 <section id="orifice-flow-and-mass-balances">
