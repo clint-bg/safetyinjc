@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physical/24-ReliefSizing';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -399,7 +401,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -415,6 +419,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-energy-balance">Mechanical Energy Balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-flow-through-an-orifice-general-case">Gaseous flow through an Orifice: General Case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flashing-two-phase-flow-estimate">Flashing Two Phase Flow Estimate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relief-valve-sizing">Relief Valve Sizing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-flow-and-mass-balances">Orifice Flow and Mass Balances</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -426,6 +442,93 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="relief-sizing">
 <h1>24-Relief Sizing<a class="headerlink" href="#relief-sizing" title="Permalink to this heading">#</a></h1>
+<p>Learning Objectives:</p>
+<ul class="simple">
+<li><p>Ability to estimate flow through an orifice for</p>
+<ul>
+<li><p>incompressible liquid</p></li>
+<li><p>compressible gas (choked and unchoked flow)</p></li>
+<li><p>two-phase flow for a flashing fluid</p></li>
+</ul>
+</li>
+<li><p>Perform preliminary sizing of a relief valve for a liquid, gas, and two-phase flow</p></li>
+<li><p>Use flow estimates in mass and energy balance calculations</p></li>
+</ul>
+<section id="mechanical-energy-balance">
+<h2>Mechanical Energy Balance<a class="headerlink" href="#mechanical-energy-balance" title="Permalink to this heading">#</a></h2>
+<div class="toggle docutils container">
+<p>Constant Density, Frictionless, Constant Temperature Flow</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta P}{\rho g} + \frac{\Delta u^2}{2g} + \Delta z + \frac{F}{g} = \frac{-W_s}{\dot{m} g}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta P\)</span> is the change in pressure, <span class="math notranslate nohighlight">\(\Delta u\)</span> is the change in velocity, <span class="math notranslate nohighlight">\(\Delta z\)</span> is the change in elevation, <span class="math notranslate nohighlight">\(F\)</span> is the frictional losses, and <span class="math notranslate nohighlight">\(W_s\)</span> is the shaft work with respect to two points in the system.</p>
+</div>
+<p>If there is no friction and constant density and no shaft work and no change in elevation, the mechanical energy balance simplifies to:</p>
+<div class="toggle docutils container">
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta P}{\rho g} + \frac{\Delta u^2}{2g} = 0
+\]</div>
+<p>or assuming that the flow points are inside a tank where P = P_o and u = 0 and outside the tank where P = P_atm and u = u, then</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P_o}{\rho} - \frac{P_{atm}}{\rho} = \frac{u^2}{2}
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+u = \sqrt{2\left(\frac{P_o - P_{atm}}{\rho}\right)}
+\]</div>
+</div>
+<p>Thus for incompressible flow, the velocity of the fluid can be determined from the pressure drop across an orifice. Although the flow is usually not frictionless, the velocity can be estimated from the pressure drop and the density of the fluid according to:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{m} = A C_d \sqrt{2\rho \Delta P}
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{n}  = \frac{A C_d }{M_w} \sqrt{2 \rho \Delta P}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot{m}\)</span> is the mass flow rate, <span class="math notranslate nohighlight">\(\dot{n}\)</span> is the molar flow rate, <span class="math notranslate nohighlight">\(M_w\)</span> is the molecular weight, <span class="math notranslate nohighlight">\(A\)</span> is the area of the orifice, <span class="math notranslate nohighlight">\(C_d\)</span> is the discharge coefficient, and <span class="math notranslate nohighlight">\(\Delta P\)</span> is the pressure drop across the orifice. For liquid flow, and estimate of the discharge coefficient is 0.65.</p>
+</section>
+<section id="gaseous-flow-through-an-orifice-general-case">
+<h2>Gaseous flow through an Orifice: General Case<a class="headerlink" href="#gaseous-flow-through-an-orifice-general-case" title="Permalink to this heading">#</a></h2>
+<p>The flow of a gas through an orifice is also derived from an energy balance assuming adiabatic, isentropic, and frictionless flow. The flow is characterized by the pressure ratio, <span class="math notranslate nohighlight">\(P_o/P_{atm}\)</span> and associated Mach number, <span class="math notranslate nohighlight">\(Ma\)</span>. The Mach number can be found from:</p>
+<div class="math notranslate nohighlight">
+\[
+Ma = \text{min} \left(1, \sqrt{\frac{2}{\gamma - 1}\left(\left(\frac{P_o}{P_{atm}}\right)^{\frac{\gamma - 1}{\gamma}} - 1\right)}\right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is the ratio of specific heats (1.4 for air). The flow is choked when <span class="math notranslate nohighlight">\(Ma = 1\)</span> and unchoked when <span class="math notranslate nohighlight">\(Ma &lt; 1\)</span>.</p>
+<p>The molar flow rate is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{n} = P_o A C_d \sqrt{\frac{\gamma}{R T M_w}} Ma \left[ 1+\frac{(\gamma-1)}{2}Ma^2\right]^{\frac{\gamma+1}{2-2\gamma}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> is the gas constant and <span class="math notranslate nohighlight">\(T\)</span> is the temperature. See Perry’s Handbook for Chemical Engineers Equation 6-118 for a more information.</p>
+</section>
+<section id="flashing-two-phase-flow-estimate">
+<h2>Flashing Two Phase Flow Estimate<a class="headerlink" href="#flashing-two-phase-flow-estimate" title="Permalink to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\dot{m} = f \frac{\Delta H_v A}{\nu_{fg}}\sqrt{\frac{1}{C_p T_s}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot{m}\)</span> is the mass flow rate, <span class="math notranslate nohighlight">\(f\)</span> is a factor depending on the scenario (less than 1), <span class="math notranslate nohighlight">\(\Delta H_v\)</span> is the heat of vaporization, <span class="math notranslate nohighlight">\(A\)</span> is the area of the orifice, <span class="math notranslate nohighlight">\(\nu\)</span> is the specific volume of the liquid, <span class="math notranslate nohighlight">\(C_p\)</span> is teh heat capacity of the fluid, and <span class="math notranslate nohighlight">\(T_s\)</span> is the saturation temperature of the fluid at the set pressure. See Chapter 4 of Crowl and Louvar for more information.</p>
+</section>
+<section id="relief-valve-sizing">
+<h2>Relief Valve Sizing<a class="headerlink" href="#relief-valve-sizing" title="Permalink to this heading">#</a></h2>
+<p>The above equations can be rearranged to solve for the area of the orifice, <span class="math notranslate nohighlight">\(A\)</span>, for a given flow rate and other conditions. Note that the discharge coefficient, <span class="math notranslate nohighlight">\(C_d\)</span>, is a function of the geometry of the orifice and the flow conditions. The discharge coefficient is typically determined experimentally with viscosity, downstream piping, backpressure, and other factors influencing the value. Estimates for some of those parameters can be found in Chapter 10 of Crowl and Louvar. For a preliminary estimate, a value of 0.65 is often used for liquid flow and 0.9 for gas flow.</p>
+<div class="toggle docutils container">
+<p>See in-class examples</p>
+</div>
+</section>
+<section id="orifice-flow-and-mass-balances">
+<h2>Orifice Flow and Mass Balances<a class="headerlink" href="#orifice-flow-and-mass-balances" title="Permalink to this heading">#</a></h2>
+<div class="toggle docutils container">
+<p>See in-class examples</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -486,6 +589,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-energy-balance">Mechanical Energy Balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-flow-through-an-orifice-general-case">Gaseous flow through an Orifice: General Case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flashing-two-phase-flow-estimate">Flashing Two Phase Flow Estimate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relief-valve-sizing">Relief Valve Sizing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-flow-and-mass-balances">Orifice Flow and Mass Balances</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
