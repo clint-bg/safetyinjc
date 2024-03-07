@@ -471,7 +471,12 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 \]</div>
 <p>Three moles of reactants produce 3 moles of products. At higher temperatures, the water vapor will be in the gas phase and there can be radicals. For the example here, we will assume that the water stays in the vapor phase and that the combustion is complete such that there is no overall change in the number of moles of gas.</p>
 <p>What is the final pressure and temperature if there is no heat loss and the reaction rate is constant at 15 moles/sec/m3?</p>
-<div class="cell tag_{_____&quot;tags&quot;:_[_________&quot;hide-cell&quot;,_____]_} docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#first scenario with 20 liter sphere with methane and air</span>
 <span class="c1">#     assume constant burn rate</span>
@@ -486,7 +491,6 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 <span class="n">Rg</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1">#J/mol*K, ideal gas constant</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">Pinitial</span><span class="o">*</span><span class="n">V</span><span class="o">/</span><span class="p">(</span><span class="n">Rg</span><span class="o">*</span><span class="n">Tinitial</span><span class="p">)</span> <span class="c1">#moles of gas in sphere</span>
 <span class="n">Cv</span> <span class="o">=</span> <span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">Rg</span> <span class="c1">#J/mol*K, heat capacity at constant volume (estimate for gases)</span>
-
 <span class="c1">#energy balance: d(nU)/dt = gen = kV DH_rx </span>
 
 <span class="k">def</span> <span class="nf">derivatives</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
@@ -517,6 +521,7 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 <div class="cell_output docutils container">
 <img alt="../_images/fe7b4a98aa1d079ddf6db7e9780a58319701fca7d3974a557779e5737d2a5272.png" src="../_images/fe7b4a98aa1d079ddf6db7e9780a58319701fca7d3974a557779e5737d2a5272.png" />
 </div>
+</details>
 </div>
 <p>See this reference for more detailed information on combustion of methane in a 20L and larger spheres: <a class="reference external" href="https://doi.org/10.1016/j.jlp.2017.02.022">https://doi.org/10.1016/j.jlp.2017.02.022</a></p>
 </section>
