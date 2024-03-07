@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physical/25-ReliefAction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -420,7 +422,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-flow-and-mass-balances">Orifice Flow and Mass Balances</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-flow-and-mass-balances">Orifice Flow and Mass Balances</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-example">First Example</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -453,6 +458,14 @@ document.write(`
 </div>
 </div>
 </div>
+<section id="first-example">
+<h3>First Example<a class="headerlink" href="#first-example" title="Permalink to this heading">#</a></h3>
+<p>Consider a 20L sphere where the methane is combusted with at least as much air as is stoichiometrically required. The combustion is complete and the products are:</p>
+<div class="math notranslate nohighlight">
+\[
+CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
+\]</div>
+<p>Three moles of reactants produce 3 moles of products. At higher temperatures, the water vapor will be in the gas phase and there can be radicals. For the example here, we will assume that the water stays in the vapor phase and that the combustion is complete such that there is no overall change</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -509,6 +522,7 @@ document.write(`
 <p>See this reference for more detailed information on combustion of methane in a 20L and larger spheres: <a class="reference external" href="https://doi.org/10.1016/j.jlp.2017.02.022">https://doi.org/10.1016/j.jlp.2017.02.022</a></p>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -559,7 +573,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-flow-and-mass-balances">Orifice Flow and Mass Balances</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-flow-and-mass-balances">Orifice Flow and Mass Balances</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-example">First Example</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
