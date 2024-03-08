@@ -505,6 +505,15 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 <li><p>The burn rate transitions monotonically from it’s highest value to zero instead of a step change</p></li>
 </ul>
 </div>
+<p>Here is a an image of the notebook thoughts on the scenario and the mass and energy balance:</p>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/EnergyNoVent.png?raw=trueg" width="600"><p>The below hidden code cell contains:</p>
+<ul class="simple">
+<li><p>parameters for the 20L sphere and combustion reaction estimate (simplified)</p></li>
+<li><p>the sigmoid function for the burn rate (transition from full burn to zero at the end of the burn)</p></li>
+<li><p>the derivative function to be integrated</p></li>
+<li><p>the initial conditions</p></li>
+<li><p>the integration and solution</p></li>
+</ul>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -572,6 +581,8 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 <li><p>Assume that the area of the burst disk transitions from closed to open in a s-curve fashion once the burst pressure of the disk is reached with a parameter of <span class="math notranslate nohighlight">\(t_{open}\)</span> equal to the time that the burst disk is 67% open. This is also applied to the burn rate of the fuel.</p></li>
 </ul>
 </div>
+<p>You can download a pdf of the in-class notes here (including both the instructor and in-class version): <a class="github reference external" href="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/EnergyMassVent.pdf">clint-bg/safetyinjc</a></p>
+<p>Additional parameters for the venting of the volume once the pressure reaches the burst pressure of the disk.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Burst disk function</span>
@@ -588,6 +599,7 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 <p class="admonition-title">Warning</p>
 <p>The below code will give non-realistic answers if the vent time is faster than the burn time. Vent time meaning the pressure is relieved prior to the burn completing.</p>
 </div>
+<p>The area of the burst disk changes with time as it opens and moves out of the way. That transition is also estimated with a sigmoid function (it could also be done with using physics where F = P/A = m*a  and you can step through time as the burst disk moves). The area of the burst disk is shown in the below figure.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -609,6 +621,7 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 <img alt="../_images/1ec4c1a938721328521cf8e3eb6ac39dc342089c50d3c05d1c04cadfb191fda3.png" src="../_images/1ec4c1a938721328521cf8e3eb6ac39dc342089c50d3c05d1c04cadfb191fda3.png" />
 </div>
 </div>
+<p>The below hidden code cell contains the moles of gas flowing out of the vent. The flow is based on the general equations discussed in the previous lecture. There’s also an if statement such that if the pressure drops below the atmospheric value, there’s flow of gas into the container from the atmosphere.</p>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -633,6 +646,7 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 </div>
 </details>
 </div>
+<p>The below code cell shows the derivatives for moles and temperature for the venting. There’s also if statements to account for the changing conditions when the burst disk ruptures and the relative sizes of the internal and external pressures.</p>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -665,6 +679,7 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 </div>
 </details>
 </div>
+<p>The below code cell shows the integration and solution for the venting of the volume once the pressure reaches the burst pressure of the disk.</p>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
