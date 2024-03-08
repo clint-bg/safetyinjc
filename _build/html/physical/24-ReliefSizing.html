@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'physical/24-ReliefSizing';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="God-Given Stewardship" href="../stewardship.html" />
+    <link rel="next" title="25-Relief Action" href="25-ReliefAction.html" />
     <link rel="prev" title="23-Reliefs" href="23-Reliefs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,6 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../physicalControls.html">Physical Safety (Controls)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="23-Reliefs.html">23-Reliefs</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">24-Relief Sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="25-ReliefAction.html">25-Relief Action</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../stewardship.html">God-Given Stewardship</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -428,7 +429,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-flow-through-an-orifice-general-case">Gaseous flow through an Orifice: General Case</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flashing-two-phase-flow-estimate">Flashing Two Phase Flow Estimate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relief-valve-sizing">Relief Valve Sizing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-flow-and-mass-balances">Orifice Flow and Mass Balances</a></li>
 </ul>
             </nav>
         </div>
@@ -452,7 +452,6 @@ document.write(`
 </ul>
 </li>
 <li><p>Perform preliminary sizing of a relief valve for a liquid, gas, and two-phase flow</p></li>
-<li><p>Use flow estimates in mass and energy balance calculations</p></li>
 </ul>
 <section id="mechanical-energy-balance">
 <h2>Mechanical Energy Balance<a class="headerlink" href="#mechanical-energy-balance" title="Permalink to this heading">#</a></h2>
@@ -519,15 +518,10 @@ Ma = \text{min} \left(1, \sqrt{\frac{2}{\gamma - 1}\left(\left(\frac{P_o}{P_{atm
 <section id="relief-valve-sizing">
 <h2>Relief Valve Sizing<a class="headerlink" href="#relief-valve-sizing" title="Permalink to this heading">#</a></h2>
 <p>The above equations can be rearranged to solve for the area of the orifice, <span class="math notranslate nohighlight">\(A\)</span>, for a given flow rate and other conditions. Note that the discharge coefficient, <span class="math notranslate nohighlight">\(C_d\)</span>, is a function of the geometry of the orifice and the flow conditions. The discharge coefficient is typically determined experimentally with viscosity, downstream piping, backpressure, and other factors influencing the value. Estimates for some of those parameters can be found in Chapter 10 of Crowl and Louvar. For a preliminary estimate, a value of 0.65 is often used for liquid flow and 0.9 for gas flow.</p>
+<p>Relief Valve Sizing in some instances does required verification with actual flow per the AMSE Boiler and Pressure Vessel Code.</p>
 <div class="toggle docutils container">
 <p>See in-class examples</p>
 <p>Download a pdf of the example using freeform here: <a class="github reference external" href="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/GasFlowExample311.pdf">clint-bg/safetyinjc</a></p>
-</div>
-</section>
-<section id="orifice-flow-and-mass-balances">
-<h2>Orifice Flow and Mass Balances<a class="headerlink" href="#orifice-flow-and-mass-balances" title="Permalink to this heading">#</a></h2>
-<div class="toggle docutils container">
-<p>See in-class examples</p>
 </div>
 </section>
 </section>
@@ -573,11 +567,11 @@ Ma = \text{min} \left(1, \sqrt{\frac{2}{\gamma - 1}\left(\left(\frac{P_o}{P_{atm
       </div>
     </a>
     <a class="right-next"
-       href="../stewardship.html"
+       href="25-ReliefAction.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">God-Given Stewardship</p>
+        <p class="prev-next-title">25-Relief Action</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -603,7 +597,6 @@ Ma = \text{min} \left(1, \sqrt{\frac{2}{\gamma - 1}\left(\left(\frac{P_o}{P_{atm
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-flow-through-an-orifice-general-case">Gaseous flow through an Orifice: General Case</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flashing-two-phase-flow-estimate">Flashing Two Phase Flow Estimate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relief-valve-sizing">Relief Valve Sizing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-flow-and-mass-balances">Orifice Flow and Mass Balances</a></li>
 </ul>
   </nav></div>
 
