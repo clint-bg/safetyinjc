@@ -425,6 +425,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#venting-for-external-fires">Venting for External Fires</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-flow-and-mass-balances">Orifice Flow and Mass Balances</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-example">First Example</a></li>
 </ul>
@@ -451,9 +452,33 @@ document.write(`
 <li><p>Review relief requirements for fire scenarios</p></li>
 </ul>
 <p>Review of MAWP and max accumulation pressure or max overpressure (based on gauge pressure)</p>
+<section id="venting-for-external-fires">
+<h2>Venting for External Fires<a class="headerlink" href="#venting-for-external-fires" title="Permalink to this heading">#</a></h2>
+<p>As heat is input to the vessel, the liquid warms and expands and reaches the boiling point. The mass flow of vapor at that point is:</p>
+<div class="math notranslate nohighlight">
+\[
+Q_m = Q/\Delta H_{vap}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(Q_m\)</span> is the mass flow of vapor, <span class="math notranslate nohighlight">\(Q\)</span> is the heat input (estimated from Eq 10-34 and 10-35 in Crowl and Louvar), and <span class="math notranslate nohighlight">\(\Delta H_{vap}\)</span> is the heat of vaporization. The vent area can then be sized based on the mass flow of vapor.</p>
+<p>When the liquid is heated it expands according to the thermal expansion coefficient, <span class="math notranslate nohighlight">\(\beta\)</span>. The volume of the liquid is:</p>
+<div class="math notranslate nohighlight">
+\[
+V = V_0(1+\beta \Delta T)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_0\)</span> is the initial volume, <span class="math notranslate nohighlight">\(\beta\)</span> is the thermal expansion coefficient, and <span class="math notranslate nohighlight">\(\Delta T\)</span> is the temperature change. This is found from the definition of the thermal expansion coefficient:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta = \frac{1}{V_0}\frac{dV}{dT}
+\]</div>
+</section>
 <section id="orifice-flow-and-mass-balances">
 <h2>Orifice Flow and Mass Balances<a class="headerlink" href="#orifice-flow-and-mass-balances" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -461,6 +486,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section id="first-example">
 <h3>First Example<a class="headerlink" href="#first-example" title="Permalink to this heading">#</a></h3>
@@ -471,6 +497,14 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 \]</div>
 <p>Three moles of reactants produce 3 moles of products. At higher temperatures, the water vapor will be in the gas phase and there can be radicals. For the example here, we will assume that the water stays in the vapor phase and that the combustion is complete such that there is no overall change in the number of moles of gas.</p>
 <p>What is the final pressure and temperature if there is no heat loss and the reaction rate is constant at 15 moles/sec/m3?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some simplifying assumptions:</p>
+<ul class="simple">
+<li><p>The burn rate is proportional to the total moles not just the moles of methane</p></li>
+<li><p>The burn rate transitions monotonically from it’s highest value to zero instead of a step change</p></li>
+</ul>
+</div>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -479,10 +513,10 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#first scenario with 20 liter sphere with methane and air</span>
-<span class="c1">#     assume constant burn rate</span>
+<span class="c1">#     assume constant burn rate per total moles</span>
 <span class="c1">#     3 moles (CH4 and 2O2) react to yield 3 moles (CO2 and 2H2O) thus dn/dt = in - out + gen = 0</span>
 
-<span class="n">k</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1">#moles/sec/m3, estimate of reaction rate of methane and air, assumed constant burn rate</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1">#1/sec/m3, estimate of reaction rate of methane and air, assumed constant burn rate</span>
 <span class="n">tburn</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1">#seconds, time to burn 20 liters of methane (rough estimate only)</span>
 <span class="n">V</span> <span class="o">=</span> <span class="mi">20</span><span class="o">/</span><span class="mi">1000</span> <span class="c1">#20 liter sphere to m^3</span>
 <span class="n">DH_rx</span> <span class="o">=</span> <span class="mf">890.4</span><span class="o">*</span><span class="mi">1000</span> <span class="c1">#J/mol CH4 , heat of combustion</span>
@@ -491,14 +525,15 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 <span class="n">Rg</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1">#J/mol*K, ideal gas constant</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">Pinitial</span><span class="o">*</span><span class="n">V</span><span class="o">/</span><span class="p">(</span><span class="n">Rg</span><span class="o">*</span><span class="n">Tinitial</span><span class="p">)</span> <span class="c1">#moles of gas in sphere</span>
 <span class="n">Cv</span> <span class="o">=</span> <span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">Rg</span> <span class="c1">#J/mol*K, heat capacity at constant volume (estimate for gases)</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.4</span> <span class="c1">#ratio of specific heats (estimate)</span>
 <span class="c1">#energy balance: d(nU)/dt = gen = kV DH_rx </span>
+
+<span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t_switch</span><span class="p">):</span> <span class="c1">#at t_switch, the sigmoid function will be 0.67</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">5.708</span><span class="o">/</span><span class="n">t_switch</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">5</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">derivatives</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
     <span class="n">T</span> <span class="o">=</span> <span class="n">var</span>
-    <span class="k">if</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="n">tburn</span><span class="p">:</span>
-        <span class="n">dTdt</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="n">V</span><span class="o">*</span><span class="n">DH_rx</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">Cv</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">dTdt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">dTdt</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">V</span><span class="o">*</span><span class="n">DH_rx</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">Cv</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">tburn</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">dTdt</span>
 
 <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
@@ -519,7 +554,7 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fe7b4a98aa1d079ddf6db7e9780a58319701fca7d3974a557779e5737d2a5272.png" src="../_images/fe7b4a98aa1d079ddf6db7e9780a58319701fca7d3974a557779e5737d2a5272.png" />
+<img alt="../_images/edf4b1f806641b094d3b16385793565182eb134db94618addff86cb46e811ecc.png" src="../_images/edf4b1f806641b094d3b16385793565182eb134db94618addff86cb46e811ecc.png" />
 </div>
 </details>
 </div>
@@ -529,6 +564,151 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 <section id="second-example-follow-on-from-first-example">
 <h2>Second Example (Follow-on from First Example)<a class="headerlink" href="#second-example-follow-on-from-first-example" title="Permalink to this heading">#</a></h2>
 <p>Consider the same conditions as the first example but what burst disk size would be required to prevent the pressure from exceeding 1 barg?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some simplifying assumptions:</p>
+<ul class="simple">
+<li><p>The above assumptions apply</p></li>
+<li><p>Assume that the area of the burst disk transitions from closed to open in a s-curve fashion once the burst pressure of the disk is reached with a parameter of <span class="math notranslate nohighlight">\(t_{open}\)</span> equal to the time that the burst disk is 67% open. This is also applied to the burn rate of the fuel.</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Burst disk function</span>
+<span class="n">t_open</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1">#seconds, time to open burst disk to 67%</span>
+<span class="n">Pdisk</span> <span class="o">=</span> <span class="mf">2e5</span> <span class="c1">#Pa, burst disk pressure, 1barg</span>
+<span class="n">Area_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="mf">0.08</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#m^2, area of burst disk</span>
+<span class="n">barea</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">Area_f</span><span class="o">*</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">t_open</span><span class="p">)</span> <span class="c1">#sigmoid function to open burst disk</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="mf">0.95</span> <span class="c1">#discharge coefficient</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The below code will give non-realistic answers if the vent time is faster than the burn time. Vent time meaning the pressure is relieved prior to the burn completing.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot burst disk area</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">barea</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Burst disk area (m2)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/1ec4c1a938721328521cf8e3eb6ac39dc342089c50d3c05d1c04cadfb191fda3.png" src="../_images/1ec4c1a938721328521cf8e3eb6ac39dc342089c50d3c05d1c04cadfb191fda3.png" />
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nout</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">P</span><span class="o">&gt;</span><span class="n">Pinitial</span><span class="p">:</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="n">P</span><span class="o">/</span><span class="n">Pinitial</span>
+        <span class="n">Pdrive</span> <span class="o">=</span> <span class="n">P</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="n">Pinitial</span><span class="o">/</span><span class="n">P</span>
+        <span class="n">Pdrive</span> <span class="o">=</span> <span class="o">-</span><span class="n">Pinitial</span>
+    <span class="n">Ma</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">ratio</span><span class="p">)</span><span class="o">**</span><span class="p">((</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">gamma</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+    <span class="n">Mw</span> <span class="o">=</span> <span class="mf">0.03</span> <span class="c1">#kg/mol, molecular weight of gases estimate</span>
+    <span class="n">flow</span> <span class="o">=</span> <span class="n">Pdrive</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">Cd</span><span class="o">*</span><span class="n">Ma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span><span class="o">/</span><span class="p">(</span><span class="n">Rg</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="n">Mw</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">((</span><span class="n">gamma</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">gamma</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">flow</span>
+    
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#dndt = in - out + gen = - nout (burst disk)</span>
+<span class="c1">#dnUdt = in - out + gen = - nout (burst disk)*H + Hrxn*r*V</span>
+<span class="n">time_offset</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">;</span> <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">derivatives</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">time_offset</span><span class="p">,</span> <span class="n">flag</span>
+    <span class="n">n</span><span class="p">,</span><span class="n">T</span> <span class="o">=</span> <span class="n">var</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">Rg</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">V</span>
+    <span class="n">dTdt</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">V</span><span class="o">*</span><span class="n">DH_rx</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">Cv</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">tburn</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">P</span><span class="o">&lt;</span><span class="n">Pdisk</span> <span class="ow">and</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1">#disk intact</span>
+        <span class="n">time_offset</span> <span class="o">=</span> <span class="n">t</span> <span class="c1">#time_offset is the time when the disk breaks and used for the sigmoid function</span>
+        <span class="n">dndt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1">#disk broken</span>
+            <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">dndt</span> <span class="o">=</span> <span class="o">-</span><span class="n">nout</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">barea</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">time_offset</span><span class="p">))</span> <span class="c1">#flow out through the vent</span>
+        <span class="k">if</span> <span class="n">P</span><span class="o">&gt;</span><span class="n">Pinitial</span><span class="p">:</span> <span class="c1">#case when air is pushed out</span>
+            <span class="n">dTdt</span> <span class="o">=</span> <span class="n">dTdt</span> <span class="o">+</span> <span class="n">dndt</span><span class="o">*</span><span class="n">Rg</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">Cv</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1">#case when air is sucked in (estimate of enthapy change)</span>
+            <span class="n">dTdt</span> <span class="o">=</span> <span class="n">dTdt</span> <span class="o">+</span> <span class="n">dndt</span><span class="o">*</span><span class="n">Rg</span><span class="o">*</span><span class="n">Tinitial</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">Cv</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dndt</span><span class="p">,</span> <span class="n">dTdt</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hidel-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Integration, initial value problem</span>
+<span class="c1">#time = np.linspace(0, 0.25, 1000)</span>
+<span class="n">init</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">Tinitial</span><span class="p">]</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">derivatives</span><span class="p">,</span> <span class="n">init</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="p">[</span><span class="n">ns</span><span class="p">,</span><span class="n">Ts</span><span class="p">]</span> <span class="o">=</span> <span class="n">sol</span>
+<span class="n">Ps</span> <span class="o">=</span> <span class="n">ns</span><span class="o">*</span><span class="n">Rg</span><span class="o">*</span><span class="n">Ts</span><span class="o">/</span><span class="n">V</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot temperature and pressure in two plots side by side</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">Ts</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">Ps</span><span class="o">/</span><span class="mf">1e5</span> <span class="o">-</span> <span class="n">Pinitial</span><span class="o">/</span><span class="mf">1e5</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Pressure (barg)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">ns</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Moles (mol)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/59006fb3ff087c30f72ebfd2bf210784ace4afba861a01dd9ada196cc49b6ca1.png" src="../_images/59006fb3ff087c30f72ebfd2bf210784ace4afba861a01dd9ada196cc49b6ca1.png" />
+</div>
+</div>
+<p>The above example is an integrated solution to the approximate behavior of the burning and of the opening of the vent. Vent sizing for explosions can be more complex and is not covered here.</p>
 </section>
 </section>
 
@@ -599,6 +779,7 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#venting-for-external-fires">Venting for External Fires</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orifice-flow-and-mass-balances">Orifice Flow and Mass Balances</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-example">First Example</a></li>
 </ul>
