@@ -665,10 +665,14 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 </div>
 </details>
 </div>
-<div class="cell tag_hidel-cell docutils container">
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Integration, initial value problem</span>
-<span class="c1">#time = np.linspace(0, 0.25, 1000)</span>
 <span class="n">init</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">Tinitial</span><span class="p">]</span>
 <span class="n">sol</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">derivatives</span><span class="p">,</span> <span class="n">init</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 <span class="p">[</span><span class="n">ns</span><span class="p">,</span><span class="n">Ts</span><span class="p">]</span> <span class="o">=</span> <span class="n">sol</span>
@@ -676,6 +680,7 @@ CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
