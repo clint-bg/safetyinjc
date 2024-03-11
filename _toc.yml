@@ -37,8 +37,10 @@ chapters:
     - file: physical/23-Reliefs
     - file: physical/24-ReliefSizing
     - file: physical/25-ReliefAction
+    - file: physical/26-Review
   - file: stewardship
     sections:
     - file: stewardship/zz-Environment
+  - file: projectDetails
   - file: acknowledgement
 
