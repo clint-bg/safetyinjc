@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../stewardship/zz-Environment.html">Environment</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../projectDetails.html">Project Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projectDetails.html">Group Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
 </ul>
 
@@ -500,16 +500,16 @@ u = \sqrt{2\left(\frac{P_o - P_{atm}}{\rho}\right)}
 </section>
 <section id="gaseous-flow-through-an-orifice-general-case">
 <h2>Gaseous flow through an Orifice: General Case<a class="headerlink" href="#gaseous-flow-through-an-orifice-general-case" title="Permalink to this heading">#</a></h2>
-<p>The flow of a gas through an orifice is also derived from an energy balance assuming adiabatic and frictionless flow. The flow is characterized by the pressure ratio, <span class="math notranslate nohighlight">\(P_o/P_{atm}\)</span> and associated Mach number, <span class="math notranslate nohighlight">\(Ma\)</span>. The Mach number can be found from:</p>
+<p>The flow of a gas through an orifice is also derived from an energy balance assuming adiabatic and frictionless flow. The flow is characterized by the pressure ratio, <span class="math notranslate nohighlight">\(P_o/P_{atm}\)</span> and associated Mach number, <span class="math notranslate nohighlight">\(Ma\)</span>. <span class="math notranslate nohighlight">\(P_o\)</span> is the absolute pressure of the volume. The Mach number can be found from:</p>
 <div class="math notranslate nohighlight">
 \[
 Ma = \text{min} \left(1, \sqrt{\frac{2}{\gamma - 1}\left(\left(\frac{P_o}{P_{atm}}\right)^{\frac{\gamma - 1}{\gamma}} - 1\right)}\right)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is the ratio of specific heats (1.4 for air). The flow is choked when <span class="math notranslate nohighlight">\(Ma = 1\)</span> and unchoked when <span class="math notranslate nohighlight">\(Ma &lt; 1\)</span>.</p>
-<p>The molar flow rate is given by:</p>
+<p>The mass flow rate is given by:</p>
 <div class="math notranslate nohighlight">
 \[
-\dot{n} = P_o A C_d \sqrt{\frac{\gamma}{R T M_w}} Ma \left[ 1+\frac{(\gamma-1)}{2}Ma^2\right]^{\frac{\gamma+1}{2-2\gamma}}
+\dot{m} = P_o A C_d \sqrt{\frac{\gamma}{R T M_w}} Ma \left[ 1+\frac{(\gamma-1)}{2}Ma^2\right]^{\frac{\gamma+1}{2-2\gamma}}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(R\)</span> is the gas constant and <span class="math notranslate nohighlight">\(T\)</span> is the temperature. See Perry’s Handbook for Chemical Engineers Equation 6-118 for more information.</p>
 </section>
