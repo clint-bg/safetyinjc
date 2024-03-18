@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stewardship/27-Energy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -424,11 +426,14 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-review">Units Review</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problems">Example Problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-unit-problems">Example Unit Problems</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-types">Energy Types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#us-energy-by-source-with-losses">US Energy by Source with Losses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#us-energy-by-source-with-losses">US Energy by Source with Losses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-loss-example">Energy loss example</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-future">Energy Future</a></li>
 </ul>
             </nav>
@@ -448,6 +453,21 @@ document.write(`
 <li><p>Review Energy Units and “Horse Sense”</p></li>
 <li><p>Understand the different energy types</p></li>
 </ul>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import needed packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 <section id="units-review">
 <h2>Units Review<a class="headerlink" href="#units-review" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -483,9 +503,34 @@ document.write(`
 </ul>
 </li>
 </ul>
-<section id="example-problems">
-<h3>Example Problems<a class="headerlink" href="#example-problems" title="Permalink to this heading">#</a></h3>
+<section id="example-unit-problems">
+<h3>Example Unit Problems<a class="headerlink" href="#example-unit-problems" title="Permalink to this heading">#</a></h3>
 <p>How many BTU’s to heat 1 L of water from 60°F to 212°F?</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cp</span> <span class="o">=</span> <span class="mi">4186</span> <span class="c1"># J/kgK, specific heat of water</span>
+<span class="c1">#specific heat of water in BTU/lbmF</span>
+<span class="n">Cp_BTU</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># BTU/lbmF</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># kg/m^3, density of water</span>
+<span class="n">vol</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">1000</span> <span class="c1"># m^3, volume of water (1 L)</span>
+<span class="n">mass</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="n">vol</span><span class="o">*</span><span class="mf">2.20462</span> <span class="c1"># lbm, mass of water (1 L)</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">Cp_BTU</span><span class="o">*</span><span class="n">mass</span><span class="o">*</span><span class="p">(</span><span class="mi">212</span><span class="o">-</span><span class="mi">60</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Energy required to heat 1 L of water from 60F to 212F: </span><span class="si">{</span><span class="n">E</span><span class="si">:</span><span class="s1">0.0f</span><span class="si">}</span><span class="s1"> BTU&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy required to heat 1 L of water from 60F to 212F: 335 BTU
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 <p>How many BTUS’s to vaporize that same 1L of water at 212°F?</p>
 </section>
 </section>
@@ -520,10 +565,22 @@ document.write(`
 </section>
 <section id="us-energy-by-source-with-losses">
 <h2>US Energy by Source with Losses<a class="headerlink" href="#us-energy-by-source-with-losses" title="Permalink to this heading">#</a></h2>
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/Energy2021.png?raw=trueg" width="600">
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/Energy2021.png?raw=trueg" width="800">
 <p>Source: <a class="reference external" href="https://flowcharts.llnl.gov/sites/flowcharts/files/2022-04/Energy_2021_United-States_0.png">https://flowcharts.llnl.gov/sites/flowcharts/files/2022-04/Energy_2021_United-States_0.png</a></p>
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/Energy2021.png?raw=trueg" width="600">
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/Energy2022.png?raw=trueg" width="800">
 <p>Source: <a class="reference external" href="https://flowcharts.llnl.gov/sites/flowcharts/files/2023-10/US%20Energy%202022.png">https://flowcharts.llnl.gov/sites/flowcharts/files/2023-10/US Energy 2022.png</a></p>
+<p>There are significant losses in use of the energy. For example, a coal plant is only about 33% efficient in converting the energy in coal to electricity.  A gasoline engine is only about 20% efficient in converting the energy in gasoline to motion.  The rest is lost as heat.</p>
+<section id="energy-loss-example">
+<h3>Energy loss example<a class="headerlink" href="#energy-loss-example" title="Permalink to this heading">#</a></h3>
+<p>The energy density of gasoline is about 45 MJ/kg.  If a car gets 30 miles per gallon, how many MJ of energy are used to go 30 miles? How many MJ of energy are lost as heat (rejected energy)?</p>
+<p>Assumptions:</p>
+<ul class="simple">
+<li><p>Force from drag is <span class="math notranslate nohighlight">\(F_d = 1/2 \rho v^2 C_d A\)</span>, where <span class="math notranslate nohighlight">\(\rho\)</span> is air density, <span class="math notranslate nohighlight">\(v\)</span> is velocity, <span class="math notranslate nohighlight">\(C_d\)</span> is drag coefficient, and <span class="math notranslate nohighlight">\(A\)</span> is frontal area. The drag coefficient for a car is about 0.3, the frontal area is about 2 m^2, and the air density is about 1.2 kg/m^3.</p></li>
+<li><p>The resistance from rolling friction, <span class="math notranslate nohighlight">\(F_r = C_r m g\)</span>, where <span class="math notranslate nohighlight">\(C_r\)</span> is the coefficient of rolling friction, <span class="math notranslate nohighlight">\(m\)</span> is mass, and <span class="math notranslate nohighlight">\(g\)</span> is acceleration due to gravity.  The coefficient of rolling friction is about 0.3 for cars and the mass of the car is about 1500 kg.</p></li>
+<li><p>The energy of a moving car is <span class="math notranslate nohighlight">\(E = 1/2 m v^2\)</span>.</p></li>
+<li><p>The energy of a force acting over a distance is <span class="math notranslate nohighlight">\(\int F dx\)</span>.</p></li>
+</ul>
+</section>
 </section>
 <section id="energy-future">
 <h2>Energy Future<a class="headerlink" href="#energy-future" title="Permalink to this heading">#</a></h2>
@@ -603,11 +660,14 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-review">Units Review</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problems">Example Problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-unit-problems">Example Unit Problems</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-types">Energy Types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#us-energy-by-source-with-losses">US Energy by Source with Losses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#us-energy-by-source-with-losses">US Energy by Source with Losses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-loss-example">Energy loss example</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-future">Energy Future</a></li>
 </ul>
   </nav></div>
