@@ -515,7 +515,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cp</span> <span class="o">=</span> <span class="mi">4186</span> <span class="c1"># J/kgK, specific heat of water</span>
 <span class="c1">#specific heat of water in BTU/lbmF</span>
-<span class="n">Cp_BTU</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># BTU/lbmF</span>
+<span class="n">Cp_BTU</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># BTU/lbmR, specific heat of water</span>
 <span class="n">rho</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># kg/m^3, density of water</span>
 <span class="n">vol</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">1000</span> <span class="c1"># m^3, volume of water (1 L)</span>
 <span class="n">mass</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="n">vol</span><span class="o">*</span><span class="mf">2.20462</span> <span class="c1"># lbm, mass of water (1 L)</span>
@@ -532,6 +532,27 @@ document.write(`
 </details>
 </div>
 <p>How many BTUS’s to vaporize that same 1L of water at 212°F?</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#water heat of vaporization</span>
+<span class="n">Hvap</span> <span class="o">=</span> <span class="mf">970.3</span> <span class="c1"># BTU/lbm, 2260 kJ/kg</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">Hvap</span><span class="o">*</span><span class="n">mass</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Energy required to vaporize 1 L of water: </span><span class="si">{</span><span class="n">E</span><span class="si">:</span><span class="s1">0.0f</span><span class="si">}</span><span class="s1"> BTU&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy required to vaporize 1 L of water: 2139 BTU
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 </section>
 </section>
 <section id="energy-types">
@@ -572,14 +593,55 @@ document.write(`
 <p>There are significant losses in use of the energy. For example, a coal plant is only about 33% efficient in converting the energy in coal to electricity.  A gasoline engine is only about 20% efficient in converting the energy in gasoline to motion.  The rest is lost as heat.</p>
 <section id="energy-loss-example">
 <h3>Energy loss example<a class="headerlink" href="#energy-loss-example" title="Permalink to this heading">#</a></h3>
-<p>The energy density of gasoline is about 45 MJ/kg.  If a car gets 30 miles per gallon, how many MJ of energy are used to go 30 miles? How many MJ of energy are lost as heat (rejected energy)?</p>
+<p>The energy density of gasoline is about 45 MJ/kg.  If a car gets 30 miles per gallon (at 60 miles per gallon), how many MJ of energy are used to go 30 miles? How many MJ of energy are lost as heat (rejected energy)?</p>
+<p>How will you set this up?</p>
+<div class="toggle docutils container">
 <p>Assumptions:</p>
 <ul class="simple">
 <li><p>Force from drag is <span class="math notranslate nohighlight">\(F_d = 1/2 \rho v^2 C_d A\)</span>, where <span class="math notranslate nohighlight">\(\rho\)</span> is air density, <span class="math notranslate nohighlight">\(v\)</span> is velocity, <span class="math notranslate nohighlight">\(C_d\)</span> is drag coefficient, and <span class="math notranslate nohighlight">\(A\)</span> is frontal area. The drag coefficient for a car is about 0.3, the frontal area is about 2 m^2, and the air density is about 1.2 kg/m^3.</p></li>
-<li><p>The resistance from rolling friction, <span class="math notranslate nohighlight">\(F_r = C_r m g\)</span>, where <span class="math notranslate nohighlight">\(C_r\)</span> is the coefficient of rolling friction, <span class="math notranslate nohighlight">\(m\)</span> is mass, and <span class="math notranslate nohighlight">\(g\)</span> is acceleration due to gravity.  The coefficient of rolling friction is about 0.3 for cars and the mass of the car is about 1500 kg.</p></li>
+<li><p>The resistance from rolling friction, <span class="math notranslate nohighlight">\(F_r = C_r m g\)</span>, where <span class="math notranslate nohighlight">\(C_r\)</span> is the coefficient of rolling friction, <span class="math notranslate nohighlight">\(m\)</span> is mass, and <span class="math notranslate nohighlight">\(g\)</span> is acceleration due to gravity.  The coefficient of rolling friction is about 0.01 for cars and the mass of the car is about 1500 kg.</p></li>
 <li><p>The energy of a moving car is <span class="math notranslate nohighlight">\(E = 1/2 m v^2\)</span>.</p></li>
 <li><p>The energy of a force acting over a distance is <span class="math notranslate nohighlight">\(\int F dx\)</span>.</p></li>
 </ul>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vel</span> <span class="o">=</span> <span class="mi">60</span><span class="o">*</span><span class="mi">5280</span><span class="o">/</span><span class="mi">3600</span><span class="o">/</span><span class="mf">3.281</span> <span class="c1"># m/s, velocity of car</span>
+<span class="n">masscar</span> <span class="o">=</span> <span class="mi">1500</span> <span class="c1"># kg, mass of car</span>
+<span class="n">Cr</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># rolling resistance coefficient</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># drag coefficient</span>
+<span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1"># m/s^2, gravity</span>
+<span class="n">Fr</span> <span class="o">=</span> <span class="n">masscar</span><span class="o">*</span><span class="n">gravity</span><span class="o">*</span><span class="n">Cr</span> <span class="c1"># N, rolling resistance force</span>
+<span class="n">rho_air</span> <span class="o">=</span> <span class="mf">1.2</span> <span class="c1"># kg/m^3, density of air</span>
+<span class="n">Area</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># m^2, frontal area of car</span>
+<span class="n">Fd</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">Cd</span><span class="o">*</span><span class="n">Area</span><span class="o">*</span><span class="n">rho_air</span><span class="o">*</span><span class="n">vel</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#N, drag force</span>
+<span class="n">dis</span> <span class="o">=</span> <span class="mi">30</span><span class="o">*</span><span class="mi">5280</span><span class="o">/</span><span class="mf">3.281</span> <span class="c1"># m, distance to travel</span>
+<span class="n">Work</span> <span class="o">=</span> <span class="p">(</span><span class="n">Fr</span> <span class="o">+</span> <span class="n">Fd</span><span class="p">)</span><span class="o">*</span><span class="n">dis</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">masscar</span><span class="o">*</span><span class="n">vel</span><span class="o">**</span><span class="mi">2</span><span class="c1"># J, work done</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Work done to move car 30 miles at 60 mph: </span><span class="si">{</span><span class="n">Work</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s1">0.0f</span><span class="si">}</span><span class="s1"> MJ&#39;</span><span class="p">)</span>
+
+<span class="c1"># efficiency of car</span>
+<span class="n">rhogas</span> <span class="o">=</span> <span class="mi">700</span> <span class="c1"># kg/m3, density of gasoline</span>
+<span class="n">volgas</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">264.172</span> <span class="c1"># m3, volume of gasoline</span>
+<span class="n">Egas</span> <span class="o">=</span> <span class="mf">45e6</span><span class="o">*</span><span class="n">rhogas</span><span class="o">*</span><span class="n">volgas</span> <span class="c1"># J, energy in gasoline</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Energy in 1 gallon of gasoline: </span><span class="si">{</span><span class="n">Egas</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s1">0.0f</span><span class="si">}</span><span class="s1"> MJ&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Efficiency of car: </span><span class="si">{</span><span class="n">Work</span><span class="o">/</span><span class="n">Egas</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s1">0.1f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Work done to move car 30 miles at 60 mph: 20 MJ
+Energy in 1 gallon of gasoline: 119 MJ
+Efficiency of car: 16.9%
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 </section>
 </section>
 <section id="energy-future">
