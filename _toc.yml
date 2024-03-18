@@ -40,7 +40,7 @@ chapters:
     - file: physical/26-Review
   - file: stewardship
     sections:
-    - file: stewardship/zz-Environment
+    - file: stewardship/27-Energy
   - file: projectDetails
   - file: acknowledgement
 
