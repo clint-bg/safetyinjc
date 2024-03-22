@@ -42,9 +42,8 @@ chapters:
     sections:
     - file: stewardship/27-Energy
     - file: stewardship/28-EnergyFF
-    - file: stewardship/29-EnergyR
-    - file: stewardship/30-Climate
-    - file: stewardship/31-Legislation
+    - file: stewardship/29-Climate
+    - file: stewardship/30-Legislation
     - file: stewardship/32-Pollution
     - file: stewardship/33-Remediation
     - file: stewardship/34-HenrysLaw
