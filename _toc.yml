@@ -44,11 +44,11 @@ chapters:
     - file: stewardship/28-EnergyFF
     - file: stewardship/29-Climate
     - file: stewardship/30-Legislation
-    - file: stewardship/32-Pollution
-    - file: stewardship/33-Remediation
-    - file: stewardship/34-HenrysLaw
-    - file: stewardship/35-Review
-    - file: stewardship/36-Summary
+    - file: stewardship/31-Pollution
+    - file: stewardship/32-Remediation
+    - file: stewardship/33-HenrysLaw
+    - file: stewardship/34-Review
+    - file: stewardship/35-Summary
   - file: projectDetails
   - file: acknowledgement
 
