@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>33-Remediation &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
+    <title>32-Remediation &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'stewardship/32-Remediation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="34-Henry’s Law" href="33-HenrysLaw.html" />
+    <link rel="next" title="33-Henry’s Law" href="33-HenrysLaw.html" />
     <link rel="prev" title="31-Pollution Prevention" href="31-Pollution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -201,10 +201,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="29-Climate.html">29-Climate and Energy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="30-Legislation.html">30-Environmental Legislation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="31-Pollution.html">31-Pollution Prevention</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">33-Remediation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33-HenrysLaw.html">34-Henry’s Law</a></li>
-<li class="toctree-l2"><a class="reference internal" href="34-Review.html">35-Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="35-Summary.html">36-Summary</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">32-Remediation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33-HenrysLaw.html">33-Henry’s Law</a></li>
+<li class="toctree-l2"><a class="reference internal" href="34-Review.html">34-Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="35-Summary.html">35-Summary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
@@ -409,7 +409,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -420,11 +422,36 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>33-Remediation</h1>
+    <h1>32-Remediation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fate-and-transport">Fate and Transport</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-experiment-tree-leaves">Thought Experiment - Tree Leaves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-experiment-tire-tread">Thought Experiment - Tire Tread</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrologic-cycle">Hydrologic Cycle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fate-processes">Fate Processes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-remediation">Environmental Remediation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soil-washing">Soil Washing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soil-roasting-incineration">Soil Roasting/ Incineration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vitrification-or-encapsulation">Vitrification or Encapsulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#landfilling">Landfilling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pump-and-treat">Pump and Treat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volatilization">Volatilization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bioremediation">Bioremediation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remediation-example">Remediation Example</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -435,8 +462,69 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="remediation">
-<h1>33-Remediation<a class="headerlink" href="#remediation" title="Permalink to this heading">#</a></h1>
+<h1>32-Remediation<a class="headerlink" href="#remediation" title="Permalink to this heading">#</a></h1>
+<section id="fate-and-transport">
+<h2>Fate and Transport<a class="headerlink" href="#fate-and-transport" title="Permalink to this heading">#</a></h2>
+<section id="thought-experiment-tree-leaves">
+<h3>Thought Experiment - Tree Leaves<a class="headerlink" href="#thought-experiment-tree-leaves" title="Permalink to this heading">#</a></h3>
+<p>What happens to tree leaves?</p>
+<p>Do they not just keep building up in layers?</p>
+<p>Wouldn’t the tree’s just eventually be buried in leaves?</p>
+</section>
+<section id="thought-experiment-tire-tread">
+<h3>Thought Experiment - Tire Tread<a class="headerlink" href="#thought-experiment-tire-tread" title="Permalink to this heading">#</a></h3>
+<p>Wear does all the tire tread go from use of millions of tires?</p>
+<p>Why doesn’t it build up on the highway’s or surroundings?</p>
+<p>How are those pieces transported?</p>
+</section>
+<section id="hydrologic-cycle">
+<h3>Hydrologic Cycle<a class="headerlink" href="#hydrologic-cycle" title="Permalink to this heading">#</a></h3>
+<p>Water moves through the air, on the ground, and in the ground. It rains, water flows downhill on the surface, and water infiltrates into and out of the ground (aquifers).</p>
+<p>Water is a universal solvent, and it can dissolve many substances. Water can also carry substances in solution, suspension, or as a colloid. Some of those substances are toxic.</p>
+<p>We depend on water for drinking, agriculture, and industry.</p>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/hydrologic.jpg?raw=trueg" width="600"><p>Image source: <a class="reference external" href="https://www.sciencefacts.net/water-cycle.html">https://www.sciencefacts.net/water-cycle.html</a></p>
+</section>
+<section id="fate-processes">
+<h3>Fate Processes<a class="headerlink" href="#fate-processes" title="Permalink to this heading">#</a></h3>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/hydrologic.jpg?raw=trueg" width="600"></section>
+</section>
+<section id="environmental-remediation">
+<h2>Environmental Remediation<a class="headerlink" href="#environmental-remediation" title="Permalink to this heading">#</a></h2>
+<p>Remediation: the action of reversing or stopping environmental damage.</p>
+<section id="soil-washing">
+<h3>Soil Washing<a class="headerlink" href="#soil-washing" title="Permalink to this heading">#</a></h3>
+<p>The soil is excavated and washed with water or other solvents to remove contaminants. The water is then treated to remove the contaminants.</p>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/washing.png?raw=trueg" width="600"></section>
+<section id="soil-roasting-incineration">
+<h3>Soil Roasting/ Incineration<a class="headerlink" href="#soil-roasting-incineration" title="Permalink to this heading">#</a></h3>
+<p>Soil roasting is a thermal treatment process that uses heat to remove contaminants from soil.</p>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/roasting.png?raw=trueg" width="600"></section>
+<section id="vitrification-or-encapsulation">
+<h3>Vitrification or Encapsulation<a class="headerlink" href="#vitrification-or-encapsulation" title="Permalink to this heading">#</a></h3>
+<p>Vitrification is the process of converting a material into a glass-like substance</p>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/vitrification.png?raw=trueg" width="600"></section>
+<section id="landfilling">
+<h3>Landfilling<a class="headerlink" href="#landfilling" title="Permalink to this heading">#</a></h3>
+<p>Contaminated soil is excavated and placed in a landfill.</p>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/landfilling.png?raw=trueg" width="600"></section>
+<section id="pump-and-treat">
+<h3>Pump and Treat<a class="headerlink" href="#pump-and-treat" title="Permalink to this heading">#</a></h3>
+<p>Groundwater is pumped to the surface and treated to remove the contaminants.</p>
+</section>
+<section id="volatilization">
+<h3>Volatilization<a class="headerlink" href="#volatilization" title="Permalink to this heading">#</a></h3>
+<p>Volatilization is the process of converting a solid or liquid into a gas.</p>
+</section>
+<section id="bioremediation">
+<h3>Bioremediation<a class="headerlink" href="#bioremediation" title="Permalink to this heading">#</a></h3>
+<p>Bio-remediation is the use of living organisms to clean up contaminated soil and water. The organisms can be bacteria, fungi, or plants.</p>
+</section>
+</section>
+<section id="remediation-example">
+<h2>Remediation Example<a class="headerlink" href="#remediation-example" title="Permalink to this heading">#</a></h2>
+<p>Mt. Trashmore in Virginia Beach, Virginia, is a former landfill that has been turned into a park. The park is built on top of the landfill, which has been capped with a layer of soil and grass. The park has a lake, playgrounds, and walking trails.</p>
 <p>Example with diffusion of contaminant into soil then a stream and dispersion in a small pond with fish. Discovery of leak from mass balance.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -484,7 +572,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">34-Henry’s Law</p>
+        <p class="prev-next-title">33-Henry’s Law</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -497,6 +585,37 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fate-and-transport">Fate and Transport</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-experiment-tree-leaves">Thought Experiment - Tree Leaves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thought-experiment-tire-tread">Thought Experiment - Tire Tread</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrologic-cycle">Hydrologic Cycle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fate-processes">Fate Processes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-remediation">Environmental Remediation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soil-washing">Soil Washing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soil-roasting-incineration">Soil Roasting/ Incineration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vitrification-or-encapsulation">Vitrification or Encapsulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#landfilling">Landfilling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pump-and-treat">Pump and Treat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volatilization">Volatilization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bioremediation">Bioremediation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remediation-example">Remediation Example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
