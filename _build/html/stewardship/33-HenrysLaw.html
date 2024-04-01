@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>33-Incident Evaluation and Reporting &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
+    <title>33-Incident Evaluation &#8212; Chemical Engineering and Society-Health, Safety, and the Environment</title>
   
   
   
@@ -202,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="30-Legislation.html">30-Environmental Legislation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="31-Pollution.html">31-Pollution Prevention</a></li>
 <li class="toctree-l2"><a class="reference internal" href="32-Remediation.html">32-Remediation</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">33-Incident Evaluation and Reporting</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">33-Incident Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="34-Review.html">34-Review</a></li>
 <li class="toctree-l2"><a class="reference internal" href="35-Summary.html">35-Summary</a></li>
 </ul>
@@ -422,7 +422,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>33-Incident Evaluation and Reporting</h1>
+    <h1>33-Incident Evaluation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,8 +432,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-flow-diagram-animated-gif">Process Flow Diagram (Animated GIF)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incident-description">Incident Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-components">Project Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-impacts">Process Impacts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-analysis-primary-explosive-material-transfer">Example Analysis - Primary Explosive Material Transfer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-background-and-scope">Process Background and Scope</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-flow-diagram">Process Flow Diagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incident-description">Incident Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-safety-information-psi">Process Safety Information (PSI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hazards-analysis">Hazards Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fault-tree">Fault Tree</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fmea">FMEA</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -445,14 +459,88 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="incident-evaluation-and-reporting">
-<h1>33-Incident Evaluation and Reporting<a class="headerlink" href="#incident-evaluation-and-reporting" title="Permalink to this heading">#</a></h1>
-<section id="process-flow-diagram-animated-gif">
-<h2>Process Flow Diagram (Animated GIF)<a class="headerlink" href="#process-flow-diagram-animated-gif" title="Permalink to this heading">#</a></h2>
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/PFGif.png?raw=trueg" width="702"></section>
+  <section class="tex2jax_ignore mathjax_ignore" id="incident-evaluation">
+<h1>33-Incident Evaluation<a class="headerlink" href="#incident-evaluation" title="Permalink to this heading">#</a></h1>
+<p>Process Hazards Key Safety Principles:</p>
+<ul class="simple">
+<li><p><strong>Replace</strong> the hazardous material or process</p></li>
+<li><p><strong>Reduce the quantity</strong> of hazardous material</p></li>
+<li><p><strong>Reduce the time</strong> the hazardous material is present</p></li>
+<li><p><strong>Reduce the number of people</strong> exposed</p></li>
+</ul>
+<p>Key Tools for Safe Operations:</p>
+<ul class="simple">
+<li><p><strong>Hazards Analysis (HA)</strong> - An incident investigation before the incident</p></li>
+<li><p><strong>Process Safety Information (PSI)</strong> - Information about the process and hazards of the materials</p></li>
+<li><p>Other <strong>PSM</strong> elements such as Management of Change, Operating Procedures, Training, Pre-Startup Safety Review, Mechanical Integrity, Hot Work Permit, Emergency Planning and Response, Incident Investigation, and Compliance Audits</p></li>
+</ul>
+<section id="project-components">
+<h2>Project Components<a class="headerlink" href="#project-components" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Process Background, Scope, and Incident Description</p></li>
+<li><p>Process Flow Diagram (PFD) or Piping and Instrumentation Diagram (P&amp;ID)</p></li>
+<li><p>Process Safety Information</p></li>
+<li><p>Hazards Analysis</p></li>
+<li><p>Process Impacts (Ethical, Global, Economic, Enviornmental, and Societal)</p></li>
+<li><p>Documentation</p></li>
+</ul>
+<section id="process-impacts">
+<h3>Process Impacts<a class="headerlink" href="#process-impacts" title="Permalink to this heading">#</a></h3>
+<p><strong>Ethical</strong> - How does the incident impact the ethical standards of the company and the industry? Or What ethical decisions led up to the incident? How could those decisions have been different, from an ethical standpoint?</p>
+<p><strong>Global</strong> - How does the incident impact the global community? Is there a difference in how the process or incident is viewed in different countries?</p>
+<p><strong>Economic</strong> - How does the incident impact the economy?</p>
+<p><strong>Environmental</strong> - How does the incident impact the environment?</p>
+<p><strong>Societal</strong> - How does the incident impact society? Does it change the attitudes of the public towards the company or industry?</p>
+</section>
+</section>
+<section id="example-analysis-primary-explosive-material-transfer">
+<h2>Example Analysis - Primary Explosive Material Transfer<a class="headerlink" href="#example-analysis-primary-explosive-material-transfer" title="Permalink to this heading">#</a></h2>
+<section id="process-background-and-scope">
+<h3>Process Background and Scope<a class="headerlink" href="#process-background-and-scope" title="Permalink to this heading">#</a></h3>
+<p>In the defense industry, primary explosives are used in the production of ammunition and other devices. These materials are sensitive to heat, shock, electrostatic discharge (ESD), impact, and friction. The process of transferring these materials from one location to another during processing occurs regularly. One such scenario is the transfer of a small quantity of Compound B from a pass-thru box to a hopper that feeds a press. An operator carries the Compound B in a small jar from the pass-thru box to the hopper. The scope of the analysis is from the time the operator picks up the jar of Compound B to the time the jar is emptied into the hopper.</p>
+</section>
+<section id="process-flow-diagram">
+<h3>Process Flow Diagram<a class="headerlink" href="#process-flow-diagram" title="Permalink to this heading">#</a></h3>
+<p>This animated gif shows the process of moving a small quantity of material in a jar from the pass-thru to the the hopper.</p>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/PFGif.gif?raw=trueg" width="700"></section>
 <section id="incident-description">
-<h2>Incident Description<a class="headerlink" href="#incident-description" title="Permalink to this heading">#</a></h2>
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/PFGifevent.png?raw=trueg" width="702"></section>
+<h3>Incident Description<a class="headerlink" href="#incident-description" title="Permalink to this heading">#</a></h3>
+<p>On April 18, 20__, an operator was transferring a small quantity of Compound B from a pass-thru box to a hopper that feeds a press. The operator was wearing a lab coat and gloves. The operator picked up the jar of Compound B from the pass-thru box and was walking towards the hopper when the operator fell. The jar flew towards the hopper and upon impact exploded and caused a fire. The operator was injured and the fire was extinguished by the fire suppression system. The operator was taken to the hospital and treated for burns and lacerations. The operator was released from the hospital the next day.</p>
+<div class="toggle docutils container">
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/PFGifevent.gif?raw=trueg" width="702">
+</div>
+</section>
+<section id="process-safety-information-psi">
+<h3>Process Safety Information (PSI)<a class="headerlink" href="#process-safety-information-psi" title="Permalink to this heading">#</a></h3>
+<p>Compound B is a complex of a reactive salt and heavy metals. It is toxic to living organisms and is unstable. It is sensitive to heat, shock, ESD, impact, and friction. It is used in the production of ammunition and other devices. The material is stored in a magazine and during processing, a portion of the storage amount is separated inside a shielded enclosure into a small jar. That jar is then transferred to a hopper that also is shielded. The hopper feeds a press that forms the material into a shape that is used in the production of ammunition.</p>
+<p><strong>SDS</strong> (Example inaccurate information for illustrative purposes only)</p>
+<p>The SDS for Compound B has the following applicable items:</p>
+<ul class="simple">
+<li><p><strong>Physical and Chemical Properties</strong> - Compound B is a white powder that is odorless. It is a complex of a reactive salt and heavy metals. It is toxic to living organisms and is unstable. It is sensitive to heat, shock, ESD, impact, and friction.</p></li>
+<li><p><strong>Stability and Reactivity</strong> - Compound B is unstable and is sensitive to heat, shock, ESD, impact, and friction.</p></li>
+<li><p><strong>Toxicological Information</strong> - Compound B is toxic to living organisms.</p></li>
+<li><p><strong>Handling and Storage</strong> - Compound B should be stored in a magazine. During processing, a portion of the storage amount is separated inside a shielded enclosure into a small jar. That jar is then transferred to a hopper that also is shielded.</p></li>
+<li><p><strong>Exposure Controls and Personal Protection</strong> - Operators should wear lab coats and gloves when handling Compound B. Operations should control ESD and avoid impact and friction scenarios.</p></li>
+</ul>
+<p><strong>Small-scale Safety Testing</strong></p>
+<p>Safety testing with friction, impact, and ESD devices have shown that the threshold initiation level (a 3.4% chance of ignition) is 30 lbf at 8 feet per second, 10 cm, and 150 mJ, respectively.</p>
+<p><strong>Equipment Details</strong></p>
+<p>The pass-thru box is a shielded enclosure that has a door on each side. The operator opens the door on one side and places the jar of Compound B inside. The operator then closes the door and opens the door on the other side. The operator then removes the jar of Compound B from the pass-thru box. The hopper is a shielded enclosure that has a door on the top. The operator opens the door and empties the jar of Compound B into the hopper. The operator then closes the door.</p>
+<p><strong>Previous Incidents</strong></p>
+<p>There have been no previous incidents involving the transfer of Compound B from the pass-thru box to the hopper. However, in a related process, an operator did drop a small quantity of Compound B without incident.</p>
+</section>
+<section id="hazards-analysis">
+<h3>Hazards Analysis<a class="headerlink" href="#hazards-analysis" title="Permalink to this heading">#</a></h3>
+<p><strong>HAZAOP</strong> HAZard and OPerability studies are best suited for processes with flowing materials and multiple inter-related steps. A piping and instrumentation diagram (P&amp;ID) is used to identify the process steps and the materials that flow between them. The P&amp;ID is then used to identify the nodes for which the guide words can be applied.</p>
+<p><strong>FTA and FMEA</strong> A Fault-Tree Analysis (FTA) and a Failure Modes and Effects Analysis (FMEA) are best suited for processes that have fewer steps but can have a myriad of failure modes. These tools are used to identify the failure modes and the effects of those failures, including safeguards, and recommendations. An FTA and FMEA are better suited to this incident scenario than a HAZOP.</p>
+<section id="fault-tree">
+<h4>Fault Tree<a class="headerlink" href="#fault-tree" title="Permalink to this heading">#</a></h4>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/FTA_ex.png?raw=trueg" width="700"></section>
+<section id="fmea">
+<h4>FMEA<a class="headerlink" href="#fmea" title="Permalink to this heading">#</a></h4>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -522,8 +610,22 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-flow-diagram-animated-gif">Process Flow Diagram (Animated GIF)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incident-description">Incident Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-components">Project Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-impacts">Process Impacts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-analysis-primary-explosive-material-transfer">Example Analysis - Primary Explosive Material Transfer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-background-and-scope">Process Background and Scope</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-flow-diagram">Process Flow Diagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incident-description">Incident Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-safety-information-psi">Process Safety Information (PSI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hazards-analysis">Hazards Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fault-tree">Fault Tree</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fmea">FMEA</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
