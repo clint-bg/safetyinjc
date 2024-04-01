@@ -535,9 +535,66 @@ document.write(`
 <p><strong>FTA and FMEA</strong> A Fault-Tree Analysis (FTA) and a Failure Modes and Effects Analysis (FMEA) are best suited for processes that have fewer steps but can have a myriad of failure modes. These tools are used to identify the failure modes and the effects of those failures, including safeguards, and recommendations. An FTA and FMEA are better suited to this incident scenario than a HAZOP.</p>
 <section id="fault-tree">
 <h4>Fault Tree<a class="headerlink" href="#fault-tree" title="Permalink to this heading">#</a></h4>
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/FTA_ex.png?raw=trueg" width="700"></section>
+<p>This is a simplified fault tree for the incident scenario. The fault tree shows the top event (Injury during transfer) and the sub events that can initiate Compound B resulting in injury. Just a few of the potential events are given with friction and impact sceanrios.</p>
+<img src="https://github.com/clint-bg/safetyinjc/blob/main/stewardship/supportfiles/FTA_ex.png?raw=trueg" width="701"></section>
 <section id="fmea">
 <h4>FMEA<a class="headerlink" href="#fmea" title="Permalink to this heading">#</a></h4>
+<p>A simplified FMEA of the incident scenario based on the above fault tree is shown below. The FMEA shows the process steps, the failure modes, the effects of those failures, the safeguards, risk rating, and the recommendations.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
+<th class="head"><p>Failure Mode</p></th>
+<th class="head"><p>Effect</p></th>
+<th class="head"><p>Safeguards</p></th>
+<th class="head"><p>Risk Rating</p></th>
+<th class="head"><p>Recommendations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pass-thru</p></td>
+<td><p>Operator opens door with out-of-place material</p></td>
+<td><p>Ignition and potential injury</p></td>
+<td><p>Pass-thru metal coors are separated on plastic rollers</p></td>
+<td><p>🟠 3D</p></td>
+<td><p>Evaluate preventative maintenance measures for cleaning rollers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pass-thru</p></td>
+<td><p>Out-of-place material present</p></td>
+<td><p>Potential ignition and injury</p></td>
+<td><p>Operator visually inspects pass-thru once a week</p></td>
+<td><p>🟠 3D</p></td>
+<td><p>Evaluate preventative maintenance measures for cleaning pass-thru</p></td>
+</tr>
+<tr class="row-even"><td><p>Operator Transfer</p></td>
+<td><p>Operator drops jar</p></td>
+<td><p>Ignition of bulk collection of Compound B</p></td>
+<td><p>Jar is made from hard plastic potentially reducing impact impulse</p></td>
+<td><p>🔴 2C</p></td>
+<td><p>Use a cart to transfer the jar from the pass-thru to the hopper with the cart under the pass-thru or hopper when the operator lowers or lifts the jar</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pass-thru</p></td>
+<td><p>ESD discharge to material</p></td>
+<td><p>Ignition of material with injury</p></td>
+<td><p></p></td>
+<td><p>🟠 3D</p></td>
+<td><p>Operator should wear an ESD wrist strap at that station or have conductive shoes. Consider completing an ESD evaluation to quantify ESD hazards</p></td>
+</tr>
+<tr class="row-even"><td><p>Operator Transfer</p></td>
+<td><p>A tool is dropped on the contaminated floor</p></td>
+<td><p>Ignition of material with injury</p></td>
+<td><p>The floor is cleaned once a week</p></td>
+<td><p>🟡 4D</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>More FTA Failure Modes</p></td>
+<td><p>This list is insufficient. All of the FTA items should be adequately addressed</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 </section>
