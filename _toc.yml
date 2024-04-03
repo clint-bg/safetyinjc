@@ -46,8 +46,8 @@ chapters:
     - file: stewardship/30-Legislation
     - file: stewardship/31-Pollution
     - file: stewardship/32-Remediation
-    - file: stewardship/33-HenrysLaw
-    - file: stewardship/34-Review
+    - file: stewardship/33-IncidentCase
+    - file: stewardship/34-Preview
     - file: stewardship/35-Summary
   - file: projectDetails
   - file: acknowledgement
