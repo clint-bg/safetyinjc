@@ -1,11 +1,11 @@
 # Safety in Jesus Christ
-God our Heavenly Father's work is to bring to pass the immortality and eternal life of man (Moses 1:39). That immortality is having and maintaining a living body of flesh and bone forever. It is also being able to live with God our Heavenly Father forever through the infinite and eternal atonement of Jesus Christ. We can live there according to the laws and ordinances that define the environment where God our Heavenly Father lives. Key to living there is loving God and our neighbors as ourselves. Another word for love is safety, spiritual and physical safety.
+God our Heavenly Father's work is to bring to pass the immortality and eternal life of man (Moses 1:39). That immortality is having and maintaining a living body of flesh and bone forever. It is also being able to live with God our Heavenly Father forever through the infinite and eternal atonement of Jesus Christ. We can live there according to the laws and ordinances that define the environment where God our Heavenly Father lives. Key to living there is loving God and our neighbors as ourselves. Another word for love is safety, spiritual and physical safety.
 
 ## Physical and Spiritual Safety
 Safety in Jesus Christ is applying systematic methods to ensure the physical and spiritual health of ourselves and those around us such that we can have immortality and eternal life. There are safe practices for our physical bodies and for the chemical systems with which we will work. There is also, perhaps more importantly, safety for our souls and the spiritual souls that surround us.
 
 ## God-Given Stewardship
-We have been given stewardship for our lives, our bodies, and the land that we have been given to live on together with all the other children of God on all continents of Earth. Our actions as chemical engineers can be magnified for the benefit of man (Haber-Bosch process for example) or to the detriment of man (derivatives of the Haber-Bosch process to wage war for example).
+We have been given stewardship for our lives, our bodies, and the land that we have been given to live on together with all the other children of God on all continents of Earth. Our actions as chemical engineers can be magnified for the benefit of man (Haber-Bosch process for example) or to the detriment of man (derivatives of the Haber-Bosch process to wage war for example).
 
 ## Course Outline
 This class treats those two broad topics (safety and stewardship) in addressing the following:
