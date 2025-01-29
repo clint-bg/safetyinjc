@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physical/09-Prob';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -448,14 +450,37 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="probabilities">
 <h1>09-Probabilities<a class="headerlink" href="#probabilities" title="Permalink to this heading">#</a></h1>
+<p>When quantifying the risk from a specific failure mode, it can be important to understand several event likelihoods or probabilities such as:</p>
+<ul class="simple">
+<li><p>probability of the event occurring in a given time period (or given number of cycles)</p></li>
+<li><p>probability of a given energy level being exceeded (such as an energy level that would cause a failure) during that event</p></li>
+<li><p>probability that given the energy level is exceeded, that the failure mode or failure outcome will occur</p></li>
+<li><p>probability that an individual or group of individuals will be exposed to the event</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>In the discussion here, we will focus on quantitatively estimating event probabilities, or the probability an event will occur in a given time period.</p>
 <section id="event-probability-from-poisson-distribution">
 <h2>Event Probability from Poisson Distribution<a class="headerlink" href="#event-probability-from-poisson-distribution" title="Permalink to this heading">#</a></h2>
+<p>There are many statistical distributions including the normal distribution, chi squared, exponential, etc. that can be used to model event probabilities.  One of the most common distributions used in reliability engineering is the Poisson distribution.  The Poisson distribution is often used to model the number of events that occur in a fixed interval of time or space.  The probability of observing <span class="math notranslate nohighlight">\(k\)</span> events in a given time period is given by the Poisson probability mass function:</p>
+<div class="math notranslate nohighlight">
+\[
+P(k) = \frac{\lambda^k e^{-\lambda}}{k!}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the rate of occurrences.</p>
+<p>In the treatment here, we will create a <span class="math notranslate nohighlight">\(\lambda'\)</span> prime that is the rate per unit time and we will also only care that k or the number of events is greater than or equal to 1.  This is because we are interested in the probability of at least one event occurring in a given time period. As such, the following is true of the probability estimate:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P = 1 - e^{-\lambda' t} \\
+P = 1 - e^{-\mu t}
+\end{split}\]</div>
+<p>where the second equation is how it is given in Crowl and Louvar’s Chemical Process Safety 4th edition.</p>
 <img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/Poisson.png?raw=true" width="600"></section>
 <section id="multiple-event-probability-estimates">
 <h2>Multiple Event Probability Estimates<a class="headerlink" href="#multiple-event-probability-estimates" title="Permalink to this heading">#</a></h2>
 <img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/AndOr.png?raw=true" width="600"></section>
 <section id="monte-carlo">
 <h2>Monte-Carlo<a class="headerlink" href="#monte-carlo" title="Permalink to this heading">#</a></h2>
+<p>Monte-Carlo methods can be used when there are more complex scenarios ini terms of interactions between events, dependencies, etc.  In this case, the probability of an event occurring is estimated by simulating the scenario many times and counting the number of times the event occurs.  The probability is then estimated as the number of times the event occurs divided by the total number of simulations.</p>
 <img src="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/MonteCarlo.png?raw=true" width="600"><p>Example Monte-Carlo Simulation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -518,7 +543,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6343
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6385
 </pre></div>
 </div>
 </div>
@@ -531,7 +556,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0059419538268015
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0174932373833177
 </pre></div>
 </div>
 </div>
@@ -563,7 +588,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7774
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7851
 </pre></div>
 </div>
 </div>
@@ -576,7 +601,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5023788401406926
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5375824753336724
 </pre></div>
 </div>
 </div>
@@ -591,7 +616,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2439
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2576
 </pre></div>
 </div>
 </div>
@@ -618,7 +643,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.27958163641791284
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2978670975101463
 </pre></div>
 </div>
 </div>
