@@ -1,6 +1,6 @@
 To compile run:
-jupyter-book build comptools/
-then: (to copy your html files to the gh-pages branch on github, first change directories to comptools)
+jupyter-book build safetyinjc/
+then: (to copy your html files to the gh-pages branch on github, first change directories to safetyinjc)
 ghp-import -n -p -f _build/html
 
 Also push the update to the repository at github
