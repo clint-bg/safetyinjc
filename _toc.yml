@@ -25,7 +25,7 @@ chapters:
     sections:
     - file: physical/14-Toxicity
     - file: physical/15-Hygiene
-    - file: physical/16-GHS
+    - file: physical/16-HazCom
     - file: physical/17-Balances
     - file: physical/18-Flammability
     - file: physical/19-Flammability2
