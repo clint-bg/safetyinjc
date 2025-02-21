@@ -450,14 +450,8 @@ document.write(`
 <section id="python-flammability-diagram">
 <h2>Python Flammability Diagram<a class="headerlink" href="#python-flammability-diagram" title="Permalink to this heading">#</a></h2>
 <p>Below code submitted by <a class="reference external" href="https://www.linkedin.com/in/isaac-matthews-2a0244290/">Isaac Matthews</a>, 2024.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pip install matplotlib, python-ternary#this is the newer one, it wont work if you install ternary, </span>
-<span class="c1">#and I don&#39;t think that package has something to uninstall with pip</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Requirements for the equalateral flammability diagram below:
+#pip install matplotlib, python-ternary; the below code wont work if you install ternary,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -478,8 +472,8 @@ document.write(`
         <span class="p">[</span><span class="mi">79</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">21</span><span class="p">],</span>  <span class="c1"># Pure Air 1</span>
         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  <span class="c1"># Pure Benzene  2</span>
         <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="c1">#pure n2  3</span>
-        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">lfl</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="c1">#LFL  4</span>
-        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">ufl</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="c1">#UFL  5</span>
+        <span class="p">[</span><span class="mi">76</span><span class="p">,</span> <span class="n">lfl</span><span class="p">,</span><span class="mi">20</span><span class="p">],</span> <span class="c1">#LFL  4</span>
+        <span class="p">[</span><span class="mi">21</span><span class="p">,</span><span class="n">ufl</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span><span class="c1">#UFL  5</span>
         <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="o">-</span><span class="n">loc</span><span class="p">,</span><span class="n">loc</span><span class="p">],</span><span class="c1">#loc</span>
         <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">sf</span><span class="p">,</span><span class="n">sf</span><span class="o">*</span><span class="n">stoic</span><span class="p">],</span><span class="c1">#stoic point  6</span>
         <span class="p">[</span><span class="mi">100</span><span class="o">-</span><span class="n">lfl</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">stoic</span><span class="p">),</span><span class="n">lfl</span><span class="p">,</span><span class="n">stoic</span><span class="o">*</span><span class="n">lfl</span><span class="p">],</span><span class="c1">#intersection  7]</span>
@@ -505,7 +499,6 @@ document.write(`
     <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Flammability triangle&quot;</span><span class="p">)</span>
     <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Stoic line&quot;</span><span class="p">)</span>
     <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-    <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Lower Oxygen Level&quot;</span><span class="p">)</span>
     <span class="c1"># Customize the plot</span>
     <span class="n">tax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Flammability Triangle for </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> in Air&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
     <span class="n">tax</span><span class="o">.</span><span class="n">left_axis_label</span><span class="p">(</span><span class="s2">&quot;Oxygen&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
@@ -539,7 +532,7 @@ document.write(`
   ax.scatter(xs, ys, vmin=vmin, vmax=vmax, **kwargs)
 </pre></div>
 </div>
-<img alt="../_images/72908f4dc24d05dbfcd7bfb69a7418c16e20a5f39f02fff539acb91822711d98.png" src="../_images/72908f4dc24d05dbfcd7bfb69a7418c16e20a5f39f02fff539acb91822711d98.png" />
+<img alt="../_images/3475ddfb78cc9fdb5a68e57957436943e05d427aaab3903eda9914735489f1f1.png" src="../_images/3475ddfb78cc9fdb5a68e57957436943e05d427aaab3903eda9914735489f1f1.png" />
 </div>
 </div>
 </section>
