@@ -450,14 +450,8 @@ document.write(`
 <section id="python-flammability-diagram">
 <h2>Python Flammability Diagram<a class="headerlink" href="#python-flammability-diagram" title="Permalink to this heading">#</a></h2>
 <p>Below code submitted by <a class="reference external" href="https://www.linkedin.com/in/isaac-matthews-2a0244290/">Isaac Matthews</a>, 2024.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pip install matplotlib, python-ternary#this is the newer one, it wont work if you install ternary, </span>
-<span class="c1">#and I don&#39;t think that package has something to uninstall with pip</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Requirements for the equalateral flammability diagram below:
+#pip install matplotlib, python-ternary; the below code wont work if you install ternary,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -467,7 +461,7 @@ document.write(`
 <span class="n">ufl</span> <span class="o">=</span> <span class="mi">74</span>
 <span class="n">lfl</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">stoic</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">lol</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">loc</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="k">def</span> <span class="nf">flammabilityTriangle</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">lfl</span><span class="p">,</span> <span class="n">ufl</span><span class="p">,</span> <span class="n">stoic</span><span class="p">,</span><span class="n">loc</span><span class="p">,</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">100</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="n">stoic</span><span class="p">)</span>
@@ -478,8 +472,8 @@ document.write(`
         <span class="p">[</span><span class="mi">79</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">21</span><span class="p">],</span>  <span class="c1"># Pure Air 1</span>
         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  <span class="c1"># Pure Benzene  2</span>
         <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="c1">#pure n2  3</span>
-        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">lfl</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="c1">#LFL  4</span>
-        <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">ufl</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="c1">#UFL  5</span>
+        <span class="p">[</span><span class="mi">76</span><span class="p">,</span> <span class="n">lfl</span><span class="p">,</span><span class="mi">20</span><span class="p">],</span> <span class="c1">#LFL  4</span>
+        <span class="p">[</span><span class="mi">21</span><span class="p">,</span><span class="n">ufl</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span><span class="c1">#UFL  5</span>
         <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="o">-</span><span class="n">loc</span><span class="p">,</span><span class="n">loc</span><span class="p">],</span><span class="c1">#loc</span>
         <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">sf</span><span class="p">,</span><span class="n">sf</span><span class="o">*</span><span class="n">stoic</span><span class="p">],</span><span class="c1">#stoic point  6</span>
         <span class="p">[</span><span class="mi">100</span><span class="o">-</span><span class="n">lfl</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">stoic</span><span class="p">),</span><span class="n">lfl</span><span class="p">,</span><span class="n">stoic</span><span class="o">*</span><span class="n">lfl</span><span class="p">],</span><span class="c1">#intersection  7]</span>
@@ -505,7 +499,6 @@ document.write(`
     <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Flammability triangle&quot;</span><span class="p">)</span>
     <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Stoic line&quot;</span><span class="p">)</span>
     <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-    <span class="n">tax</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Lower Oxygen Level&quot;</span><span class="p">)</span>
     <span class="c1"># Customize the plot</span>
     <span class="n">tax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Flammability Triangle for </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> in Air&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
     <span class="n">tax</span><span class="o">.</span><span class="n">left_axis_label</span><span class="p">(</span><span class="s2">&quot;Oxygen&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
@@ -530,16 +523,113 @@ document.write(`
     <span class="n">plt</span><span class="o">.</span><span class="n">ticks</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">flammabilityTriangle</span><span class="p">(</span><span class="s2">&quot;Hydrogen&quot;</span><span class="p">,</span> <span class="n">lfl</span><span class="p">,</span><span class="n">ufl</span><span class="p">,</span><span class="n">stoic</span><span class="p">,</span><span class="n">lol</span><span class="p">)</span>
+<span class="n">flammabilityTriangle</span><span class="p">(</span><span class="s2">&quot;Hydrogen&quot;</span><span class="p">,</span> <span class="n">lfl</span><span class="p">,</span><span class="n">ufl</span><span class="p">,</span><span class="n">stoic</span><span class="p">,</span><span class="n">loc</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/clintguymon/opt/anaconda3/envs/jupiterbook/lib/python3.9/site-packages/ternary/plotting.py:148: UserWarning: No data for colormapping provided via &#39;c&#39;. Parameters &#39;vmin&#39;, &#39;vmax&#39; will be ignored
-  ax.scatter(xs, ys, vmin=vmin, vmax=vmax, **kwargs)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">ternary</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ufl</span> <span class="o">=</span> <span class="mi">74</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">lfl</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupiterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">optimize</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">430</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="kn">from</span> <span class="nn">._constraints</span> <span class="kn">import</span> <span class="p">(</span><span class="n">NonlinearConstraint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span>                            <span class="n">LinearConstraint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span>                            <span class="n">Bounds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">429</span> <span class="kn">from</span> <span class="nn">._hessian_update_strategy</span> <span class="kn">import</span> <span class="n">HessianUpdateStrategy</span><span class="p">,</span> <span class="n">BFGS</span><span class="p">,</span> <span class="n">SR1</span>
+<span class="ne">--&gt; </span><span class="mi">430</span> <span class="kn">from</span> <span class="nn">._shgo</span> <span class="kn">import</span> <span class="n">shgo</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span> <span class="kn">from</span> <span class="nn">._dual_annealing</span> <span class="kn">import</span> <span class="n">dual_annealing</span>
+<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="kn">from</span> <span class="nn">._qap</span> <span class="kn">import</span> <span class="n">quadratic_assignment</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupiterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">optimize</span><span class="o">/</span><span class="n">_shgo</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">sys</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">spatial</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">OptimizeResult</span><span class="p">,</span> <span class="n">minimize</span><span class="p">,</span> <span class="n">Bounds</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">scipy.optimize._optimize</span> <span class="kn">import</span> <span class="n">MemoizeJac</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1055,</span> in <span class="ni">_handle_fromlist</span><span class="nt">(module, fromlist, import_, recursive)</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupiterbook/lib/python3.9/site-packages/scipy/__init__.py:189,</span> in <span class="ni">__getattr__</span><span class="nt">(name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span> <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">submodules</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">189</span>         <span class="k">return</span> <span class="n">_importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;scipy.</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span>         <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupiterbook/lib/python3.9/importlib/__init__.py:127,</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>             <span class="k">break</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">127</span> <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupiterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">spatial</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">116</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="kn">from</span> <span class="nn">._plotutils</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="kn">from</span> <span class="nn">._procrustes</span> <span class="kn">import</span> <span class="n">procrustes</span>
+<span class="ne">--&gt; </span><span class="mi">116</span> <span class="kn">from</span> <span class="nn">._geometric_slerp</span> <span class="kn">import</span> <span class="n">geometric_slerp</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="c1"># Deprecated namespaces, to be removed in v2.0.0</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">ckdtree</span><span class="p">,</span> <span class="n">kdtree</span><span class="p">,</span> <span class="n">qhull</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupiterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">spatial</span><span class="o">/</span><span class="n">_geometric_slerp</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">euclidean</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="kn">import</span> <span class="nn">numpy.typing</span> <span class="k">as</span> <span class="nn">npt</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupiterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">spatial</span><span class="o">/</span><span class="n">distance</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">121</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_hausdorff</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="kn">from</span> <span class="nn">..linalg</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="ne">--&gt; </span><span class="mi">121</span> <span class="kn">from</span> <span class="nn">..special</span> <span class="kn">import</span> <span class="n">rel_entr</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_distance_pybind</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span> <span class="k">def</span> <span class="nf">_extra_windows_error_checks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">required_shape</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="c1"># TODO: remove this function when distutils</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="c1"># build system is removed because pybind11 error</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="c1"># handling should suffice per gh-18108</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupiterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">special</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">798</span>
+<span class="g g-Whitespace">    </span><span class="mi">790</span> <span class="kn">from</span> <span class="nn">._spherical_bessel</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span>     <span class="n">spherical_jn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">spherical_yn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">spherical_in</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span>     <span class="n">spherical_kn</span>
+<span class="g g-Whitespace">    </span><span class="mi">795</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span> <span class="c1"># Deprecated namespaces, to be removed in v2.0.0</span>
+<span class="ne">--&gt; </span><span class="mi">798</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">add_newdocs</span><span class="p">,</span> <span class="n">basic</span><span class="p">,</span> <span class="n">orthogonal</span><span class="p">,</span> <span class="n">specfun</span><span class="p">,</span> <span class="n">sf_error</span><span class="p">,</span> <span class="n">spfun_stats</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span> <span class="n">__all__</span> <span class="o">=</span> <span class="n">_ufuncs</span><span class="o">.</span><span class="n">__all__</span> <span class="o">+</span> <span class="n">_basic</span><span class="o">.</span><span class="n">__all__</span> <span class="o">+</span> <span class="n">_orthogonal</span><span class="o">.</span><span class="n">__all__</span> <span class="o">+</span> <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">801</span>     <span class="s1">&#39;SpecialFunctionWarning&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span>     <span class="s1">&#39;SpecialFunctionError&#39;</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">814</span>     <span class="s1">&#39;spherical_kn&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">815</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span> <span class="kn">from</span> <span class="nn">scipy._lib._testutils</span> <span class="kn">import</span> <span class="n">PytestTester</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupiterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">special</span><span class="o">/</span><span class="n">add_newdocs</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># This file is not meant for public use and will be removed in SciPy v2.0.0.</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">warnings</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_add_newdocs</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;add_newdoc&#39;</span><span class="p">,</span> <span class="s1">&#39;Dict&#39;</span><span class="p">,</span> <span class="s1">&#39;docdict&#39;</span><span class="p">]</span>  <span class="c1"># noqa: F822</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">def</span> <span class="fm">__dir__</span><span class="p">():</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1007,</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:986,</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:680,</span> in <span class="ni">_load_unlocked</span><span class="nt">(spec)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:846,</span> in <span class="ni">exec_module</span><span class="nt">(self, module)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:978,</span> in <span class="ni">get_code</span><span class="nt">(self, fullname)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:647,</span> in <span class="ni">_compile_bytecode</span><span class="nt">(data, name, bytecode_path, source_path)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
-<img alt="../_images/72908f4dc24d05dbfcd7bfb69a7418c16e20a5f39f02fff539acb91822711d98.png" src="../_images/72908f4dc24d05dbfcd7bfb69a7418c16e20a5f39f02fff539acb91822711d98.png" />
 </div>
 </div>
 </section>
