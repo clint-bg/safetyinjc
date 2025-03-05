@@ -438,7 +438,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incompressible-flow-through-an-orifice">Incompressible Flow through an Orifice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-flow-through-an-orifice-general-case">Gaseous flow through an Orifice: General Case</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flashing-two-phase-flow-estimate">Flashing Two Phase Flow Estimate</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relief-valve-sizing">Relief Valve Sizing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relief-valve-sizing">Relief Valve Sizing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class-example-venting-co2-from-2l-bottle">In Class Example: Venting CO2 from 2L Bottle</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -518,7 +521,7 @@ Ma = \text{min} \left(1, \sqrt{\frac{2}{\gamma - 1}\left(\left(\frac{P_o}{P_{atm
 \[
 \dot{n} = P_o A C_d \sqrt{\frac{\gamma}{R T M_w}} Ma \left[ 1+\frac{(\gamma-1)}{2}Ma^2\right]^{\frac{\gamma+1}{2-2\gamma}}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(R\)</span> is the gas constant and <span class="math notranslate nohighlight">\(T\)</span> is the temperature. If you use all SI units (Pascal, meters, kilograms, mole: so pressure in pascal, area in meters, R in J/mol/K, and Mw in kg/mol), you’ll get mole per second for <span class="math notranslate nohighlight">\(\dot{n}\)</span>. See Perry’s Handbook for Chemical Engineers Equation 6-118 for more information.</p>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> is the gas constant and <span class="math notranslate nohighlight">\(T\)</span> is the temperature, <span class="math notranslate nohighlight">\(P_o\)</span> is the absolute pressure inside the vessel, <span class="math notranslate nohighlight">\(C_d\)</span> is the discharge coefficient (typically about 0.9). If you use all SI units (Pascal, meters, kilograms, mole: so pressure in pascal, area in meters, R in J/mol/K, and Mw in kg/mol), you’ll get mole per second for <span class="math notranslate nohighlight">\(\dot{n}\)</span>. See Perry’s Handbook for Chemical Engineers Equation 6-118 for more information.</p>
 </section>
 <section id="flashing-two-phase-flow-estimate">
 <h2>Flashing Two Phase Flow Estimate<a class="headerlink" href="#flashing-two-phase-flow-estimate" title="Permalink to this heading">#</a></h2>
@@ -536,6 +539,85 @@ Ma = \text{min} \left(1, \sqrt{\frac{2}{\gamma - 1}\left(\left(\frac{P_o}{P_{atm
 <p>See in-class examples</p>
 <p>Download a pdf of the example using freeform here: <a class="github reference external" href="https://github.com/clint-bg/safetyinjc/blob/main/physical/supportfiles/GasFlowExample311.pdf">clint-bg/safetyinjc</a></p>
 </div>
+<section id="in-class-example-venting-co2-from-2l-bottle">
+<h3>In Class Example: Venting CO2 from 2L Bottle<a class="headerlink" href="#in-class-example-venting-co2-from-2l-bottle" title="Permalink to this heading">#</a></h3>
+<p>A two liter bottle is half filed with water. There is a relief valve on the top designed to relieve at 60 psig with a flow of 61 scfm. What is the flow rate of CO2 through the relieve per the above equations?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#fist find the Mach number</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.3</span> <span class="c1">#specific heat capacity ratio for CO2, estimate</span>
+<span class="n">P1</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">+</span> <span class="mf">12.5</span> <span class="c1">#initial pressure, estimate, psia</span>
+<span class="n">Patm</span> <span class="o">=</span> <span class="mf">12.5</span> <span class="c1"># atmospheric pressure, psia</span>
+<span class="n">Ma</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">P1</span><span class="o">/</span><span class="n">Patm</span><span class="p">)</span><span class="o">**</span><span class="p">((</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">gamma</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span> <span class="c1">#Mach number</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ma</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#now calculate the molar flow rate</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1"># gas constant, J/(mol*K)</span>
+<span class="n">Temp</span> <span class="o">=</span> <span class="mi">295</span> <span class="c1"># temperature, K</span>
+<span class="n">Area</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="mf">0.0254</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># area of the pipe, m^2</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="mf">0.9</span> <span class="c1"># discharge coefficient</span>
+<span class="n">Mw</span> <span class="o">=</span> <span class="mf">0.04401</span> <span class="c1"># molar mass of CO2, kg/mol</span>
+<span class="c1"># molar flow rate, mol/s</span>
+<span class="n">ndot</span> <span class="o">=</span> <span class="n">P1</span><span class="o">*</span><span class="mf">6894.76</span><span class="o">*</span><span class="n">Area</span><span class="o">*</span><span class="n">Cd</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Temp</span><span class="o">*</span><span class="n">Mw</span><span class="p">))</span><span class="o">*</span><span class="n">Ma</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">Ma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">((</span><span class="n">gamma</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">gamma</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The molar flow rate is </span><span class="si">{</span><span class="n">ndot</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1"> mol/s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The molar flow rate is 0.92 mol/s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#now convert that molar flow rate into scfm, PV = nRT</span>
+<span class="n">Tstandard</span> <span class="o">=</span> <span class="mf">298.15</span> <span class="c1"># standard temperature, K</span>
+<span class="n">Pstandard</span> <span class="o">=</span> <span class="mi">101325</span> <span class="c1"># standard pressure, Pa</span>
+<span class="n">scmps</span> <span class="o">=</span> <span class="n">ndot</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">Tstandard</span><span class="o">/</span><span class="n">Pstandard</span> <span class="c1">#units of m^3/s</span>
+<span class="n">scfm</span> <span class="o">=</span> <span class="n">scmps</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="p">(</span><span class="mf">3.281</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The flow rate in scfm is </span><span class="si">{</span><span class="n">scfm</span><span class="si">:</span><span class="s1">0.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The flow rate in scfm is 47.4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Why is this number different than the reported flow rate of CO2 through the relief valve? Could the diameter of the relief be slightly larger?</p>
+<p>How would you get the generation rate of CO2 from the submlimation of dry ice?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q = hA(T_{water} - T_{ice}) \\
+mdot = Q/\Delta H_{vap}
+\end{split}\]</div>
+<p>Does area (<span class="math notranslate nohighlight">\(A\)</span>) change? How would you get the heat transfer coefficient (<span class="math notranslate nohighlight">\(h\)</span>)?</p>
+</section>
 </section>
 </section>
 
@@ -610,7 +692,10 @@ Ma = \text{min} \left(1, \sqrt{\frac{2}{\gamma - 1}\left(\left(\frac{P_o}{P_{atm
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incompressible-flow-through-an-orifice">Incompressible Flow through an Orifice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-flow-through-an-orifice-general-case">Gaseous flow through an Orifice: General Case</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flashing-two-phase-flow-estimate">Flashing Two Phase Flow Estimate</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relief-valve-sizing">Relief Valve Sizing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relief-valve-sizing">Relief Valve Sizing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class-example-venting-co2-from-2l-bottle">In Class Example: Venting CO2 from 2L Bottle</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
