@@ -496,7 +496,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Energy from bursting reactor scales with burst pressure and void volume:</span>
-<span class="n">BurstEnergy</span> <span class="o">=</span> <span class="n">BurstPressure</span> <span class="o">*</span> <span class="n">ReactorVolume</span> <span class="o">*</span> <span class="mf">1e5</span> <span class="c1">#Joules</span>
+<span class="n">BurstEnergy</span> <span class="o">=</span> <span class="n">BurstPressure</span> <span class="o">*</span> <span class="n">ReactorVolume</span> <span class="o">*</span> <span class="mf">1e5</span><span class="o">/</span><span class="p">(</span><span class="mf">1.4</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">BurstPressure</span><span class="p">)</span><span class="o">**</span><span class="p">((</span><span class="mf">1.4</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mf">1.4</span><span class="p">)</span> <span class="c1">#Joules</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;BurstEnergy, MJ: &#39;</span><span class="p">,</span> <span class="n">BurstEnergy</span><span class="o">/</span><span class="mf">1e6</span><span class="p">)</span>
 <span class="n">CombustionEnergy</span> <span class="o">=</span> <span class="n">ContentMass</span> <span class="o">*</span> <span class="n">CombustionHeat</span> <span class="c1">#Joules</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;CombustionEnergy, MJ: </span><span class="si">{</span><span class="n">CombustionEnergy</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -507,9 +507,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BurstEnergy, MJ:  50.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BurstEnergy, MJ:  121.29319730813798
 CombustionEnergy, MJ: 399183.10
-Energy could power 3992.33 homes for a year
+Energy could power 3993.04 homes for a year
 </pre></div>
 </div>
 </div>
