@@ -1,0 +1,68 @@
+version: 1
+project:
+  title: Chemical Engineering and Society-Health, Safety, and the Environment
+  authors:
+    - name: Clint Guymon
+    - name: Brigham Young University
+  github: clint-bg/safetyinjc
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: intro.md
+    - file: 01-Intro.ipynb
+    - file: spiritual.md
+      children:
+        - file: spiritual/02-GPrinciples.ipynb
+        - file: spiritual/03-EthicsApproach.ipynb
+    - file: physicalPHA.md
+      children:
+        - file: physical/04-Logic.ipynb
+        - file: physical/05-PSM.ipynb
+        - file: physical/06-FTA.ipynb
+        - file: physical/07-HA.ipynb
+        - file: physical/08-HAZ.ipynb
+        - file: physical/09-Prob.ipynb
+        - file: physical/10-CaseStudy.ipynb
+        - file: physical/11-PSM.ipynb
+        - file: physical/12-Review.ipynb
+        - file: physical/13-CaseStudy2.ipynb
+    - file: physicalPSI.md
+      children:
+        - file: physical/14-Toxicity.ipynb
+        - file: physical/15-Hygiene.ipynb
+        - file: physical/16-HazCom.ipynb
+        - file: physical/17-Balances.ipynb
+        - file: physical/18-Flammability.ipynb
+        - file: physical/19-Flammability2.ipynb
+        - file: physical/20-Explosions.ipynb
+        - file: physical/21-ESD.ipynb
+        - file: physical/22-Reactivity.ipynb
+    - file: physicalControls.md
+      children:
+        - file: physical/23-Reliefs.ipynb
+        - file: physical/24-ReliefSizing.ipynb
+        - file: physical/25-ReliefAction.ipynb
+        - file: physical/26-Review.ipynb
+    - file: stewardship.md
+      children:
+        - file: stewardship/27-Energy.ipynb
+        - file: stewardship/28-EnergyFF.ipynb
+        - file: stewardship/29-Climate.ipynb
+        - file: stewardship/30-Legislation.ipynb
+        - file: stewardship/31-Pollution.ipynb
+        - file: stewardship/32-Remediation.ipynb
+        - file: stewardship/33-ProcessExample.ipynb
+        - file: stewardship/34-Preview.ipynb
+        - file: stewardship/35-Summary.ipynb
+    - file: projectDetails.ipynb
+    - file: acknowledgement.md
+site:
+  options:
+    logo: logo.png
+    folders: true
+    analytics_google: G-2YT6ZCYRDQ
+  template: book-theme

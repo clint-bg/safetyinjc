@@ -57,7 +57,7 @@ A critical part of hazards analysis is properly understanding the chemicals and 
 - Students will be able to apply principles of risk management, Hazards and Operability Studies (HAZOPS), Layers of Protection Analysis (LOPA), and fault-tree analyses in process design.
 
 ## Course Textbook
-Chemical Process Safety by Daniel Crowl and Joseph Louvar, Fourth Edition
+Foundations of Spiritual and Physical Safety: with Chemical Processes by Clint Guymon, PhD PE, First Edition, [Amazon Link](https://a.co/d/b08OOpi).
 
 ## Syllabus
 The syllabus is available on Learning Suite.
