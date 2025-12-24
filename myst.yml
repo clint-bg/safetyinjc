@@ -13,9 +13,9 @@ project:
       output: exports/book.pdf
   toc:
     - file: intro.md
-    - file: 01-Intro.ipynb
     - file: spiritual.md
       children:
+        - file: spiritual/01-Intro.ipynb
         - file: spiritual/02-GPrinciples.ipynb
         - file: spiritual/03-EthicsApproach.ipynb
     - file: physicalPHA.md
