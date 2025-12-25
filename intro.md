@@ -18,7 +18,11 @@ This class treats those two broad topics (safety and stewardship) in addressing 
 ### Physical Safety
 Protection of people and resources from harm. Here we highlight Process Safety Management (PSM). There are fourteen elements part of the process safety management (PSM) required by OSHA for organizations working or storing chemicals above a certain threshold. The threshold for explosives is 0, meaning any amount of explosives qualifies the company to comply with PSM. The regulation is part of the code of federal regulations (CFR) as outlined here: [29 CFR 1910.119 (OSHA PSM)](https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-H/section-1910.119). The primary element is Hazards Analysis and secondarily Process Safety Information.
 
-<img src="https://github.com/clint-bg/safetyinjc/blob/main/spiritual/supportfiles/PSMArch.png?raw=trueg" width="400">
+```{image} https://github.com/clint-bg/safetyinjc/blob/main/spiritual/supportfiles/PSMArch.png?raw=trueg
+:width: 400px
+:alt: PSM Arch
+:align: center
+```
 
 The above arch shows the hazards as bricks held back by an arch representing PSM with the keystone to that arch (hazards analysis) being the most important part to protecting people and resources from harm.
 
@@ -63,7 +67,26 @@ Foundations of Spiritual and Physical Safety: with Chemical Processes by Clint G
 The syllabus is available on Learning Suite.
 
 ## Course Schedule
-The schedule for the course will be as follows (subject to change where Week 1.2 is the first week and the second class of that week):
-See Learning Suite for the most up-to-date schedule.
+The course is divided up into five modules roughly divided by the following topics:
+ - Module 1: Foundations of Safety and Ethics  
+    *Focus: Establishing the dual framework of physical and spiritual safety, and the ethical responsibilities of an engineer.*
+    - Lectures: 1-4
+    - Reading through Chapter II (Foundations of Spiritual and Physical Safety: with chemical processes)
+ - Module 2: Understanding Harm and Risk      
+    *Focus: How injuries occur (toxicology/physics) and how we quantify risk.*
+    - Lectures: 5-8
+    - Reading through Chapter IV  
+ - Module 3: Systematic Hazards Analysis      
+    *Focus: The core engineering methodologies for identifying and mitigating risk.*
+    - Lectures: 9-15
+    - Reading through Chapter V  
+ - Module 4: Critical Process Safety Information      
+    *Focus: Chemical thermodynamics, flammability, and explosions.*
+    - Lectures: 16-21
+    - Reading through Chapter VI  
+ - Module 5: Safeguards & Regulations     
+    *Focus: Engineering controls, legal requirements, and tools.*
+    - Lectures: 22-30
+    - Reading through Chapter XII & Appendix
 
 Content is presented using [Jupyter Book](https://jupyterbook.org).
