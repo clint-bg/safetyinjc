@@ -1,0 +1,14 @@
+To compile run:
+jupyter book build 
+
+If you need to rebuild the workflow file deploy.yml then type:
+jupyter book init --gh-pages
+This only needs to happen once I think.
+
+Also push the update to the repository at github
+git add ./*
+git commit -m "commit"
+git push
+
+I couldn't figure out how to update the picture in the primary sidebar but
+ I did get google analytics integrated
