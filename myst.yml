@@ -67,6 +67,7 @@ project:
     - file: acknowledgement.md
 site:
   options:
+    base_url: "https://clint-bg.github.io/safetyinjc/"
     logo: logo.png
     folders: true
     analytics_google: G-2YT6ZCYRDQ
