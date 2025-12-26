@@ -17,50 +17,58 @@ project:
     - file: intro.md
     - file: spiritual.md
       children:
-        - file: spiritual/01-Intro.ipynb
-        - file: spiritual/02-GPrinciples.ipynb
-        - file: spiritual/03-EthicsApproach.ipynb
-    - file: physicalPHA.md
+        - file: spiritual/01-intro.ipynb
+        - file: spiritual/02-spiritethics.ipynb
+        - file: spiritual/03-ethicsapproaches.ipynb
+        - file: spiritual/04-onbecoming.ipynb
+    - file: harmrisk.md
       children:
-        - file: physical/04-Logic.ipynb
-        - file: physical/05-PSM.ipynb
-        - file: physical/06-FTA.ipynb
-        - file: physical/07-HA.ipynb
-        - file: physical/08-HAZ.ipynb
-        - file: physical/09-Prob.ipynb
-        - file: physical/10-CaseStudy.ipynb
-        - file: physical/11-PSM.ipynb
-        - file: physical/12-Review.ipynb
-        - file: physical/13-CaseStudy2.ipynb
-    - file: physicalPSI.md
+        - file: harmrisk/05-humanbody.ipynb
+        - file: harmrisk/06-injurymodes.ipynb
+        - file: harmrisk/07-riskacceptance.ipynb
+        - file: harmrisk/08-quantitative.ipynb
+    - file: hazardsanalysis.md
       children:
-        - file: physical/14-Toxicity.ipynb
-        - file: physical/15-Hygiene.ipynb
-        - file: physical/16-HazCom.ipynb
-        - file: physical/17-Balances.ipynb
-        - file: physical/18-Flammability.ipynb
-        - file: physical/19-Flammability2.ipynb
-        - file: physical/20-Explosions.ipynb
-        - file: physical/21-ESD.ipynb
-        - file: physical/22-Reactivity.ipynb
-    - file: physicalControls.md
+        - file: hazardsanalysis/09-inherent.ipynb
+        - file: hazardsanalysis/10-hatools.ipynb
+        - file: hazardsanalysis/11-hazop.ipynb
+        - file: hazardsanalysis/13-fta.ipynb
+        - file: hazardsanalysis/14-fmea.ipynb
+        - file: hazardsanalysis/15-fmeastudy.ipynb
+        - file: hazardsanalysis/15-pha.ipynb
+    - file: processsafetyinfo.md
       children:
-        - file: physical/23-Reliefs.ipynb
-        - file: physical/24-ReliefSizing.ipynb
-        - file: physical/25-ReliefAction.ipynb
-        - file: physical/26-Review.ipynb
-    - file: stewardship.md
+        - file: processsafetyinfo/16-hygiene.ipynb
+        - file: processsafetyinfo/16-toxicity.ipynb
+        - file: processsafetyinfo/17-reactivity.ipynb
+        - file: processsafetyinfo/18-esd.ipynb
+        - file: processsafetyinfo/19-flammability1.ipynb
+        - file: processsafetyinfo/19-flammability2.ipynb
+        - file: processsafetyinfo/20-explosions.ipynb
+        - file: processsafetyinfo/21-balances.ipynb
+        - file: processsafetyinfo/21-reliefaction.ipynb
+        - file: processsafetyinfo/21-reliefsizing.ipynb
+        - file: processsafetyinfo/21d-preview.ipynb
+    - file: safeguardsregs.md
       children:
-        - file: stewardship/27-Energy.ipynb
-        - file: stewardship/28-EnergyFF.ipynb
-        - file: stewardship/29-Climate.ipynb
-        - file: stewardship/30-Legislation.ipynb
-        - file: stewardship/31-Pollution.ipynb
-        - file: stewardship/32-Remediation.ipynb
-        - file: stewardship/33-ProcessExample.ipynb
-        - file: stewardship/34-Preview.ipynb
-        - file: stewardship/35-Summary.ipynb
+        - file: safeguardsregs/22-reliefs.ipynb
+        - file: safeguardsregs/23-engineeringcontrols.ipynb
+        - file: safeguardsregs/24-psm.ipynb
+        - file: safeguardsregs/25-ragast.ipynb
+        - file: safeguardsregs/26-hazcom.ipynb
+        - file: safeguardsregs/27-aitools.ipynb
+        - file: safeguardsregs/33-energy.ipynb
+        - file: safeguardsregs/34-energyFF.ipynb
+        - file: safeguardsregs/35-climate.ipynb
+        - file: safeguardsregs/36-legislation.ipynb
+        - file: safeguardsregs/37-pollution.ipynb
+        - file: safeguardsregs/38-remediation.ipynb
     - file: projectDetails.ipynb
+    - file: appendix.md
+      children:
+        - file: appendix/logic.ipynb
+        - file: appendix/review2.ipynb
+        - file: appendix/z-finalreview.ipynb
     - file: acknowledgement.md
 site:
   options:

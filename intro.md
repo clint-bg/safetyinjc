@@ -68,7 +68,7 @@ The syllabus is available on Learning Suite.
 
 ## Course Schedule
 The course is divided up into five modules roughly divided by the following topics:
- - Module 1: Foundations of Safety and Ethics  
+ - Module 1: Spiritual Safety and Ethics  
     *Focus: Establishing the dual framework of physical and spiritual safety, and the ethical responsibilities of an engineer.*
     - Lectures: 1-4
     - Reading through Chapter II (Foundations of Spiritual and Physical Safety: with chemical processes)
