@@ -17,7 +17,7 @@ project:
     - file: intro.md
     - file: spiritual.md
       children:
-        - file: spiritual/01-intro.ipynb
+        - file: spiritual/01-introd.ipynb
         - file: spiritual/02-spiritethics.ipynb
         - file: spiritual/03-ethicsapproaches.ipynb
         - file: spiritual/04-onbecoming.ipynb
