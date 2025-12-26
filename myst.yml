@@ -1,8 +1,9 @@
 version: 1
 project:
-  title: Health, Safety, and the Environment
-  date: 2025-12-25  # ISO format (YYYY-MM-DD) is safest
+  title: Foundations of Spiritual and Physical Safety
+  subtitle: with Chemical Processes
   keywords:
+    - Spiritual Safety
     - Process Safety
     - Chemical Engineering
     - Risk Assessment
@@ -12,10 +13,6 @@ project:
   github: clint-bg/safetyinjc
   bibliography:
     - references.bib
-  exports:
-    - format: pdf
-      template: plain_latex
-      articles: spiritual/01-Intro.ipynb
   toc:
     - file: intro.md
     - file: spiritual.md
