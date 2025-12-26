@@ -3,7 +3,7 @@
     "files": [],
     "opts": {
       "execute": false,
-      "pdf": true,
+      "pdf": false,
       "tex": false,
       "typst": false,
       "docx": false,
@@ -21,21 +21,9 @@
       "strict": false,
       "ci": false,
       "maxSizeWebp": 1572864
-    }
+    },
+    "performSiteBuild": true
   },
-  "exports": [
-    {
-      "format": "pdf",
-      "template": "plain_latex",
-      "articles": [
-        {
-          "file": "/Users/clintguymon/github/safetyinjc/spiritual/01-Intro.ipynb",
-          "level": 0
-        }
-      ],
-      "output": "/Users/clintguymon/github/safetyinjc/_build/exports/intro.pdf",
-      "$file": "/Users/clintguymon/github/safetyinjc/myst.yml",
-      "$project": "/Users/clintguymon/github/safetyinjc"
-    }
-  ]
+  "exports": [],
+  "buildSite": true
 }
