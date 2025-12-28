@@ -31,7 +31,9 @@ project:
       children:
         - file: hazardsanalysis/09-inherent.ipynb
         - file: hazardsanalysis/10-hatools.ipynb
+        - file: hazardsanalysis/10-logic.ipynb
         - file: hazardsanalysis/11-hazop.ipynb
+        - file: hazardsanalysis/12-hazopstudy.ipynb
         - file: hazardsanalysis/13-fta.ipynb
         - file: hazardsanalysis/14-fmea.ipynb
         - file: hazardsanalysis/15-fmeastudy.ipynb
@@ -63,10 +65,9 @@ project:
         - file: safeguardsregs/36-legislation.ipynb
         - file: safeguardsregs/37-pollution.ipynb
         - file: safeguardsregs/38-remediation.ipynb
-    - file: projectDetails.ipynb
+    - file: projectdetails.ipynb
     - file: appendix.md
       children:
-        - file: appendix/logic.ipynb
         - file: appendix/review2.ipynb
         - file: appendix/z-finalreview.ipynb
     - file: acknowledgement.md
