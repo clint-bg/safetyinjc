@@ -80,6 +80,21 @@ project:
         - file: appendix/z-finalreview.ipynb
     - file: acknowledgement.md
 site:
+  nav:
+    - title: Spirit
+      url: /spiritual
+    - title: Risk
+      url: /harmrisk
+    - title: HA 
+      url: /hazardsanalysis
+    - title: PSI 
+      url: /processsafetyinfo
+    - title: Steward
+      url: /safeguardsregs
+  actions:
+    - title: PDF
+      url: /exports/FSPSwCP.pdf
+
   options:
     logo: logo.png
     folders: true
