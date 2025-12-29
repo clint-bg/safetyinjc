@@ -1,7 +1,15 @@
 version: 1
 project:
-  title: Foundations of Spiritual and Physical Safety
+  title: Foundations of Spiritual and Physical Safety with Chemical Processes
   subtitle: with Chemical Processes
+  exports: 
+    - format: pdf
+      template: curvenote
+      article: 
+        - spiritual/01-introd.ipynb
+        - spiritual/02-spiritethics.ipynb
+        - spiritual/03-ethicsapproaches.ipynb
+      output: exports/FSPSwCP.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
