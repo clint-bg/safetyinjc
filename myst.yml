@@ -12,14 +12,14 @@ project:
         # - spiritual/03-ethicsapproaches.ipynb
         # - spiritual/04-onbecoming.ipynb
         # - harmrisk/05-humanbody.ipynb
-        - harmrisk/06-injurymodes.ipynb
+        # - harmrisk/06-injurymodes.ipynb
         # - harmrisk/07-riskacceptance.ipynb
         # - harmrisk/08-quantitative.ipynb
         # - hazardsanalysis/09-inherent.ipynb
         # - hazardsanalysis/10-hatools.ipynb
-        # - hazardsanalysis/10-logic.ipynb
         # - hazardsanalysis/11-hazop.ipynb
         # - hazardsanalysis/12-hazopstudy.ipynb
+        # - hazardsanalysis/12-logic.ipynb
         # - hazardsanalysis/13-fta.ipynb
         # - hazardsanalysis/14-fmea.ipynb
         # - hazardsanalysis/15-fmeastudy.ipynb
@@ -27,11 +27,11 @@ project:
         # - processsafetyinfo/16-hygiene.ipynb
         # - processsafetyinfo/16-toxicity.ipynb
         # - processsafetyinfo/17-reactivity.ipynb
-        # - processsafetyinfo/18-esd.ipynb
+        # - processsafetyinfo/18-init.ipynb
         # - processsafetyinfo/19-flammability1.ipynb
         # - processsafetyinfo/19-flammability2.ipynb
         # - processsafetyinfo/20-explosions.ipynb
-        # - processsafetyinfo/21-balances.ipynb
+        - processsafetyinfo/21-balances.ipynb
         # - processsafetyinfo/21-reliefaction.ipynb
         # - processsafetyinfo/21-reliefsizing.ipynb
         # - processsafetyinfo/21d-preview.ipynb
@@ -47,7 +47,7 @@ project:
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
         # - safeguardsregs/38-remediation.ipynb
-      output: exports/06-injurymodes.pdf
+      output: exports/21-balances.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
@@ -77,9 +77,9 @@ project:
       children:
         - file: hazardsanalysis/09-inherent.ipynb
         - file: hazardsanalysis/10-hatools.ipynb
-        - file: hazardsanalysis/10-logic.ipynb
         - file: hazardsanalysis/11-hazop.ipynb
         - file: hazardsanalysis/12-hazopstudy.ipynb
+        - file: hazardsanalysis/12-logic.ipynb
         - file: hazardsanalysis/13-fta.ipynb
         - file: hazardsanalysis/14-fmea.ipynb
         - file: hazardsanalysis/15-fmeastudy.ipynb
@@ -89,7 +89,7 @@ project:
         - file: processsafetyinfo/16-hygiene.ipynb
         - file: processsafetyinfo/16-toxicity.ipynb
         - file: processsafetyinfo/17-reactivity.ipynb
-        - file: processsafetyinfo/18-esd.ipynb
+        - file: processsafetyinfo/18-init.ipynb
         - file: processsafetyinfo/19-flammability1.ipynb
         - file: processsafetyinfo/19-flammability2.ipynb
         - file: processsafetyinfo/20-explosions.ipynb
