@@ -31,11 +31,12 @@ project:
         # - processsafetyinfo/19-flammability1.ipynb
         # - processsafetyinfo/19-flammability2.ipynb
         # - processsafetyinfo/20-explosions.ipynb
-        - processsafetyinfo/21-balances.ipynb
-        # - processsafetyinfo/21-reliefaction.ipynb
-        # - processsafetyinfo/21-reliefsizing.ipynb
-        # - processsafetyinfo/21d-preview.ipynb
+        # - processsafetyinfo/21-balances1.ipynb
+        # - processsafetyinfo/21-orificeflow.ipynb
+        # - processsafetyinfo/21d-balances2.ipynb
+        # - processsafetyinfo/22-balances3.ipynb
         # - safeguardsregs/22-reliefs.ipynb
+        - safeguardsregs/22-reliefsizing.ipynb
         # - safeguardsregs/23-engineeringcontrols.ipynb
         # - safeguardsregs/24-psm.ipynb
         # - safeguardsregs/25-ragast.ipynb
@@ -47,14 +48,14 @@ project:
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
         # - safeguardsregs/38-remediation.ipynb
-      output: exports/21-balances.pdf
+      output: exports/22-reliefsizing.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
     - Chemical Engineering
     - Risk Assessment
   authors:
-    - name: Clint Guymon
+    - name: Clint Guymon, PhD PE
     - name: Brigham Young University
   github: clint-bg/safetyinjc
   bibliography:
@@ -93,13 +94,14 @@ project:
         - file: processsafetyinfo/19-flammability1.ipynb
         - file: processsafetyinfo/19-flammability2.ipynb
         - file: processsafetyinfo/20-explosions.ipynb
-        - file: processsafetyinfo/21-balances.ipynb
-        - file: processsafetyinfo/21-reliefaction.ipynb
-        - file: processsafetyinfo/21-reliefsizing.ipynb
-        - file: processsafetyinfo/21d-preview.ipynb
+        - file: processsafetyinfo/21-balances1.ipynb
+        - file: processsafetyinfo/21-orificeflow.ipynb
+        - file: processsafetyinfo/21d-balances2.ipynb
+        - file: processsafetyinfo/22-balances3.ipynb
     - file: safeguardsregs.md
       children:
         - file: safeguardsregs/22-reliefs.ipynb
+        - file: safeguardsregs/22-reliefsizing.ipynb
         - file: safeguardsregs/23-engineeringcontrols.ipynb
         - file: safeguardsregs/24-psm.ipynb
         - file: safeguardsregs/25-ragast.ipynb
