@@ -7,7 +7,7 @@ project:
       template: curvenote
       date: 2025-01-01
       article: 
-        #- spiritual/01-introd.ipynb
+          - spiritual/01-introd.ipynb
         # - spiritual/02-spiritethics.ipynb
         # - spiritual/03-ethicsapproaches.ipynb
         # - spiritual/04-onbecoming.ipynb
@@ -36,19 +36,19 @@ project:
         # - processsafetyinfo/21d-balances2.ipynb
         # - processsafetyinfo/22-balances3.ipynb
         # - safeguardsregs/22-reliefs.ipynb
-        - safeguardsregs/22-reliefsizing.ipynb
-        # - safeguardsregs/23-engineeringcontrols.ipynb
+        # - safeguardsregs/22-reliefsizing.ipynb
+        # - safeguardsregs/23-controls.ipynb
         # - safeguardsregs/24-psm.ipynb
         # - safeguardsregs/25-ragast.ipynb
         # - safeguardsregs/26-hazcom.ipynb
         # - safeguardsregs/27-aitools.ipynb
         # - safeguardsregs/33-energy.ipynb
-        # - safeguardsregs/34-energyFF.ipynb
+        # - safeguardsregs/33-energyFF.ipynb
         # - safeguardsregs/35-climate.ipynb
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
         # - safeguardsregs/38-remediation.ipynb
-      output: exports/22-reliefsizing.pdf
+      output: exports/01-introd.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
@@ -102,13 +102,13 @@ project:
       children:
         - file: safeguardsregs/22-reliefs.ipynb
         - file: safeguardsregs/22-reliefsizing.ipynb
-        - file: safeguardsregs/23-engineeringcontrols.ipynb
+        - file: safeguardsregs/23-controls.ipynb
         - file: safeguardsregs/24-psm.ipynb
         - file: safeguardsregs/25-ragast.ipynb
         - file: safeguardsregs/26-hazcom.ipynb
         - file: safeguardsregs/27-aitools.ipynb
         - file: safeguardsregs/33-energy.ipynb
-        - file: safeguardsregs/34-energyFF.ipynb
+        - file: safeguardsregs/33-energyFF.ipynb
         - file: safeguardsregs/35-climate.ipynb
         - file: safeguardsregs/36-legislation.ipynb
         - file: safeguardsregs/37-pollution.ipynb
