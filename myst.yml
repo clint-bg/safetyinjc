@@ -7,7 +7,7 @@ project:
       template: curvenote
       date: 2025-01-01
       article: 
-          - spiritual/01-introd.ipynb
+        #  - spiritual/01-introd.ipynb
         # - spiritual/02-spiritethics.ipynb
         # - spiritual/03-ethicsapproaches.ipynb
         # - spiritual/04-onbecoming.ipynb
@@ -42,13 +42,13 @@ project:
         # - safeguardsregs/25-ragast.ipynb
         # - safeguardsregs/26-hazcom.ipynb
         # - safeguardsregs/27-aitools.ipynb
-        # - safeguardsregs/33-energy.ipynb
+        - safeguardsregs/33-energy.ipynb
         # - safeguardsregs/33-energyFF.ipynb
         # - safeguardsregs/35-climate.ipynb
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
         # - safeguardsregs/38-remediation.ipynb
-      output: exports/01-introd.pdf
+      output: exports/33-energy.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
