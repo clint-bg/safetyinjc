@@ -10,8 +10,8 @@ project:
         # - spiritual/01-introd.ipynb
         # - spiritual/02-spiritethics.ipynb
         # - spiritual/03-ethicsapproaches.ipynb
-        - spiritual/04-onbecoming.ipynb
-        # - harmrisk/05-humanbody.ipynb
+        # - spiritual/04-onbecoming.ipynb
+        - harmrisk/05-humanbody.ipynb
         # - harmrisk/06-injurymodes.ipynb
         # - harmrisk/07-riskacceptance.ipynb
         # - harmrisk/08-quantitative.ipynb
@@ -48,7 +48,7 @@ project:
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
         # - safeguardsregs/38-remediation.ipynb
-      output: exports/04-onbecoming.pdf
+      output: exports/05-humanbody.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
