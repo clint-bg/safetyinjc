@@ -14,8 +14,8 @@ project:
         # - harmrisk/05-humanbody.ipynb
         # - harmrisk/06-injurymodes.ipynb
         # - harmrisk/07-riskacceptance.ipynb
-        - harmrisk/08-quantitative.ipynb
-        # - hazardsanalysis/09-inherent.ipynb
+        # - harmrisk/08-quantitative.ipynb
+        - hazardsanalysis/09-inherent.ipynb
         # - hazardsanalysis/10-hatools.ipynb
         # - hazardsanalysis/11-hazop.ipynb
         # - hazardsanalysis/12-hazopstudy.ipynb
@@ -48,7 +48,7 @@ project:
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
         # - safeguardsregs/38-remediation.ipynb
-      output: exports/08-quantitative.pdf
+      output: exports/09-inherent.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
