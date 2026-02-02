@@ -1,0 +1,43 @@
+// Root Cause Analysis
+digraph Fishbone {
+	rankdir=LR size="12,8"
+	node [fontname=Arial style=filled]
+	Effect [label="PUMP SEAL FAILURE
+& LEAK" fillcolor=salmon shape=deeppink width=2.5]
+	Machine [label=Machine fillcolor=lightblue shape=ellipse]
+	Machine -> Effect [penwidth=3]
+	"Worn Bearings" [label="Worn Bearings" fontsize=10 shape=none style=none]
+	"Worn Bearings" -> Machine
+	"Improper Alignment" [label="Improper Alignment" fontsize=10 shape=none style=none]
+	"Improper Alignment" -> Machine
+	Method [label=Method fillcolor=lightblue shape=ellipse]
+	Method -> Effect [penwidth=3]
+	"Inadequate PM Schedule" [label="Inadequate PM Schedule" fontsize=10 shape=none style=none]
+	"Inadequate PM Schedule" -> Method
+	"Incorrect Startup Procedure" [label="Incorrect Startup Procedure" fontsize=10 shape=none style=none]
+	"Incorrect Startup Procedure" -> Method
+	Material [label=Material fillcolor=lightblue shape=ellipse]
+	Material -> Effect [penwidth=3]
+	"Incompatible O-ring Elastomer" [label="Incompatible O-ring Elastomer" fontsize=10 shape=none style=none]
+	"Incompatible O-ring Elastomer" -> Material
+	"Abrasive Particles in Fluid" [label="Abrasive Particles in Fluid" fontsize=10 shape=none style=none]
+	"Abrasive Particles in Fluid" -> Material
+	Manpower [label=Manpower fillcolor=lightblue shape=ellipse]
+	Manpower -> Effect [penwidth=3]
+	"Lack of Training" [label="Lack of Training" fontsize=10 shape=none style=none]
+	"Lack of Training" -> Manpower
+	"Fatigue / Overtime" [label="Fatigue / Overtime" fontsize=10 shape=none style=none]
+	"Fatigue / Overtime" -> Manpower
+	Measurement [label=Measurement fillcolor=lightblue shape=ellipse]
+	Measurement -> Effect [penwidth=3]
+	"Faulty Pressure Gauge" [label="Faulty Pressure Gauge" fontsize=10 shape=none style=none]
+	"Faulty Pressure Gauge" -> Measurement
+	"No Vibration Monitoring" [label="No Vibration Monitoring" fontsize=10 shape=none style=none]
+	"No Vibration Monitoring" -> Measurement
+	MotherNature [label=MotherNature fillcolor=lightblue shape=ellipse]
+	MotherNature -> Effect [penwidth=3]
+	"Extreme Ambient Heat" [label="Extreme Ambient Heat" fontsize=10 shape=none style=none]
+	"Extreme Ambient Heat" -> MotherNature
+	"Corrosive Atmosphere" [label="Corrosive Atmosphere" fontsize=10 shape=none style=none]
+	"Corrosive Atmosphere" -> MotherNature
+}

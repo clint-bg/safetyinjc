@@ -1,0 +1,25 @@
+// Root Cause Analysis
+digraph FiveWhys {
+	rankdir=TB size="8,10"
+	node [fontname=Arial margin=0.2 shape=box style=filled]
+	Problem [label="PROBLEM:
+Agitator Motor Overheated and Tripped" fillcolor="#e74c3c" fontcolor=white]
+	Why1 [label="WHY?
+Motor internal cooling fan failed" fillcolor="#f39c12"]
+	Why2 [label="WHY?
+Fan blades were severely corroded" fillcolor="#f1c40f"]
+	Why3 [label="WHY?
+Seal on the motor housing degraded,
+allowing corrosive vapors in" fillcolor="#d4e157"]
+	RootCause [label="ROOT CAUSE:
+Incorrect seal material (elastomer)
+selected for this chemical environment" fillcolor="#27ae60" fontcolor=white]
+	CM [label="COUNTERMEASURE:
+Replace with Chemically Resistant Seal
+& Update Material Selection Standard" fillcolor="#ecf0f1" shape=component]
+	Problem -> Why1 [label=" why?"]
+	Why1 -> Why2 [label=" why?"]
+	Why2 -> Why3 [label=" why?"]
+	Why3 -> RootCause [label=" why?"]
+	RootCause -> CM [label=" action" style=dashed]
+}

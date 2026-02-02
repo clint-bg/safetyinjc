@@ -1,0 +1,29 @@
+// Process Safety Bowtie
+digraph Bowtie {
+	rankdir=LR size="12,5"
+	node [fontname=Arial shape=box style=filled]
+	TopEvent [label="LOSS OF CONTAINMENT
+(Exothermic Runaway)" fillcolor=red fontcolor=white width=2.5]
+	subgraph cluster_threats {
+		color=blue label=THREATS
+		T1 [label="Cooling System Failure" fillcolor=lightblue]
+		T2 [label="Reactant Overcharge" fillcolor=lightblue]
+		B1 [label="Redundant Pumps" fillcolor=lightgray shape=diamond]
+		B2 [label="Auto Feed-Cut" fillcolor=lightgray shape=diamond]
+	}
+	subgraph cluster_consequences {
+		color=orange label=CONSEQUENCES
+		C1 [label="Vessel Rupture" fillcolor=peachpuff]
+		C2 [label="Toxic Release" fillcolor=peachpuff]
+		M1 [label="Pressure Relief Valve" fillcolor=lightgray shape=diamond]
+		M2 [label="Scrubber System" fillcolor=lightgray shape=diamond]
+	}
+	T1 -> B1
+	B1 -> TopEvent
+	T2 -> B2
+	B2 -> TopEvent
+	TopEvent -> M1
+	M1 -> C1
+	TopEvent -> M2
+	M2 -> C2
+}
