@@ -19,11 +19,12 @@ project:
         # - hazardsanalysis/10-hatools.ipynb
         # - hazardsanalysis/11-hazop.ipynb
         # - hazardsanalysis/11a-hazopstudy.ipynb
-        - hazardsanalysis/12-logic.ipynb
-        # - hazardsanalysis/13-fta.ipynb
+        # - hazardsanalysis/12-logic.ipynb
+        - hazardsanalysis/13-fta.ipynb
         # - hazardsanalysis/14-fmea.ipynb
         # - hazardsanalysis/14a-fmeastudy.ipynb
         # - hazardsanalysis/15-pha.ipynb
+        # - hazardsanalysis/16-aitools.ipynb
         # - processsafetyinfo/16-hygiene.ipynb
         # - processsafetyinfo/16-toxicity.ipynb
         # - processsafetyinfo/17-reactivity.ipynb
@@ -41,14 +42,13 @@ project:
         # - safeguardsregs/24-psm.ipynb
         # - safeguardsregs/25-ragast.ipynb
         # - safeguardsregs/26-hazcom.ipynb
-        # - safeguardsregs/27-aitools.ipynb
         # - safeguardsregs/33-energy.ipynb
         # - safeguardsregs/33-energyFF.ipynb
         # - safeguardsregs/35-climate.ipynb
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
         # - safeguardsregs/38-remediation.ipynb
-      output: exports/12-logic.pdf
+      output: exports/13-fta.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
@@ -85,6 +85,7 @@ project:
         - file: hazardsanalysis/14-fmea.ipynb
         - file: hazardsanalysis/14a-fmeastudy.ipynb
         - file: hazardsanalysis/15-pha.ipynb
+        - file: hazardsanalysis/16-aitools.ipynb
     - file: processsafetyinfo.md
       children:
         - file: processsafetyinfo/16-hygiene.ipynb
@@ -106,7 +107,6 @@ project:
         - file: safeguardsregs/24-psm.ipynb
         - file: safeguardsregs/25-ragast.ipynb
         - file: safeguardsregs/26-hazcom.ipynb
-        - file: safeguardsregs/27-aitools.ipynb
         - file: safeguardsregs/33-energy.ipynb
         - file: safeguardsregs/33-energyFF.ipynb
         - file: safeguardsregs/35-climate.ipynb
