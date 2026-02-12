@@ -22,9 +22,9 @@ project:
         # - hazardsanalysis/12-logic.ipynb
         # - hazardsanalysis/13-fta.ipynb
         # - hazardsanalysis/14-fmea.ipynb
-        - hazardsanalysis/14a-fmeastudy.ipynb
+        # - hazardsanalysis/14a-fmeastudy.ipynb
         # - hazardsanalysis/15-pha.ipynb
-        # - hazardsanalysis/16-aitools.ipynb
+        - hazardsanalysis/16-aitools.ipynb
         # - processsafetyinfo/16-hygiene.ipynb
         # - processsafetyinfo/16-toxicity.ipynb
         # - processsafetyinfo/17-reactivity.ipynb
@@ -48,7 +48,7 @@ project:
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
         # - safeguardsregs/38-remediation.ipynb
-      output: exports/14a-fmeastudy.pdf
+      output: exports/16-aitools.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
