@@ -27,8 +27,8 @@ project:
         # - hazardsanalysis/16-aitools.ipynb
         # - processsafetyinfo/16-hygiene.ipynb
         # - processsafetyinfo/16-toxicity.ipynb
-        - processsafetyinfo/17-reactivity.ipynb
-        # - processsafetyinfo/18-init.ipynb
+        # - processsafetyinfo/17-reactivity.ipynb
+        - processsafetyinfo/18-init.ipynb
         # - processsafetyinfo/19-flammability1.ipynb
         # - processsafetyinfo/19-flammability2.ipynb
         # - processsafetyinfo/20-explosions.ipynb
@@ -48,7 +48,7 @@ project:
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
         # - safeguardsregs/38-remediation.ipynb
-      output: exports/17-reactivity.pdf
+      output: exports/18-init.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
