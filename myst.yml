@@ -116,6 +116,7 @@ project:
     - file: projectdetails.ipynb
     - file: appendix.md
       children:
+        - file: appendix/teamwork.ipynb
         - file: appendix/review2.ipynb
         - file: appendix/z-finalreview.ipynb
     - file: acknowledgement.md
