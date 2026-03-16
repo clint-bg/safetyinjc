@@ -38,8 +38,8 @@ project:
         # - processsafetyinfo/22-balances3.ipynb
         # - safeguardsregs/22-reliefs.ipynb
         # - safeguardsregs/22-reliefsizing.ipynb
-        - safeguardsregs/23-controls.ipynb
-        # - safeguardsregs/24-psm.ipynb
+        # - safeguardsregs/23-controls.ipynb
+        - safeguardsregs/24-psm.ipynb
         # - safeguardsregs/25-ragast.ipynb
         # - safeguardsregs/26-hazcom.ipynb
         # - safeguardsregs/33-energy.ipynb
@@ -48,7 +48,7 @@ project:
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
         # - safeguardsregs/38-remediation.ipynb
-      output: exports/23-controls.pdf
+      output: exports/24-psm.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
