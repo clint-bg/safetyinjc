@@ -40,15 +40,15 @@ project:
         # - safeguardsregs/22-reliefsizing.ipynb
         # - safeguardsregs/23-controls.ipynb
         # - safeguardsregs/24-psm.ipynb
-        - safeguardsregs/25-ragast.ipynb
-        # - safeguardsregs/26-hazcom.ipynb
+        # - safeguardsregs/25-ragast.ipynb
+        - safeguardsregs/26-hazcom.ipynb
         # - safeguardsregs/33-energy.ipynb
         # - safeguardsregs/33-energyFF.ipynb
         # - safeguardsregs/35-climate.ipynb
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
         # - safeguardsregs/38-remediation.ipynb
-      output: exports/25-ragast.pdf
+      output: exports/26-hazcom.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
