@@ -44,11 +44,11 @@ project:
         # - safeguardsregs/26-hazcom.ipynb
         # - safeguardsregs/33-energy.ipynb
         # - safeguardsregs/33-energyFF.ipynb
-        - safeguardsregs/35-climate.ipynb
+        # - safeguardsregs/35-climate.ipynb
         # - safeguardsregs/36-legislation.ipynb
         # - safeguardsregs/37-pollution.ipynb
-        # - safeguardsregs/38-remediation.ipynb
-      output: exports/35-climate.pdf
+        - safeguardsregs/38-remediation.ipynb
+      output: exports/38-remediation.pdf
   keywords:
     - Spiritual Safety
     - Process Safety
